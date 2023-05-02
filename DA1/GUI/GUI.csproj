@@ -282,11 +282,11 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Menu.cs">
+    <Compile Include="Trang chủ.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Menu.Designer.cs">
-      <DependentUpon>Menu.cs</DependentUpon>
+    <Compile Include="Trang chủ.Designer.cs">
+      <DependentUpon>Trang chủ.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -380,8 +380,8 @@
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Menu.resx">
-      <DependentUpon>Menu.cs</DependentUpon>
+    <EmbeddedResource Include="Trang chủ.resx">
+      <DependentUpon>Trang chủ.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -695,6 +695,7 @@
     <Content Include="obj\Debug\TempPE\Hoá đơn.CR_CTHD.cs.dll" />
     <Content Include="obj\Debug\TempPE\Hoá đơn.CR_HoaDon.cs.dll" />
     <Content Include="obj\Debug\TempPE\Properties.Resources.Designer.cs.dll" />
+    <None Include="Resources\icons8_Close_64px_3.png" />
     <None Include="Resources\Screenshot 2023-05-02 173823.png" />
     <None Include="Resources\Ảnh trang chủ1.png" />
     <None Include="Resources\Ảnh trang chủ.png" />
