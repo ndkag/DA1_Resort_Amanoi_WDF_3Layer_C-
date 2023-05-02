@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.btn_TroGiup = new Guna.UI2.WinForms.Guna2Button();
             this.btn_ThongKe = new Guna.UI2.WinForms.Guna2Button();
@@ -39,20 +38,8 @@
             this.btn_DangXuat = new Guna.UI2.WinForms.Guna2Button();
             this.panelSlideMenu = new System.Windows.Forms.Panel();
             this.panelThongKeSubmenu = new System.Windows.Forms.Panel();
-            this.btn_Phong = new GUI.BC.Button2();
-            this.btn_DoanhThu = new GUI.BC.Button2();
-            this.btn_ThongKeKH = new GUI.BC.Button2();
             this.panelChucNangSubmenu = new System.Windows.Forms.Panel();
-            this.btn_HoaDon = new GUI.BC.Button2();
-            this.btn_QLDichVu = new GUI.BC.Button2();
-            this.btn_KhachHang = new GUI.BC.Button2();
-            this.btn_Nhanvien = new GUI.BC.Button2();
-            this.btn_QLPhong = new GUI.BC.Button2();
-            this.btn_ChiTietDV = new GUI.BC.Button2();
-            this.btn_DatPhong = new GUI.BC.Button2();
             this.panelHethongSubmenu = new System.Windows.Forms.Panel();
-            this.btnQuanLyTK = new GUI.BC.Button2();
-            this.btn_DoiMK = new GUI.BC.Button2();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.lb_Ten = new System.Windows.Forms.Label();
             this.lb_ID = new System.Windows.Forms.Label();
@@ -66,7 +53,19 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.btn_Phong = new GUI.BC.Button2();
+            this.btn_DoanhThu = new GUI.BC.Button2();
+            this.btn_ThongKeKH = new GUI.BC.Button2();
+            this.btn_HoaDon = new GUI.BC.Button2();
+            this.btn_QLDichVu = new GUI.BC.Button2();
+            this.btn_KhachHang = new GUI.BC.Button2();
+            this.btn_Nhanvien = new GUI.BC.Button2();
+            this.btn_QLPhong = new GUI.BC.Button2();
+            this.btn_ChiTietDV = new GUI.BC.Button2();
+            this.btn_DatPhong = new GUI.BC.Button2();
+            this.btnQuanLyTK = new GUI.BC.Button2();
+            this.btn_DoiMK = new GUI.BC.Button2();
+            this.label8 = new System.Windows.Forms.Label();
             this.panelSlideMenu.SuspendLayout();
             this.panelThongKeSubmenu.SuspendLayout();
             this.panelChucNangSubmenu.SuspendLayout();
@@ -245,6 +244,201 @@
             this.panelThongKeSubmenu.Size = new System.Drawing.Size(243, 151);
             this.panelThongKeSubmenu.TabIndex = 35;
             // 
+            // panelChucNangSubmenu
+            // 
+            this.panelChucNangSubmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(227)))), ((int)(((byte)(224)))));
+            this.panelChucNangSubmenu.Controls.Add(this.btn_HoaDon);
+            this.panelChucNangSubmenu.Controls.Add(this.btn_QLDichVu);
+            this.panelChucNangSubmenu.Controls.Add(this.btn_KhachHang);
+            this.panelChucNangSubmenu.Controls.Add(this.btn_Nhanvien);
+            this.panelChucNangSubmenu.Controls.Add(this.btn_QLPhong);
+            this.panelChucNangSubmenu.Controls.Add(this.btn_ChiTietDV);
+            this.panelChucNangSubmenu.Controls.Add(this.btn_DatPhong);
+            this.panelChucNangSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelChucNangSubmenu.Location = new System.Drawing.Point(0, 466);
+            this.panelChucNangSubmenu.Name = "panelChucNangSubmenu";
+            this.panelChucNangSubmenu.Size = new System.Drawing.Size(243, 321);
+            this.panelChucNangSubmenu.TabIndex = 33;
+            // 
+            // panelHethongSubmenu
+            // 
+            this.panelHethongSubmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(227)))), ((int)(((byte)(224)))));
+            this.panelHethongSubmenu.Controls.Add(this.btnQuanLyTK);
+            this.panelHethongSubmenu.Controls.Add(this.btn_DoiMK);
+            this.panelHethongSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelHethongSubmenu.Location = new System.Drawing.Point(0, 333);
+            this.panelHethongSubmenu.Name = "panelHethongSubmenu";
+            this.panelHethongSubmenu.Size = new System.Drawing.Size(243, 84);
+            this.panelHethongSubmenu.TabIndex = 32;
+            // 
+            // panelLogo
+            // 
+            this.panelLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelLogo.Controls.Add(this.lb_Ten);
+            this.panelLogo.Controls.Add(this.lb_ID);
+            this.panelLogo.Controls.Add(this.label2);
+            this.panelLogo.Controls.Add(this.label1);
+            this.panelLogo.Controls.Add(this.btn_Menu);
+            this.panelLogo.Controls.Add(this.lb_LOGO);
+            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelLogo.Location = new System.Drawing.Point(0, 0);
+            this.panelLogo.Name = "panelLogo";
+            this.panelLogo.Size = new System.Drawing.Size(243, 221);
+            this.panelLogo.TabIndex = 1;
+            // 
+            // lb_Ten
+            // 
+            this.lb_Ten.AutoSize = true;
+            this.lb_Ten.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Ten.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.lb_Ten.Location = new System.Drawing.Point(57, 159);
+            this.lb_Ten.Name = "lb_Ten";
+            this.lb_Ten.Size = new System.Drawing.Size(0, 25);
+            this.lb_Ten.TabIndex = 30;
+            // 
+            // lb_ID
+            // 
+            this.lb_ID.AutoSize = true;
+            this.lb_ID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_ID.ForeColor = System.Drawing.Color.DimGray;
+            this.lb_ID.Location = new System.Drawing.Point(77, 181);
+            this.lb_ID.Name = "lb_ID";
+            this.lb_ID.Size = new System.Drawing.Size(0, 20);
+            this.lb_ID.TabIndex = 29;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DimGray;
+            this.label2.Location = new System.Drawing.Point(46, 181);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(31, 20);
+            this.label2.TabIndex = 28;
+            this.label2.Text = "ID:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.label1.Location = new System.Drawing.Point(7, 159);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 25);
+            this.label1.TabIndex = 27;
+            this.label1.Text = "Tên:";
+            // 
+            // btn_Menu
+            // 
+            this.btn_Menu.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Menu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Menu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Menu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Menu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_Menu.FillColor = System.Drawing.Color.Transparent;
+            this.btn_Menu.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold);
+            this.btn_Menu.ForeColor = System.Drawing.Color.DimGray;
+            this.btn_Menu.Image = global::GUI.Properties.Resources.icons8_Menu_48px;
+            this.btn_Menu.ImageSize = new System.Drawing.Size(30, 30);
+            this.btn_Menu.Location = new System.Drawing.Point(12, 115);
+            this.btn_Menu.Name = "btn_Menu";
+            this.btn_Menu.Size = new System.Drawing.Size(232, 37);
+            this.btn_Menu.TabIndex = 26;
+            this.btn_Menu.Tag = "Menu";
+            this.btn_Menu.Click += new System.EventHandler(this.btn_Menu_Click);
+            // 
+            // lb_LOGO
+            // 
+            this.lb_LOGO.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lb_LOGO.AutoSize = true;
+            this.lb_LOGO.BackColor = System.Drawing.Color.Transparent;
+            this.lb_LOGO.Font = new System.Drawing.Font("Magneto", 24F, System.Drawing.FontStyle.Bold);
+            this.lb_LOGO.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lb_LOGO.Location = new System.Drawing.Point(32, 38);
+            this.lb_LOGO.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_LOGO.Name = "lb_LOGO";
+            this.lb_LOGO.Size = new System.Drawing.Size(192, 48);
+            this.lb_LOGO.TabIndex = 11;
+            this.lb_LOGO.Text = "Amanoi";
+            // 
+            // panelChildForm
+            // 
+            this.panelChildForm.BackgroundImage = global::GUI.Properties.Resources.Screenshot_2023_05_02_173823;
+            this.panelChildForm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelChildForm.Controls.Add(this.label8);
+            this.panelChildForm.Controls.Add(this.label7);
+            this.panelChildForm.Controls.Add(this.label6);
+            this.panelChildForm.Controls.Add(this.label5);
+            this.panelChildForm.Controls.Add(this.label4);
+            this.panelChildForm.Controls.Add(this.label3);
+            this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelChildForm.Location = new System.Drawing.Point(264, 0);
+            this.panelChildForm.Name = "panelChildForm";
+            this.panelChildForm.Size = new System.Drawing.Size(1311, 789);
+            this.panelChildForm.TabIndex = 3;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold);
+            this.label7.ForeColor = System.Drawing.SystemColors.Window;
+            this.label7.Location = new System.Drawing.Point(310, 404);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(315, 54);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "MSV: 10121854";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold);
+            this.label6.ForeColor = System.Drawing.SystemColors.Window;
+            this.label6.Location = new System.Drawing.Point(690, 404);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(253, 54);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Lớp: 125217";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold);
+            this.label5.ForeColor = System.Drawing.SystemColors.Window;
+            this.label5.Location = new System.Drawing.Point(310, 480);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(740, 54);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Giáo viên hướng dẫn: Cô Trịnh Thị Nhị";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.SystemColors.Window;
+            this.label4.Location = new System.Drawing.Point(310, 333);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(722, 54);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Người thực hiện: Nguyễn Duy Khang";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.SystemColors.Window;
+            this.label3.Location = new System.Drawing.Point(310, 267);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(777, 54);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Đề tài: Ứng dụng quản lý resort Amanoi";
+            // 
             // btn_Phong
             // 
             this.btn_Phong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(227)))), ((int)(((byte)(224)))));
@@ -316,22 +510,6 @@
             this.btn_ThongKeKH.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btn_ThongKeKH.UseVisualStyleBackColor = false;
             this.btn_ThongKeKH.Click += new System.EventHandler(this.btn_ThongKeKH_Click);
-            // 
-            // panelChucNangSubmenu
-            // 
-            this.panelChucNangSubmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(227)))), ((int)(((byte)(224)))));
-            this.panelChucNangSubmenu.Controls.Add(this.btn_HoaDon);
-            this.panelChucNangSubmenu.Controls.Add(this.btn_QLDichVu);
-            this.panelChucNangSubmenu.Controls.Add(this.btn_KhachHang);
-            this.panelChucNangSubmenu.Controls.Add(this.btn_Nhanvien);
-            this.panelChucNangSubmenu.Controls.Add(this.btn_QLPhong);
-            this.panelChucNangSubmenu.Controls.Add(this.btn_ChiTietDV);
-            this.panelChucNangSubmenu.Controls.Add(this.btn_DatPhong);
-            this.panelChucNangSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelChucNangSubmenu.Location = new System.Drawing.Point(0, 466);
-            this.panelChucNangSubmenu.Name = "panelChucNangSubmenu";
-            this.panelChucNangSubmenu.Size = new System.Drawing.Size(243, 321);
-            this.panelChucNangSubmenu.TabIndex = 33;
             // 
             // btn_HoaDon
             // 
@@ -501,17 +679,6 @@
             this.btn_DatPhong.UseVisualStyleBackColor = false;
             this.btn_DatPhong.Click += new System.EventHandler(this.btn_DatPhong_Click);
             // 
-            // panelHethongSubmenu
-            // 
-            this.panelHethongSubmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(227)))), ((int)(((byte)(224)))));
-            this.panelHethongSubmenu.Controls.Add(this.btnQuanLyTK);
-            this.panelHethongSubmenu.Controls.Add(this.btn_DoiMK);
-            this.panelHethongSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelHethongSubmenu.Location = new System.Drawing.Point(0, 333);
-            this.panelHethongSubmenu.Name = "panelHethongSubmenu";
-            this.panelHethongSubmenu.Size = new System.Drawing.Size(243, 84);
-            this.panelHethongSubmenu.TabIndex = 32;
-            // 
             // btnQuanLyTK
             // 
             this.btnQuanLyTK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(227)))), ((int)(((byte)(224)))));
@@ -560,190 +727,17 @@
             this.btn_DoiMK.UseVisualStyleBackColor = false;
             this.btn_DoiMK.Click += new System.EventHandler(this.btn_DoiMK_Click);
             // 
-            // panelLogo
+            // label8
             // 
-            this.panelLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelLogo.Controls.Add(this.lb_Ten);
-            this.panelLogo.Controls.Add(this.lb_ID);
-            this.panelLogo.Controls.Add(this.label2);
-            this.panelLogo.Controls.Add(this.label1);
-            this.panelLogo.Controls.Add(this.btn_Menu);
-            this.panelLogo.Controls.Add(this.lb_LOGO);
-            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(243, 221);
-            this.panelLogo.TabIndex = 1;
-            // 
-            // lb_Ten
-            // 
-            this.lb_Ten.AutoSize = true;
-            this.lb_Ten.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_Ten.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            this.lb_Ten.Location = new System.Drawing.Point(57, 159);
-            this.lb_Ten.Name = "lb_Ten";
-            this.lb_Ten.Size = new System.Drawing.Size(0, 25);
-            this.lb_Ten.TabIndex = 30;
-            // 
-            // lb_ID
-            // 
-            this.lb_ID.AutoSize = true;
-            this.lb_ID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_ID.ForeColor = System.Drawing.Color.DimGray;
-            this.lb_ID.Location = new System.Drawing.Point(77, 181);
-            this.lb_ID.Name = "lb_ID";
-            this.lb_ID.Size = new System.Drawing.Size(0, 20);
-            this.lb_ID.TabIndex = 29;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(46, 181);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(31, 20);
-            this.label2.TabIndex = 28;
-            this.label2.Text = "ID:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            this.label1.Location = new System.Drawing.Point(7, 159);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 25);
-            this.label1.TabIndex = 27;
-            this.label1.Text = "Tên:";
-            // 
-            // btn_Menu
-            // 
-            this.btn_Menu.BackColor = System.Drawing.Color.Transparent;
-            this.btn_Menu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_Menu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_Menu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_Menu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_Menu.FillColor = System.Drawing.Color.Transparent;
-            this.btn_Menu.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold);
-            this.btn_Menu.ForeColor = System.Drawing.Color.DimGray;
-            this.btn_Menu.Image = global::GUI.Properties.Resources.icons8_Menu_48px;
-            this.btn_Menu.ImageSize = new System.Drawing.Size(30, 30);
-            this.btn_Menu.Location = new System.Drawing.Point(12, 115);
-            this.btn_Menu.Name = "btn_Menu";
-            this.btn_Menu.Size = new System.Drawing.Size(232, 37);
-            this.btn_Menu.TabIndex = 26;
-            this.btn_Menu.Tag = "Menu";
-            this.btn_Menu.Click += new System.EventHandler(this.btn_Menu_Click);
-            // 
-            // lb_LOGO
-            // 
-            this.lb_LOGO.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lb_LOGO.AutoSize = true;
-            this.lb_LOGO.BackColor = System.Drawing.Color.Transparent;
-            this.lb_LOGO.Font = new System.Drawing.Font("Magneto", 24F, System.Drawing.FontStyle.Bold);
-            this.lb_LOGO.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lb_LOGO.Location = new System.Drawing.Point(32, 38);
-            this.lb_LOGO.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lb_LOGO.Name = "lb_LOGO";
-            this.lb_LOGO.Size = new System.Drawing.Size(192, 48);
-            this.lb_LOGO.TabIndex = 11;
-            this.lb_LOGO.Text = "Amanoi";
-            // 
-            // panelChildForm
-            // 
-            this.panelChildForm.BackgroundImage = global::GUI.Properties.Resources.Screenshot_2023_05_02_173823;
-            this.panelChildForm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelChildForm.Controls.Add(this.label7);
-            this.panelChildForm.Controls.Add(this.label6);
-            this.panelChildForm.Controls.Add(this.label5);
-            this.panelChildForm.Controls.Add(this.label4);
-            this.panelChildForm.Controls.Add(this.label3);
-            this.panelChildForm.Controls.Add(this.bunifuLabel1);
-            this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelChildForm.Location = new System.Drawing.Point(264, 0);
-            this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Size = new System.Drawing.Size(1311, 789);
-            this.panelChildForm.TabIndex = 3;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold);
-            this.label7.ForeColor = System.Drawing.SystemColors.Window;
-            this.label7.Location = new System.Drawing.Point(310, 404);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(315, 54);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "MSV: 10121854";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold);
-            this.label6.ForeColor = System.Drawing.SystemColors.Window;
-            this.label6.Location = new System.Drawing.Point(690, 404);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(253, 54);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "Lớp: 125217";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold);
-            this.label5.ForeColor = System.Drawing.SystemColors.Window;
-            this.label5.Location = new System.Drawing.Point(310, 480);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(740, 54);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Giáo viên hướng dẫn: Cô Trịnh Thị Nhị";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold);
-            this.label4.ForeColor = System.Drawing.SystemColors.Window;
-            this.label4.Location = new System.Drawing.Point(310, 333);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(722, 54);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Người thực hiện: Nguyễn Duy Khang";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.SystemColors.Window;
-            this.label3.Location = new System.Drawing.Point(310, 267);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(777, 54);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Đề tài: Ứng dụng quản lý resort Amanoi";
-            // 
-            // bunifuLabel1
-            // 
-            this.bunifuLabel1.AllowParentOverrides = false;
-            this.bunifuLabel1.AutoEllipsis = false;
-            this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel1.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel1.ForeColor = System.Drawing.SystemColors.Window;
-            this.bunifuLabel1.Location = new System.Drawing.Point(561, 103);
-            this.bunifuLabel1.Name = "bunifuLabel1";
-            this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(247, 81);
-            this.bunifuLabel1.TabIndex = 0;
-            this.bunifuLabel1.Text = "ĐỒ ÁN 1";
-            this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold);
+            this.label8.ForeColor = System.Drawing.SystemColors.Window;
+            this.label8.Location = new System.Drawing.Point(601, 104);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(282, 81);
+            this.label8.TabIndex = 11;
+            this.label8.Text = "ĐỒ ÁN 1";
             // 
             // Menu
             // 
@@ -803,11 +797,11 @@
         public BC.Button2 btn_Nhanvien;
         public BC.Button2 btn_QLPhong;
         private BC.Button2 btn_Phong;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label8;
     }
 }

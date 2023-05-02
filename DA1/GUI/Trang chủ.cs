@@ -15,6 +15,7 @@ using System.Linq;
 using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Documents;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
@@ -262,10 +263,16 @@ namespace GUI
   
         private void btn_DangXuat_Click(object sender, EventArgs e)
         {
-            
-            LoginForm lg = new LoginForm();
-            this.Hide();
-            lg.ShowDialog();
+            DialogResult dr = MessageBox.Show("Bạn có chắc chắn muốn đăng xuất?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (dr == DialogResult.Yes)
+            {
+                LoginForm lg = new LoginForm();
+                this.Hide();
+                lg.ShowDialog();
+            }
+
+          
         }
 
         private void btn_TrangChu_Click(object sender, EventArgs e)
