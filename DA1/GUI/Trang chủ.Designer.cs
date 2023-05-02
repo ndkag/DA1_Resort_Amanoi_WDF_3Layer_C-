@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class Menu
+    partial class Trang_Chủ
     {
         /// <summary>
         /// Required designer variable.
@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Trang_Chủ));
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.btn_TroGiup = new Guna.UI2.WinForms.Guna2Button();
             this.btn_ThongKe = new Guna.UI2.WinForms.Guna2Button();
@@ -48,6 +49,7 @@
             this.btn_Menu = new Guna.UI2.WinForms.Guna2Button();
             this.lb_LOGO = new System.Windows.Forms.Label();
             this.panelChildForm = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -65,7 +67,6 @@
             this.btn_DatPhong = new GUI.BC.Button2();
             this.btnQuanLyTK = new GUI.BC.Button2();
             this.btn_DoiMK = new GUI.BC.Button2();
-            this.label8 = new System.Windows.Forms.Label();
             this.panelSlideMenu.SuspendLayout();
             this.panelThongKeSubmenu.SuspendLayout();
             this.panelChucNangSubmenu.SuspendLayout();
@@ -378,6 +379,18 @@
             this.panelChildForm.Name = "panelChildForm";
             this.panelChildForm.Size = new System.Drawing.Size(1311, 789);
             this.panelChildForm.TabIndex = 3;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold);
+            this.label8.ForeColor = System.Drawing.SystemColors.Window;
+            this.label8.Location = new System.Drawing.Point(601, 104);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(282, 81);
+            this.label8.TabIndex = 11;
+            this.label8.Text = "ĐỒ ÁN 1";
             // 
             // label7
             // 
@@ -727,19 +740,7 @@
             this.btn_DoiMK.UseVisualStyleBackColor = false;
             this.btn_DoiMK.Click += new System.EventHandler(this.btn_DoiMK_Click);
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold);
-            this.label8.ForeColor = System.Drawing.SystemColors.Window;
-            this.label8.Location = new System.Drawing.Point(601, 104);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(282, 81);
-            this.label8.TabIndex = 11;
-            this.label8.Text = "ĐỒ ÁN 1";
-            // 
-            // Menu
+            // Trang_Chủ
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -749,9 +750,10 @@
             this.Controls.Add(this.panelSlideMenu);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "Menu";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "Trang_Chủ";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Menu";
+            this.Text = "Trang chủ";
             this.Load += new System.EventHandler(this.Menu_Load);
             this.panelSlideMenu.ResumeLayout(false);
             this.panelThongKeSubmenu.ResumeLayout(false);

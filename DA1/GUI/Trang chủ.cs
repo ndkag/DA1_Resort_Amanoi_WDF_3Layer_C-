@@ -21,13 +21,13 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace GUI
 {
-    public partial class Menu : Form
+    public partial class Trang_Chủ : Form
     {
         //private bool isLoggedIn = false;
         QLPhongDTO p = new QLPhongDTO();
         QLPhongBLL bll = new QLPhongBLL();
 
-        public Menu()
+        public Trang_Chủ()
         {
             InitializeComponent();
             customizeDesign();

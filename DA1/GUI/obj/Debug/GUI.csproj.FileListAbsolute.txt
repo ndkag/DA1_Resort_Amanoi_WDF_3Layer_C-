@@ -17,7 +17,6 @@ C:\Users\duykh\Desktop\ĐỒ án 1 chuẩn\DA1\GUI\obj\Debug\GUI.Hệ_thống.Đ
 C:\Users\duykh\Desktop\ĐỒ án 1 chuẩn\DA1\GUI\obj\Debug\GUI.Hệ_thống.Quản_lý_tài_khoản.resources
 C:\Users\duykh\Desktop\ĐỒ án 1 chuẩn\DA1\GUI\obj\Debug\GUI.LoadPhong.resources
 C:\Users\duykh\Desktop\ĐỒ án 1 chuẩn\DA1\GUI\obj\Debug\GUI.LoginForm.resources
-C:\Users\duykh\Desktop\ĐỒ án 1 chuẩn\DA1\GUI\obj\Debug\GUI.Menu.resources
 C:\Users\duykh\Desktop\ĐỒ án 1 chuẩn\DA1\GUI\obj\Debug\GUI.Properties.Resources.resources
 C:\Users\duykh\Desktop\ĐỒ án 1 chuẩn\DA1\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
 C:\Users\duykh\Desktop\ĐỒ án 1 chuẩn\DA1\GUI\obj\Debug\GUI.exe.licenses
@@ -52,3 +51,4 @@ C:\Users\duykh\Desktop\ĐỒ án 1 chuẩn\DA1\GUI\obj\Debug\GUI.exe
 C:\Users\duykh\Desktop\ĐỒ án 1 chuẩn\DA1\GUI\obj\Debug\GUI.pdb
 C:\Users\duykh\Desktop\ĐỒ án 1 chuẩn\DA1\GUI\bin\Debug\Guna.UI.dll
 C:\Users\duykh\Desktop\ĐỒ án 1 chuẩn\DA1\GUI\obj\Debug\GUI.Hỗ_trợ.resources
+C:\Users\duykh\Desktop\ĐỒ án 1 chuẩn\DA1\GUI\obj\Debug\GUI.Trang_Chủ.resources

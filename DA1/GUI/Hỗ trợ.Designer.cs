@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Hỗ_trợ));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -47,10 +49,9 @@
             this.label9 = new System.Windows.Forms.Label();
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
             this.btn_thoat = new Guna.UI2.WinForms.Guna2Button();
             this.gunaElipse2 = new Guna.UI.WinForms.GunaElipse(this.components);
-            this.label13 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.gunaElipse3 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -79,6 +80,14 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(733, 598);
             this.panel1.TabIndex = 0;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(176)))), ((int)(((byte)(122)))));
+            this.panel3.Location = new System.Drawing.Point(25, 22);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(5, 550);
+            this.panel3.TabIndex = 73;
             // 
             // label12
             // 
@@ -258,6 +267,18 @@
             this.panel2.Size = new System.Drawing.Size(733, 75);
             this.panel2.TabIndex = 1;
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Magneto", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label13.Location = new System.Drawing.Point(245, 11);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(226, 56);
+            this.label13.TabIndex = 68;
+            this.label13.Text = "Amanoi";
+            // 
             // btn_thoat
             // 
             this.btn_thoat.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(176)))), ((int)(((byte)(122)))));
@@ -283,26 +304,6 @@
             this.gunaElipse2.Radius = 30;
             this.gunaElipse2.TargetControl = this.panel2;
             // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Magneto", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label13.Location = new System.Drawing.Point(245, 11);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(226, 56);
-            this.label13.TabIndex = 68;
-            this.label13.Text = "Amanoi";
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(176)))), ((int)(((byte)(122)))));
-            this.panel3.Location = new System.Drawing.Point(25, 22);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(5, 550);
-            this.panel3.TabIndex = 73;
-            // 
             // gunaElipse3
             // 
             this.gunaElipse3.Radius = 15;
@@ -317,6 +318,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Hỗ_trợ";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hỗ_trợ";

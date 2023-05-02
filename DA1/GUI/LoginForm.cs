@@ -46,7 +46,7 @@ namespace GUI
                     // Admin login
                     MessageBox.Show("Chào mừng Admin " + account.DisplayName + " đăng nhập thành công.");
 
-                    Menu mainMenu = new Menu();
+                    Trang_Chủ mainMenu = new Trang_Chủ();
                     mainMenu.lb_Ten.Text = account.DisplayName;
                     mainMenu.lb_ID.Text = account.UserName;
 
@@ -57,7 +57,7 @@ namespace GUI
                 {
                     // User login
                     MessageBox.Show("Chào mừng " + account.DisplayName + "đăng nhập thành công.");
-                    Menu mainMenu = new Menu();
+                    Trang_Chủ mainMenu = new Trang_Chủ();
                     mainMenu.btn_TaiKhoan.Visible = false;
                     mainMenu.btn_QLDichVu.Visible = false;
                     mainMenu.btn_QLPhong.Visible = false;
