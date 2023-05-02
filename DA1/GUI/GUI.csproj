@@ -198,6 +198,12 @@
     <Compile Include="Báo cáo thống kê\Xuất_báo_cáo.Designer.cs">
       <DependentUpon>Xuất_báo_cáo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Hỗ trợ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hỗ trợ.Designer.cs">
+      <DependentUpon>Hỗ trợ.cs</DependentUpon>
+    </Compile>
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -314,6 +320,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Báo cáo thống kê\Xuất_báo_cáo.resx">
       <DependentUpon>Xuất_báo_cáo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hỗ trợ.resx">
+      <DependentUpon>Hỗ trợ.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="obj\Debug\GUI.BC.RJTextBox.resources" />
     <EmbeddedResource Include="obj\Debug\GUI.BCTK_KhachHang.resources" />
