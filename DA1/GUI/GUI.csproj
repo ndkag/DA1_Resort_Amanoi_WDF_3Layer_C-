@@ -1,0 +1,700 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AB2578AC-9A11-471B-9BF8-3234A1E3A009}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>GUI</RootNamespace>
+    <AssemblyName>GUI</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu.Licensing, Version=3.2.0.0, Culture=neutral, PublicKeyToken=f89b4760ba7dcb6b" />
+    <Reference Include="Bunifu.UI.WinForms.1.5.3">
+      <HintPath>..\..\..\..\Downloads\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuButton">
+      <HintPath>..\..\..\..\Downloads\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuCheckBox">
+      <HintPath>..\..\..\..\Downloads\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuCheckBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuCircleProgress">
+      <HintPath>..\..\..\..\Downloads\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuCircleProgress.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDataGridView">
+      <HintPath>..\..\..\..\Downloads\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDatePicker">
+      <HintPath>..\..\..\..\Downloads\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDropdown">
+      <HintPath>..\..\..\..\Downloads\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuDropdown.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuGauge">
+      <HintPath>..\..\..\..\Downloads\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuGauge.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuGradientPanel">
+      <HintPath>..\..\..\..\Downloads\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuGradientPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuLabel">
+      <HintPath>..\..\..\..\Downloads\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuLabel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPanel">
+      <HintPath>..\..\..\..\Downloads\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuRating">
+      <HintPath>..\..\..\..\Downloads\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuRating.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuShadowPanel">
+      <HintPath>..\..\..\..\Downloads\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuShadowPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuTextbox">
+      <HintPath>..\..\..\..\Downloads\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuTextbox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuToggleSwitch">
+      <HintPath>..\..\..\..\Downloads\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuToggleSwitch.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FontAwesome.Sharp, Version=6.3.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.6.3.0\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI">
+      <HintPath>..\..\..\framwork-main\framwork-main\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna.UI-Framework-Lib-master\Guna.UI WinForms\.net 4.0\Guna.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.4\lib\net472\Guna.UI2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="bin\Debug\Báo cáo thống kê\CR_KhachHang.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="bin\Debug\Báo cáo thống kê\CR_KhachHang1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CR_KhachHang.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Báo cáo thống kê\BCTK_DatPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Báo cáo thống kê\BCTK_DatPhong.Designer.cs">
+      <DependentUpon>BCTK_DatPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Báo cáo thống kê\BCTK_HoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Báo cáo thống kê\BCTK_HoaDon.Designer.cs">
+      <DependentUpon>BCTK_HoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Báo cáo thống kê\BCTK_KhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Báo cáo thống kê\BCTK_KhachHang.Designer.cs">
+      <DependentUpon>BCTK_KhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BC\Button2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BC\RJComboBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BC\RJTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BC\RJTextBox.Designer.cs">
+      <DependentUpon>RJTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BC\RJToggleButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CR_DatPhong.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CR_DatPhong.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CR_HoaDon.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CR_HoaDon.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CR_KhachHang.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CR_KhachHang.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Báo cáo thống kê\Xuất_báo_cáo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Báo cáo thống kê\Xuất_báo_cáo.Designer.cs">
+      <DependentUpon>Xuất_báo_cáo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Hoá Đơn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hoá Đơn.Designer.cs">
+      <DependentUpon>Hoá Đơn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quản lý\QL CTDV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quản lý\QL CTDV.Designer.cs">
+      <DependentUpon>QL CTDV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quản lý\QL dịch vụ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quản lý\QL dịch vụ.Designer.cs">
+      <DependentUpon>QL dịch vụ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quản lý\QL Khách Hàng.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quản lý\QL Khách Hàng.Designer.cs">
+      <DependentUpon>QL Khách Hàng.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quản lý\QL Phòng.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quản lý\QL Phòng.Designer.cs">
+      <DependentUpon>QL Phòng.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quản lý\QL_Nhân_Viên.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quản lý\QL_Nhân_Viên.Designer.cs">
+      <DependentUpon>QL_Nhân_Viên.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quản lý\QL_Đặt_Phòng.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quản lý\QL_Đặt_Phòng.Designer.cs">
+      <DependentUpon>QL_Đặt_Phòng.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hoá đơn\XuatHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hoá đơn\XuatHoaDon.Designer.cs">
+      <DependentUpon>XuatHoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tài khoản\Đổi mật khẩu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tài khoản\Đổi mật khẩu.Designer.cs">
+      <DependentUpon>Đổi mật khẩu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tài khoản\Quản lý tài khoản.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tài khoản\Quản lý tài khoản.Designer.cs">
+      <DependentUpon>Quản lý tài khoản.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoadPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoadPhong.Designer.cs">
+      <DependentUpon>LoadPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="bin\Debug\Báo cáo thống kê\CR_KhachHang.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CR_KhachHang1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Báo cáo thống kê\BCTK_DatPhong.resx">
+      <DependentUpon>BCTK_DatPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Báo cáo thống kê\BCTK_HoaDon.resx">
+      <DependentUpon>BCTK_HoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Báo cáo thống kê\BCTK_KhachHang.resx">
+      <DependentUpon>BCTK_KhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BC\RJTextBox.resx">
+      <DependentUpon>RJTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CR_DatPhong.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CR_DatPhong.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CR_HoaDon.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CR_HoaDon.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CR_KhachHang.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CR_KhachHang.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Báo cáo thống kê\Xuất_báo_cáo.resx">
+      <DependentUpon>Xuất_báo_cáo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="obj\Debug\GUI.BC.RJTextBox.resources" />
+    <EmbeddedResource Include="obj\Debug\GUI.BCTK_KhachHang.resources" />
+    <EmbeddedResource Include="obj\Debug\GUI.Báo_cáo_thống_kê.BCTK_DatPhong.resources" />
+    <EmbeddedResource Include="obj\Debug\GUI.Báo_cáo_thống_kê.Xuất_báo_cáo.resources" />
+    <EmbeddedResource Include="obj\Debug\GUI.Chức_năng.Chi_Tiết_DỊch_Vụ.resources" />
+    <EmbeddedResource Include="obj\Debug\GUI.Chức_năng.Hoá_Đơn.resources" />
+    <EmbeddedResource Include="obj\Debug\GUI.Hoá_đơn.XuatHD.resources" />
+    <EmbeddedResource Include="obj\Debug\GUI.Hoá_đơn.XuatHoaDon.resources" />
+    <EmbeddedResource Include="obj\Debug\GUI.Hệ_thống.Quản_lý_tài_khoản.resources" />
+    <EmbeddedResource Include="obj\Debug\GUI.Hệ_thống.Đổi_mật_khẩu.resources" />
+    <EmbeddedResource Include="obj\Debug\GUI.LoadPhong.resources" />
+    <EmbeddedResource Include="obj\Debug\GUI.LoginForm.resources" />
+    <EmbeddedResource Include="obj\Debug\GUI.Menu.resources" />
+    <EmbeddedResource Include="obj\Debug\GUI.Properties.Resources.resources" />
+    <EmbeddedResource Include="obj\Debug\GUI.Quản_lý.QL_dịch_vụ.resources" />
+    <EmbeddedResource Include="obj\Debug\GUI.Quản_lý.QL_Khách_Hàng.resources" />
+    <EmbeddedResource Include="obj\Debug\GUI.Quản_lý.QL_Nhân_Viên.resources" />
+    <EmbeddedResource Include="obj\Debug\GUI.Quản_lý.QL_Phòng.resources" />
+    <EmbeddedResource Include="obj\Debug\GUI.Quản_lý.QL_Đặt_Phòng.resources" />
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Hoá Đơn.resx">
+      <DependentUpon>Hoá Đơn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quản lý\QL CTDV.resx">
+      <DependentUpon>QL CTDV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quản lý\QL dịch vụ.resx">
+      <DependentUpon>QL dịch vụ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quản lý\QL Khách Hàng.resx">
+      <DependentUpon>QL Khách Hàng.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quản lý\QL Phòng.resx">
+      <DependentUpon>QL Phòng.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quản lý\QL_Nhân_Viên.resx">
+      <DependentUpon>QL_Nhân_Viên.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quản lý\QL_Đặt_Phòng.resx">
+      <DependentUpon>QL_Đặt_Phòng.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hoá đơn\XuatHoaDon.resx">
+      <DependentUpon>XuatHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tài khoản\Đổi mật khẩu.resx">
+      <DependentUpon>Đổi mật khẩu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tài khoản\Quản lý tài khoản.resx">
+      <DependentUpon>Quản lý tài khoản.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoadPhong.resx">
+      <DependentUpon>LoadPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="bin\Debug\BLL.dll.config" />
+    <None Include="bin\Debug\DAL.dll.config" />
+    <None Include="bin\Debug\GUI.exe.config" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\GUI.csproj.AssemblyReference.cache" />
+    <None Include="obj\Debug\GUI.csproj.CopyComplete" />
+    <None Include="obj\Debug\GUI.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\GUI.csproj.GenerateResource.cache" />
+    <None Include="obj\Debug\GUI.csproj.SuggestedBindingRedirects.cache" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{1a7c5f04-c350-4923-b0e2-1959350746a9}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{dff51cf5-d38b-4a74-9615-1597413aca0c}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\đã chỉnh.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pass1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pass2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chỉnh sauwr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2023-03-13 211403.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2023-03-13 211524.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2023-03-13 211606.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_back_arrow_512px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2023-03-13 212820.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2023-03-13 213008.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\z4130297575803_0be77109c9399e9612a374f1a4ece6b7 - Copy.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gold.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2023-02-22 214511.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2023-03-23 225018.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2023-03-23 2250181.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2023-02-22 2145111.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2023-02-22 2145112.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Layer 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-11.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2023-02-22 214511 copy.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2023-02-22 214511 y.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2023-02-22 2145113.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Nền.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Nền1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_back_arrow_512px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_search_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_search_100px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_refresh_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_advanced_search_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Delete_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON SỬA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_settings_512px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_add_80px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_add_80px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_add_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_user_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_password_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\đã chỉnh1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\z4130297575803_0be77109c9399e9612a374f1a4ece6b7 - Copy1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2023-02-22 2145114.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Nền2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_add_64px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON SỬA1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_refresh_64px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_advanced_search_64px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Delete_48px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_search_100px2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_search_64px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Menu_24px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Menu_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_mobile_home_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_mobile_home_48px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_home_page_60px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_test_account_60px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_gears_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_help_60px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Nền3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_home_page_60px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nền 3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_export_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_help_60px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_graph_report_script_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_gears_64px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_test_account_60px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_home_page_60px2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\BLL.dll" />
+    <Content Include="bin\Debug\BLL.pdb" />
+    <Content Include="bin\Debug\Bunifu.Licensing.dll" />
+    <Content Include="bin\Debug\Bunifu.UI.WinForms.1.5.3.dll" />
+    <Content Include="bin\Debug\Bunifu.UI.WinForms.BunifuButton.dll" />
+    <Content Include="bin\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll" />
+    <Content Include="bin\Debug\Bunifu.UI.WinForms.BunifuDataGridView.dll" />
+    <Content Include="bin\Debug\Bunifu.UI.WinForms.BunifuDatePicker.dll" />
+    <Content Include="bin\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll" />
+    <Content Include="bin\Debug\Bunifu.UI.WinForms.BunifuGauge.dll" />
+    <Content Include="bin\Debug\Bunifu.UI.WinForms.BunifuGradientPanel.dll" />
+    <Content Include="bin\Debug\Bunifu.UI.WinForms.BunifuLabel.dll" />
+    <Content Include="bin\Debug\Bunifu.UI.WinForms.BunifuPanel.dll" />
+    <Content Include="bin\Debug\Bunifu.UI.WinForms.BunifuRating.dll" />
+    <Content Include="bin\Debug\Bunifu.UI.WinForms.BunifuShadowPanel.dll" />
+    <Content Include="bin\Debug\Bunifu.UI.WinForms.BunifuTextbox.dll" />
+    <Content Include="bin\Debug\Bunifu.UI.WinForms.BunifuToggleSwitch.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.CrystalReports.Engine.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportSource.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.Shared.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.Windows.Forms.dll" />
+    <Content Include="bin\Debug\DAL.dll" />
+    <Content Include="bin\Debug\DAL.pdb" />
+    <Content Include="bin\Debug\DTO.dll" />
+    <Content Include="bin\Debug\DTO.pdb" />
+    <Content Include="bin\Debug\FontAwesome.Sharp.dll" />
+    <Content Include="bin\Debug\GUI.exe" />
+    <Content Include="bin\Debug\GUI.pdb" />
+    <Content Include="bin\Debug\Guna.UI2.dll" />
+    <Content Include="bin\Debug\stdole.dll" />
+    <Content Include="obj\Debug\GUI.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\GUI.exe" />
+    <Content Include="obj\Debug\gui.exe.licenses" />
+    <Content Include="obj\Debug\GUI.pdb" />
+    <Content Include="obj\Debug\TempPE\Báo cáo thống kê.CR_Khách hàng.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Báo cáo thống kê.CR_Khách_Hàng.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Báo cáo thống kê.CR_Phong.cs.dll" />
+    <Content Include="obj\Debug\TempPE\CR_KhachHang.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Hoá đơn.CR_CTHD.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Hoá đơn.CR_HoaDon.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Properties.Resources.Designer.cs.dll" />
+    <None Include="Resources\Screenshot 2023-05-02 173823.png" />
+    <None Include="Resources\Ảnh trang chủ1.png" />
+    <None Include="Resources\Ảnh trang chủ.png" />
+    <None Include="Resources\icons8_search_64px_11.png" />
+    <None Include="Resources\icons8_Order_Completed_60px.png" />
+    <None Include="Resources\icons8_Close_64px_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
