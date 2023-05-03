@@ -71,87 +71,128 @@ namespace GUI.Quản_lý
         private void btn_Thêm_Click(object sender, EventArgs e)
         {
 
-            string tenkh = txt_TenKH.Text.Trim();
-            string diachi = txt_DiaChi.Text.Trim();
-            string sdt = txt_SDT.Text.Trim();
-            DateTime ngaytao = DateTime.Now;
-
-            DTO_QLKhachHang KH = new DTO_QLKhachHang
+          
+            try
             {
-                TenKH = tenkh,
-                DiaChi = diachi,
-                SoDienThoai = sdt,
-                NgayTao = ngaytao,
-            };
-            if (qlkh.ThemKH(KH) == true)
-            {
-                MessageBox.Show("Thêm thành công");
-                refreshdatagridview();
+                string tenkh = txt_TenKH.Text.Trim();
+                string diachi = txt_DiaChi.Text.Trim();
+                string sdt = txt_SDT.Text.Trim();
+                DateTime ngaytao = DateTime.Now;
+              
+                if (string.IsNullOrEmpty(tenkh) || string.IsNullOrEmpty(diachi) || string.IsNullOrEmpty(sdt))
+                {
+                    MessageBox.Show("Vui lòng nhập thông tin!");
+                    return;
+                }
+                DTO_QLKhachHang KH = new DTO_QLKhachHang
+                {
+                    TenKH = tenkh,
+                    DiaChi = diachi,
+                    SoDienThoai = sdt,
+                    NgayTao = ngaytao,
+                };
+                if (qlkh.ThemKH(KH) == true)
+                {
+                    MessageBox.Show("Thêm thành công");
+                    refreshdatagridview();
 
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Thông báo!");
             }
         }
 
         private void btn_Sua_Click(object sender, EventArgs e)
         {
-            string makh = txt_MaKH.Text.Trim();
-            string tenkh = txt_TenKH.Text.Trim();
-            string diachi = txt_DiaChi.Text.Trim();
-            string sdt = txt_SDT.Text.Trim();
-            DateTime ngaytao = DateTime.Parse(dtp_NgayTao.Value.ToShortDateString());
-            DTO_QLKhachHang NV = new DTO_QLKhachHang(makh, tenkh, diachi, sdt, ngaytao);
-            if (qlkh.SuaKH(NV) == true)
+           
+            try
             {
-                MessageBox.Show("Sửa thành công");
-                refreshdatagridview();
+                string makh = txt_MaKH.Text.Trim();
+                string tenkh = txt_TenKH.Text.Trim();
+                string diachi = txt_DiaChi.Text.Trim();
+                string sdt = txt_SDT.Text.Trim();
+                DateTime ngaytao = DateTime.Parse(dtp_NgayTao.Value.ToShortDateString());
+                DTO_QLKhachHang NV = new DTO_QLKhachHang(makh, tenkh, diachi, sdt, ngaytao);
+                if (qlkh.SuaKH(NV) == true)
+                {
+                    MessageBox.Show("Sửa thành công");
+                    refreshdatagridview();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Thông báo!");
             }
         }
 
         private void btn_LamMoi_Click(object sender, EventArgs e)
         {
-            foreach (Control ctrl in guna2Panel1.Controls)
+        
+            try
             {
-                if (ctrl is Guna2TextBox)
+                foreach (Control ctrl in guna2Panel1.Controls)
                 {
-                    (ctrl as Guna2TextBox).Text = "";
-                }
-                else if (ctrl is Guna2DateTimePicker)
-                {
-                    (ctrl as Guna2DateTimePicker).Text = "";
+                    if (ctrl is Guna2TextBox)
+                    {
+                        (ctrl as Guna2TextBox).Text = "";
+                    }
+                    else if (ctrl is Guna2DateTimePicker)
+                    {
+                        (ctrl as Guna2DateTimePicker).Text = "";
+                    }
+
+                    if (ctrl is Guna2DateTimePicker)
+                    {
+                        (ctrl as Guna2DateTimePicker).Value = DateTime.Now;
+                    }
+
                 }
 
-                if (ctrl is Guna2DateTimePicker)
-                {
-                    (ctrl as Guna2DateTimePicker).Value = DateTime.Now;
-                }
+
+                refreshdatagridview();
 
             }
-
-
-            refreshdatagridview();
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Thông báo!");
+            }
         }
 
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
-            string makh = txt_MaKH.Text.Trim();
-
-
-            DialogResult dr = MessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (dr == DialogResult.Yes)
+         
+            try
             {
-                if (qlkh.XoaKH(makh) == true)
+                string makh = txt_MaKH.Text.Trim();
+
+
+                DialogResult dr = MessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (dr == DialogResult.Yes)
                 {
-                    MessageBox.Show("Xoá thành công");
-                    foreach (Control ctrl in panel3.Controls)
+                    if (qlkh.XoaKH(makh) == true)
                     {
-                        if (ctrl is RJTextBox)
+                        MessageBox.Show("Xoá thành công");
+                        foreach (Control ctrl in panel3.Controls)
                         {
-                            (ctrl as RJTextBox).Texts = "";
+                            if (ctrl is RJTextBox)
+                            {
+                                (ctrl as RJTextBox).Texts = "";
+                            }
                         }
+                        txt_MaKH.Enabled = true;
+                        refreshdatagridview();
                     }
-                    txt_MaKH.Enabled = true;
-                    refreshdatagridview();
                 }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Thông báo!");
             }
         }
 
@@ -159,25 +200,45 @@ namespace GUI.Quản_lý
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int hang = e.RowIndex;
-            // Display data in controls
-            if (hang == -1) return;
+        
 
-            txt_MaKH.Text = dgv_QLKH[1, hang].Value.ToString();
-            txt_TenKH.Text = dgv_QLKH[2, hang].Value.ToString();
-            txt_DiaChi.Text = dgv_QLKH[3, hang].Value.ToString();
-            txt_SDT.Text = dgv_QLKH[4, hang].Value.ToString();
-            dtp_NgayTao.Text = dgv_QLKH[5, hang].Value.ToString();
+            try
+            {
+                int hang = e.RowIndex;
+                // Display data in controls
+                if (hang == -1) return;
+
+                txt_MaKH.Text = dgv_QLKH[1, hang].Value.ToString();
+                txt_TenKH.Text = dgv_QLKH[2, hang].Value.ToString();
+                txt_DiaChi.Text = dgv_QLKH[3, hang].Value.ToString();
+                txt_SDT.Text = dgv_QLKH[4, hang].Value.ToString();
+                dtp_NgayTao.Text = dgv_QLKH[5, hang].Value.ToString();
 
 
-            txt_MaKH.Enabled = false;
+                txt_MaKH.Enabled = false;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Thông báo!");
+            }
         }
 
         private void txt_TimKiem_TextChanged(object sender, EventArgs e)
         {
-            string keyword = txt_TimKiem.Text.Trim();
-            List<DTO_QLKhachHang> results = qlkh.TimKiems(keyword);
-            dgv_QLKH.DataSource = results;
+          
+            try
+            {
+                string keyword = txt_TimKiem.Text.Trim();
+                List<DTO_QLKhachHang> results = qlkh.TimKiems(keyword);
+                dgv_QLKH.DataSource = results;
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Thông báo!");
+            }
         }
 
 

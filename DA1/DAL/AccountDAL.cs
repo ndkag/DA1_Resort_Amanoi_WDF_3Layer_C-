@@ -20,12 +20,13 @@ namespace DAL
         {
             chuoikn.Open();
             int i;
-            string sql = "Select count(*) from Account where UserName='" + ma.Trim() + "'";
+            string sql = "Select count(*) from Account where UserName='" + ma.Trim() + "' ";
             cmd = new SqlCommand(sql, chuoikn);
             i = (int)cmd.ExecuteScalar();
             chuoikn.Close();
             return i;
         }
+
         #region Đăng nhập
        
         public AccountDTO GetAccountByUsernameAndPassword(string username, string password)
@@ -50,6 +51,56 @@ namespace DAL
                 }
                 reader.Close();
             chuoikn.Close();
+            return account;
+        }
+        public AccountDTO GetAccountByUsername(string username)
+        {
+            AccountDTO account = null;
+
+            chuoikn.Open();
+
+            string query = "SELECT * FROM Account WHERE UserName = @UserName";
+            SqlCommand command = new SqlCommand(query, chuoikn);
+            command.Parameters.AddWithValue("@UserName", username);
+
+            SqlDataReader reader = command.ExecuteReader();
+            if (reader.Read())
+            {
+                account = new AccountDTO();
+                account.UserName = reader.GetString(0);
+                account.DisplayName = reader.GetString(1);
+                account.Password = reader.GetString(2);
+                account.Type = reader.GetInt32(3);
+            }
+            reader.Close();
+            chuoikn.Close();
+
+            return account;
+        }
+
+        public AccountDTO GetAccountByPassword(string password)
+        {
+            AccountDTO account = null;
+
+            chuoikn.Open();
+
+            string encryptedPassword = GetMD5Hash(password);
+            string query = "SELECT * FROM Account WHERE Password = @Password";
+            SqlCommand command = new SqlCommand(query, chuoikn);
+            command.Parameters.AddWithValue("@Password", encryptedPassword);
+
+            SqlDataReader reader = command.ExecuteReader();
+            if (reader.Read())
+            {
+                account = new AccountDTO();
+                account.UserName = reader.GetString(0);
+                account.DisplayName = reader.GetString(1);
+                account.Password = reader.GetString(2);
+                account.Type = reader.GetInt32(3);
+            }
+            reader.Close();
+            chuoikn.Close();
+
             return account;
         }
 
@@ -93,7 +144,7 @@ namespace DAL
             thucthisql(sql);
             return true;
         }
-
+     
     }
 
 

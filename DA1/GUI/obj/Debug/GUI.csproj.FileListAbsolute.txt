@@ -49,6 +49,5 @@ C:\Users\duykh\Desktop\ĐỒ án 1 chuẩn\DA1\GUI\bin\Debug\DAL.dll.config
 C:\Users\duykh\Desktop\ĐỒ án 1 chuẩn\DA1\GUI\obj\Debug\GUI.csproj.CopyComplete
 C:\Users\duykh\Desktop\ĐỒ án 1 chuẩn\DA1\GUI\obj\Debug\GUI.exe
 C:\Users\duykh\Desktop\ĐỒ án 1 chuẩn\DA1\GUI\obj\Debug\GUI.pdb
-C:\Users\duykh\Desktop\ĐỒ án 1 chuẩn\DA1\GUI\bin\Debug\Guna.UI.dll
 C:\Users\duykh\Desktop\ĐỒ án 1 chuẩn\DA1\GUI\obj\Debug\GUI.Hỗ_trợ.resources
 C:\Users\duykh\Desktop\ĐỒ án 1 chuẩn\DA1\GUI\obj\Debug\GUI.Trang_Chủ.resources

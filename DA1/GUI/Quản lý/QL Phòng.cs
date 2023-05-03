@@ -34,9 +34,20 @@ namespace GUI.Quản_lý
             {
                 string tenPhong = txt_TenP.Text.Trim();
                 string trangThaiPhong = txt_TrangThaiP.Text.Trim();
-                decimal giaTien = decimal.Parse(txt_GiaTienP.Text.Trim());
+                decimal giaTien;
+                if (!decimal.TryParse(txt_GiaTienP.Text.Trim(), out giaTien))
+                {
+                    MessageBox.Show("Vui lòng nhập giá tiền!");
+                    return;
+                }
+                if (string.IsNullOrEmpty(tenPhong) || string.IsNullOrEmpty(trangThaiPhong) || string.IsNullOrEmpty(txt_SoNguoiP.Text) || string.IsNullOrEmpty(txt_NgayOP.Text))
+                {
+                    MessageBox.Show("Vui lòng nhập thông tin!");
+                    return;
+                }
                 int soNguoi = int.Parse(txt_SoNguoiP.Text.Trim());
                 int NgayO = int.Parse(txt_NgayOP.Text.Trim());
+              
                 QLPhongDTO phong = new QLPhongDTO
                 {
                     TenPhong = tenPhong,
@@ -54,7 +65,7 @@ namespace GUI.Quản_lý
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi: " + ex.Message);
+                MessageBox.Show( ex.Message,"Thông báo!");
             }
 
 
@@ -102,59 +113,95 @@ namespace GUI.Quản_lý
         {
 
 
-            string maphong = txt_MaP.Text.Trim();
-            string tenPhong = txt_TenP.Text.Trim();
-            string trangThaiPhong = txt_TrangThaiP.Text.Trim();
-            decimal giaTien = decimal.Parse(txt_GiaTienP.Text.Trim());
-            int soNguoi = int.Parse(txt_SoNguoiP.Text.Trim());
-            int NgayO = int.Parse(txt_NgayOP.Text.Trim());
-
-            QLPhongDTO phong = new QLPhongDTO(maphong, tenPhong, trangThaiPhong, giaTien, soNguoi, NgayO);
-
-            if (phongBll.SuaP(phong) == true)
+      
+            try
             {
-                MessageBox.Show("Sửa thành công");
-                refreshdatagridview();
+                string maphong = txt_MaP.Text.Trim();
+                string tenPhong = txt_TenP.Text.Trim();
+                string trangThaiPhong = txt_TrangThaiP.Text.Trim();
+                decimal giaTien = decimal.Parse(txt_GiaTienP.Text.Trim());
+                int soNguoi = int.Parse(txt_SoNguoiP.Text.Trim());
+                int NgayO = int.Parse(txt_NgayOP.Text.Trim());
+
+                QLPhongDTO phong = new QLPhongDTO(maphong, tenPhong, trangThaiPhong, giaTien, soNguoi, NgayO);
+
+                if (phongBll.SuaP(phong) == true)
+                {
+                    MessageBox.Show("Sửa thành công");
+                    refreshdatagridview();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Thông báo!");
             }
         }
 
         private void btn_XoaP_Click(object sender, EventArgs e)
         {
-            string maphong = txt_MaP.Text.Trim();
-
-
-            DialogResult dr = MessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (dr == DialogResult.Yes)
+           
+            try
             {
-                if (phongBll.XoaP(maphong) == true)
+                string maphong = txt_MaP.Text.Trim();
+
+
+                DialogResult dr = MessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (dr == DialogResult.Yes)
                 {
-                    MessageBox.Show("Xoá thành công");
-                    refreshdatagridview();
+                    if (phongBll.XoaP(maphong) == true)
+                    {
+                        MessageBox.Show("Xoá thành công");
+                        refreshdatagridview();
+                    }
                 }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Thông báo!");
             }
         }
 
         private void btn_LamMoip_Click(object sender, EventArgs e)
         {
-            foreach (Control ctrl in guna2Panel1.Controls)
+         
+            try
             {
-                if (ctrl is Guna2TextBox)
+                foreach (Control ctrl in guna2Panel1.Controls)
                 {
-                    (ctrl as Guna2TextBox).Text = "";
+                    if (ctrl is Guna2TextBox)
+                    {
+                        (ctrl as Guna2TextBox).Text = "";
+                    }
                 }
-            }
 
-            refreshdatagridview();
+                refreshdatagridview();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Thông báo!");
+            }
         }
 
 
 
         private void txt_TimKiemP_TextChanged(object sender, EventArgs e)
         {
-            string keyword = txt_TimKiemP.Text.Trim();
-            List<QLPhongDTO> results = phongBll.Search(keyword);
-            dgv_QLP.DataSource = results;
+           
+            try
+            {
+                string keyword = txt_TimKiemP.Text.Trim();
+                List<QLPhongDTO> results = phongBll.Search(keyword);
+                dgv_QLP.DataSource = results;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Thông báo!");
+            }
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -177,17 +224,26 @@ namespace GUI.Quản_lý
 
         private void dgv_QLP_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int hang = e.RowIndex;
-            // Display data in controls
-            if (hang == -1) return;
+         
+            try
+            {
+                int hang = e.RowIndex;
+                // Display data in controls
+                if (hang == -1) return;
 
-            txt_MaP.Text = dgv_QLP[1, hang].Value.ToString();
+                txt_MaP.Text = dgv_QLP[1, hang].Value.ToString();
 
-            txt_TenP.Text = dgv_QLP[2, hang].Value.ToString();
-            txt_TrangThaiP.Text = dgv_QLP[3, hang].Value.ToString();
-            txt_GiaTienP.Text = dgv_QLP[4, hang].Value.ToString();
-            txt_SoNguoiP.Text = dgv_QLP[5, hang].Value.ToString();
-            txt_NgayOP.Text = dgv_QLP[6, hang].Value.ToString();
+                txt_TenP.Text = dgv_QLP[2, hang].Value.ToString();
+                txt_TrangThaiP.Text = dgv_QLP[3, hang].Value.ToString();
+                txt_GiaTienP.Text = dgv_QLP[4, hang].Value.ToString();
+                txt_SoNguoiP.Text = dgv_QLP[5, hang].Value.ToString();
+                txt_NgayOP.Text = dgv_QLP[6, hang].Value.ToString();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Thông báo!");
+            }
         }
 
         private void QL_Phòng_Load(object sender, EventArgs e)

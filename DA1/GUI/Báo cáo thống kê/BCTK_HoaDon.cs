@@ -99,52 +99,72 @@ namespace GUI.Báo_cáo_thống_kê
                 series.Points.AddXY(i, DoanhThu);
             }
 
+
         }
         private void btn_ThongKe_Click(object sender, EventArgs e)
         {
 
-            int nam = int.Parse((cbb_nam.SelectedItem ?? "0").ToString());
-            int thang = int.Parse((cbb_Thang.SelectedItem ?? "0").ToString());
-            if (nam == 0 && thang == 0)
+          
+            try
             {
-                MessageBox.Show("Vui lòng chọn tháng và năm muốn thống kê.");
-            }
-            else if (thang == 0)
-            {
-                DataTable dt = bll.ThongKeDoanhThuTheoNam(nam);
-                ThongKeNam(dt, nam);
-            }
-            else if (nam == 0)
-            {
-                MessageBox.Show("Vui lòng chọn năm muốn thống kê.");
+                int nam = int.Parse((cbb_nam.SelectedItem ?? "0").ToString());
+                int thang = int.Parse((cbb_Thang.SelectedItem ?? "0").ToString());
+                if (nam == 0 && thang == 0)
+                {
+                    MessageBox.Show("Vui lòng chọn tháng và năm muốn thống kê.");
+                }
+                else if (thang == 0)
+                {
+                    DataTable dt = bll.ThongKeDoanhThuTheoNam(nam);
+                    ThongKeNam(dt, nam);
+                }
+                else if (nam == 0)
+                {
+                    MessageBox.Show("Vui lòng chọn năm muốn thống kê.");
+
+                }
+                else
+                {
+                    DataTable dt = bll.ThongKeDoanhThuTheoNam(nam);
+                    ThongKeNam(dt, nam);
+                    DataTable dtthang = bll.ThongKeDoanhThuTheoThang(thang, nam);
+                    ThongKeThang(dtthang, thang, nam);
+                }
 
             }
-            else
+            catch (Exception ex)
             {
-                DataTable dt = bll.ThongKeDoanhThuTheoNam(nam);
-                ThongKeNam(dt, nam);
-                DataTable dtthang = bll.ThongKeDoanhThuTheoThang(thang, nam);
-                ThongKeThang(dtthang, thang,nam);
+                MessageBox.Show(ex.Message, "Thông báo!");
             }
         }
 
         private void btn_Xuat_BC_Click(object sender, EventArgs e)
         {
-            int nam = int.Parse((cbb_nam.SelectedItem ?? "0").ToString());
-            int thang = int.Parse((cbb_Thang.SelectedItem ?? "0").ToString());
-            DataTable dt = bll.BaoCaoHoaDonThang(thang, nam);
-            //khởi tạo đối tượng report
-            CR_HoaDon rpt = new CR_HoaDon();
-            //gán mã loại vào trong report
-            ((TextObject)rpt.ReportDefinition.ReportObjects["txt_Thang"]).Text = thang.ToString();
-            //thêm dữ liệu vào report
-            rpt.SetDataSource(dt);
-            //làm mới report-->để rpt rỗng
-            rpt.Refresh();
-            //khởi tạo đối tượng form chứa report
-            Xuất_báo_cáo frm = new Xuất_báo_cáo();
-            frm.crystalReportViewer1.ReportSource = rpt;//đổ dữ liệu từ dt
-            frm.ShowDialog();
+          
+
+            try
+            {
+                int nam = int.Parse((cbb_nam.SelectedItem ?? "0").ToString());
+                int thang = int.Parse((cbb_Thang.SelectedItem ?? "0").ToString());
+                DataTable dt = bll.BaoCaoHoaDonThang(thang, nam);
+                //khởi tạo đối tượng report
+                CR_HoaDon rpt = new CR_HoaDon();
+                //gán mã loại vào trong report
+                ((TextObject)rpt.ReportDefinition.ReportObjects["txt_Thang"]).Text = thang.ToString();
+                //thêm dữ liệu vào report
+                rpt.SetDataSource(dt);
+                //làm mới report-->để rpt rỗng
+                rpt.Refresh();
+                //khởi tạo đối tượng form chứa report
+                Xuất_báo_cáo frm = new Xuất_báo_cáo();
+                frm.crystalReportViewer1.ReportSource = rpt;//đổ dữ liệu từ dt
+                frm.ShowDialog();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Thông báo!");
+            }
         }
     }
 }

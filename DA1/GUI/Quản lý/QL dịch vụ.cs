@@ -24,7 +24,7 @@ namespace GUI.Quản_lý
 
         BLL_DichVu blldv = new BLL_DichVu();
         private DataTable phongs;
-   
+
         private void refreshdatagridview() //giúp load lại trang dữ liệu
         {
             phongs = blldv.getDichVu();
@@ -51,70 +51,118 @@ namespace GUI.Quản_lý
         }
         private void btn_Them_Click(object sender, EventArgs e)
         {
-            string tenDV = txt_TenDV.Text.Trim();
 
-            decimal giatien = decimal.Parse(txt_GiaTien.Text.Trim());
-            DTO_DichVu dv = new DTO_DichVu
+            try
             {
-                TenDV = tenDV,
-                GiaTien = giatien,
-            };
+                string tenDV = txt_TenDV.Text.Trim();
 
-       
-        
+                //decimal giatien = decimal.Parse(txt_GiaTien.Text.Trim());
+                decimal giatien;
+                if (!decimal.TryParse(txt_GiaTien.Text.Trim(), out giatien))
+                {
+                    MessageBox.Show("Vui lòng nhập giá tiền=!");
+                    return;
+                }
+                if (string.IsNullOrEmpty(tenDV))
+                {
+                    MessageBox.Show("Vui lòng nhập tên dịch vụ!");
+                    return;
+                }
+                DTO_DichVu dv = new DTO_DichVu
+                {
+                    TenDV = tenDV,
+                    GiaTien = giatien,
+                };
+
+
+
                 if (blldv.ThemDV(dv) == true)
                 {
                     MessageBox.Show("Thêm thành công");
                     refreshdatagridview();
 
                 }
-            
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Thông báo!");
+            }
         }
 
         private void btn_Sua_Click(object sender, EventArgs e)
         {
 
-            string madv = txt_MaDV.Text.Trim();
-            string tenDV = txt_TenDV.Text.Trim();
-
-            decimal giaTien = decimal.Parse(txt_GiaTien.Text.Trim());
 
 
-            DTO_DichVu dv = new DTO_DichVu(madv, tenDV, giaTien);
-
-            if (blldv.SuaDV(dv) == true)
+            try
             {
-                MessageBox.Show("Sửa thành công");
-                refreshdatagridview();
+                string madv = txt_MaDV.Text.Trim();
+                string tenDV = txt_TenDV.Text.Trim();
+
+                decimal giaTien = decimal.Parse(txt_GiaTien.Text.Trim());
+
+
+                DTO_DichVu dv = new DTO_DichVu(madv, tenDV, giaTien);
+
+                if (blldv.SuaDV(dv) == true)
+                {
+                    MessageBox.Show("Sửa thành công");
+                    refreshdatagridview();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Thông báo!");
             }
         }
 
         private void btn_LamMoi_Click(object sender, EventArgs e)
         {
-            foreach (Control ctrl in guna2Panel1.Controls)
+
+
+            try
             {
-                if (ctrl is Guna2TextBox)
+                foreach (Control ctrl in guna2Panel1.Controls)
                 {
-                    (ctrl as Guna2TextBox).Text = "";
+                    if (ctrl is Guna2TextBox)
+                    {
+                        (ctrl as Guna2TextBox).Text = "";
+                    }
                 }
+                refreshdatagridview();
+
             }
-            refreshdatagridview();
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Thông báo!");
+            }
         }
 
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
-            string madv = txt_MaDV.Text.Trim();
 
-
-            DialogResult dr = MessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (dr == DialogResult.Yes)
+            try
             {
-                if (blldv.XoaDV(madv) == true)
+                string madv = txt_MaDV.Text.Trim();
+
+
+                DialogResult dr = MessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (dr == DialogResult.Yes)
                 {
-                    MessageBox.Show("Xoá thành công");
-                    refreshdatagridview();
+                    if (blldv.XoaDV(madv) == true)
+                    {
+                        MessageBox.Show("Xoá thành công");
+                        refreshdatagridview();
+                    }
                 }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Thông báo!");
             }
         }
 
@@ -124,19 +172,37 @@ namespace GUI.Quản_lý
 
         private void txt_TimKiem__TextChanged(object sender, EventArgs e)
         {
-            string keyword = txt_TimKiem.Text.Trim();
-            List<DTO_DichVu> results = blldv.TimKiem(keyword);
-            dgv_DichVu.DataSource = results;
+
+            try
+            {
+                string keyword = txt_TimKiem.Text.Trim();
+                List<DTO_DichVu> results = blldv.TimKiem(keyword);
+                dgv_DichVu.DataSource = results;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Thông báo!");
+            }
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int hang = e.RowIndex;
-            // Dữ liệu được hiển thị lên bảng điền thông tin
-            if (hang == -1) return;
-            txt_MaDV.Text = dgv_DichVu[1, hang].Value.ToString();
-            txt_TenDV.Text = dgv_DichVu[2, hang].Value.ToString();
-            txt_GiaTien.Text = dgv_DichVu[3, hang].Value.ToString();
+
+            try
+            {
+                int hang = e.RowIndex;
+                // Dữ liệu được hiển thị lên bảng điền thông tin
+                if (hang == -1) return;
+                txt_MaDV.Text = dgv_DichVu[1, hang].Value.ToString();
+                txt_TenDV.Text = dgv_DichVu[2, hang].Value.ToString();
+                txt_GiaTien.Text = dgv_DichVu[3, hang].Value.ToString();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Thông báo!");
+            }
         }
 
         private void QL_dịch_vụ_Load(object sender, EventArgs e)

@@ -61,83 +61,118 @@ namespace GUI
         private void btn_Xuat_BC_Click(object sender, EventArgs e)
         {
 
-            int nam = int.Parse((cbb_nam.SelectedItem ?? "0").ToString());
-            int thang = int.Parse((cbb_Thang.SelectedItem ?? "0").ToString());
-            DataTable dt = bll.BaoCaoKhachHang(thang, nam);
-            //khởi tạo đối tượng report
-            CR_KhachHang rpt = new CR_KhachHang();
-            //gán mã loại vào trong report
-            ((TextObject)rpt.ReportDefinition.ReportObjects["txt_Thang"]).Text = thang.ToString();
-            //thêm dữ liệu vào report
-            rpt.SetDataSource(dt);
-            //làm mới report-->để rpt rỗng
-            rpt.Refresh();
-            //khởi tạo đối tượng form chứa report
-            Xuất_báo_cáo frm = new Xuất_báo_cáo();
-            frm.crystalReportViewer1.ReportSource = rpt;//đổ dữ liệu từ dt
-            frm.ShowDialog();
+           
+
+            try
+            {
+                int nam = int.Parse((cbb_nam.SelectedItem ?? "0").ToString());
+                int thang = int.Parse((cbb_Thang.SelectedItem ?? "0").ToString());
+                DataTable dt = bll.BaoCaoKhachHang(thang, nam);
+                //khởi tạo đối tượng report
+                CR_KhachHang rpt = new CR_KhachHang();
+                //gán mã loại vào trong report
+                ((TextObject)rpt.ReportDefinition.ReportObjects["txt_Thang"]).Text = thang.ToString();
+                //thêm dữ liệu vào report
+                rpt.SetDataSource(dt);
+                //làm mới report-->để rpt rỗng
+                rpt.Refresh();
+                //khởi tạo đối tượng form chứa report
+                Xuất_báo_cáo frm = new Xuất_báo_cáo();
+                frm.crystalReportViewer1.ReportSource = rpt;//đổ dữ liệu từ dt
+                frm.ShowDialog();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Thông báo!");
+            }
         }
 
         private void btn_ThongKe_Click(object sender, EventArgs e)
         {
 
-            int nam = int.Parse((cbb_nam.SelectedItem ??"0" ).ToString());
-            int thang = int.Parse((cbb_Thang.SelectedItem ?? "0").ToString());
-            if (nam == 0 && thang ==0)
-            {
-                MessageBox.Show("Vui lòng chọn tháng và năm muốn thống kê.");
-            }
-            else if (thang == 0)
-            {
-                DataTable dt = bll.ThongKeSoKhachHangTheoNam(nam);
-                ThongKeNam(dt, nam);
-            }
-            else if (nam == 0)
-            {
-                MessageBox.Show("Vui lòng chọn năm muốn thống kê.");
-
-            }
-            else
-            {
-                DataTable dt = bll.ThongKeSoKhachHangTheoNam(nam);
-                ThongKeNam(dt, nam);
-                DataTable dtthang = bll.ThongKeSoKhachHangTheoThang(thang, nam);
-                ThongKeThang(dtthang, thang);
-
-            }
            
+            try
+            {
+                int nam = int.Parse((cbb_nam.SelectedItem ?? "0").ToString());
+                int thang = int.Parse((cbb_Thang.SelectedItem ?? "0").ToString());
+                if (nam == 0 && thang == 0)
+                {
+                    MessageBox.Show("Vui lòng chọn tháng và năm muốn thống kê.");
+                }
+                else if (thang == 0)
+                {
+                    DataTable dt = bll.ThongKeSoKhachHangTheoNam(nam);
+                    ThongKeNam(dt, nam);
+                }
+                else if (nam == 0)
+                {
+                    MessageBox.Show("Vui lòng chọn năm muốn thống kê.");
 
-           
+                }
+                else
+                {
+                    DataTable dt = bll.ThongKeSoKhachHangTheoNam(nam);
+                    ThongKeNam(dt, nam);
+                    DataTable dtthang = bll.ThongKeSoKhachHangTheoThang(thang, nam);
+                    ThongKeThang(dtthang, thang);
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Thông báo!");
+            }
+
+
         }
 
         private void cbb_nam_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int nam = int.Parse((cbb_nam.SelectedItem ?? "0").ToString());
-            int thang = int.Parse((cbb_Thang.SelectedItem ?? "0").ToString());
-            if (nam != 0)
+            
+            try
             {
-                dgv_BC.DataSource = bll.BaoCaoKhachHang(thang, nam);
-                label3.Text = thang.ToString() + " năm " + nam.ToString();
-            }
-            else
-            {
-                MessageBox.Show("Vui lòng nhập năm:))");
-            }
+                int nam = int.Parse((cbb_nam.SelectedItem ?? "0").ToString());
+                int thang = int.Parse((cbb_Thang.SelectedItem ?? "0").ToString());
+                if (nam != 0)
+                {
+                    dgv_BC.DataSource = bll.BaoCaoKhachHang(thang, nam);
+                    label3.Text = thang.ToString() + " năm " + nam.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng nhập năm:))");
+                }
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Thông báo!");
+            }
         }
 
         private void cbb_Thang_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int nam = int.Parse((cbb_nam.SelectedItem ?? "0").ToString());
-            int thang = int.Parse((cbb_Thang.SelectedItem ?? "0").ToString());
-            if (nam != 0)
+           
+            try
             {
-                dgv_BC.DataSource = bll.BaoCaoKhachHang(thang, nam);
-                label3.Text = thang.ToString() + " năm " + nam.ToString();
+                int nam = int.Parse((cbb_nam.SelectedItem ?? "0").ToString());
+                int thang = int.Parse((cbb_Thang.SelectedItem ?? "0").ToString());
+                if (nam != 0)
+                {
+                    dgv_BC.DataSource = bll.BaoCaoKhachHang(thang, nam);
+                    label3.Text = thang.ToString() + " năm " + nam.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng nhập năm:))");
+                }
+
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Vui lòng nhập năm:))");
+                MessageBox.Show(ex.Message, "Thông báo!");
             }
         }
     }

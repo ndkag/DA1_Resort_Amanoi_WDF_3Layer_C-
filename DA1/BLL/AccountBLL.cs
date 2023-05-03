@@ -28,6 +28,16 @@ namespace BLL
         {
             return db.GetMD5Hash(input);
         }
+
+        public AccountDTO GetAccountByPassword(string password)
+        {
+            return accountDAL.GetAccountByPassword(password);
+        }
+        public AccountDTO GetAccountByUsername(string username)
+        {
+            return accountDAL.GetAccountByUsername(username);
+        }
+
         #endregion
 
         #region Quản lý tài khoản
@@ -60,6 +70,7 @@ namespace BLL
         {
             return accountDAL.DoiMK(account);
         }
+    
     }
 }
 

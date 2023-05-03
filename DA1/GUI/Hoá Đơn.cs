@@ -43,26 +43,36 @@ namespace GUI.Chức_năng
         private void btn_Them_Click(object sender, EventArgs e)
         {
 
-            string maDP = txt_MaDatPhong.Texts.Trim();
-            string maDV = cbb_MaDV.SelectedValue.ToString();
-            string tenDV = txt_TenDV.Text.Trim();
-            decimal soLUong = decimal.Parse(txt_SoLuong.Texts.Trim());
-            decimal TongTien = bll_CTDV.TinhTongTien(maDV, soLUong);
-
-            DTO_ChiTietDV DP = new DTO_ChiTietDV(maDP, maDV, tenDV, soLUong, TongTien);
-
-            if (bll_CTDV.kiemtramatrung(maDV, maDP) == 1)
+            try
             {
-                MessageBox.Show("Dịch vụ đã được sử dụng, vui lòng cập nhập lại dịch vụ " + tenDV+ " để sử dụng tiếp hoặc chọn dịch vụ khác.");
+                string maDP = txt_MaDatPhong.Texts.Trim();
+                string maDV = cbb_MaDV.SelectedValue.ToString();
+                string tenDV = txt_TenDV.Text.Trim();
+                decimal soLUong = decimal.Parse(txt_SoLuong.Texts.Trim());
+                decimal TongTien = bll_CTDV.TinhTongTien(maDV, soLUong);
+
+                DTO_ChiTietDV DP = new DTO_ChiTietDV(maDP, maDV, tenDV, soLUong, TongTien);
+
+                if (bll_CTDV.kiemtramatrung(maDV, maDP) == 1)
+                {
+                    MessageBox.Show("Dịch vụ đã được sử dụng, vui lòng cập nhập lại dịch vụ " + tenDV + " để sử dụng tiếp hoặc chọn dịch vụ khác.");
+                }
+                else
+                {
+                    bll_CTDV.ThemChiTietDichVu(DP);
+                    refreshdatagridview();
+                    HienThiTongTienChiTietDichVu();
+
+
+                }
+
+
             }
-            else
+            catch (Exception ex)
             {
-                bll_CTDV.ThemChiTietDichVu(DP);
-                refreshdatagridview();
-                HienThiTongTienChiTietDichVu();
-
-
+                MessageBox.Show(ex.Message, "Thông báo!");
             }
+
         }
 
 
@@ -73,37 +83,67 @@ namespace GUI.Chức_năng
         private void btn_LamMoi_Click(object sender, EventArgs e)
         {
 
-            cbb_MaDV.Enabled = true;
-            txt_SoLuong.Texts = "";
 
-            cbb_MaDV.Text = "";
-            txt_TenDV.Text = "";
-            txt_MaDatPhong.Texts = "";
+            try
+            {
+                cbb_MaDV.Enabled = true;
+                txt_SoLuong.Texts = "";
 
-            refreshdatagridview();
-            HienThiTongTienChiTietDichVu();
+                cbb_MaDV.Text = "";
+                txt_TenDV.Text = "";
+                txt_MaDatPhong.Texts = "";
+
+                refreshdatagridview();
+                HienThiTongTienChiTietDichVu();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Thông báo!");
+            }
 
         }
 
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
-            string madv = cbb_MaDV.SelectedValue.ToString();
-            string madp = txt_MaDatPhong.Texts.Trim();
-
-
-            DialogResult dr = MessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (dr == DialogResult.Yes)
+            try
             {
-                if (bll_CTDV.Xoa(madv, madp) == true)
-                {
-                    MessageBox.Show("Xoá thành công");
 
-                    refreshdatagridview();
-                    HienThiTongTienChiTietDichVu();
+                string madv = cbb_MaDV.SelectedValue.ToString();
+                string madp = txt_MaDatPhong.Texts.Trim();
+
+                if (string.IsNullOrEmpty(madv) || string.IsNullOrEmpty(madp))
+                {
+                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin.");
+                    return;
+                }
+                else
+                {
+                    DialogResult dr = MessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (dr == DialogResult.Yes)
+                    {
+                        if (bll_CTDV.Xoa(madv, madp) == true)
+                        {
+                            MessageBox.Show("Xoá thành công");
+
+                            refreshdatagridview();
+                            HienThiTongTienChiTietDichVu();
+
+                        }
+                    }
 
                 }
+
+
+
+
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Thông báo!");
+            }
+
         }
 
 
@@ -153,16 +193,24 @@ namespace GUI.Chức_năng
                 decimal TongTien = bll_CTDV.TinhTongTien(maDV, soLUong);
 
                 DTO_ChiTietDV DP = new DTO_ChiTietDV(maDP, maDV, tendv, soLUong, TongTien);
-                bll_CTDV.SuaCTDV(DP);
-                MessageBox.Show("Sửa thành công");
-                refreshdatagridview();
-                HienThiTongTienChiTietDichVu();
+                if (bll_CTDV.SuaCTDV(DP) == true)
+                {
+                    MessageBox.Show("Sửa thành công");
+                    refreshdatagridview();
+                    HienThiTongTienChiTietDichVu();
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng điền thông tin muốn sửa");
+
+                }
+
 
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi: " + ex.Message);
+                MessageBox.Show(ex.Message, "Thông báo!");
             }
 
         }
@@ -171,25 +219,30 @@ namespace GUI.Chức_năng
         {
 
 
-            string maDP = txt_MaDPHD.Texts.Trim();
-            string makh = txt_MaKH.Texts.Trim();
-            string maNV = cbb_MaNV.SelectedValue.ToString();
-            string ghichu = txt_GhiChu.Texts.Trim();
 
-            DateTime ngaytao = DateTime.Now;
-            decimal tongtien = decimal.Parse(txt_TongTienCTDV.Texts.Trim());
-            DTO_HoaDon DP = new DTO_HoaDon
-            {
-                MaKH = makh,
-                MaNV = maNV,
-                MaDatPhong = maDP,
-                TongTien = tongtien,
-                NgayThanhToan = ngaytao,
-                GhiChu = ghichu
-            };
 
-            if (bllhd.ThemHoaDon(DP) == true)
+            try
             {
+
+                string maDP = txt_MaDPHD.Texts.Trim();
+                string makh = txt_MaKH.Texts.Trim();
+                string maNV = cbb_MaNV.SelectedValue.ToString();
+                string ghichu = txt_GhiChu.Texts.Trim();
+
+                DateTime ngaytao = DateTime.Now;
+                decimal tongtien = decimal.Parse(txt_TongTienCTDV.Texts.Trim());
+                DTO_HoaDon DP = new DTO_HoaDon
+                {
+                    MaKH = makh,
+                    MaNV = maNV,
+                    MaDatPhong = maDP,
+                    TongTien = tongtien,
+                    NgayThanhToan = ngaytao,
+                    GhiChu = ghichu
+                };
+
+                bllhd.ThemHoaDon(DP);
+
                 XuatHoaDon xhd = new XuatHoaDon();
                 xhd.txt_MaDatPhong.Texts = txt_MaDatPhong.Texts.Trim();
                 xhd.txt_MaPhong.Texts = txt_MaPhong.Texts.Trim();
@@ -197,29 +250,38 @@ namespace GUI.Chức_năng
                 Close();
 
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Vui lòng nhập thông tin");
-
+                MessageBox.Show(ex.Message, "Thông báo!");
             }
 
         }
 
         private void txt_MaDPHD__TextChanged(object sender, EventArgs e)
         {
-            // Gọi hàm lấy thông tin khách hàng từ DAL
-            string maDP = txt_MaDPHD.Texts.Trim();
-            DTO_DatPhong DP = bllhd.LayMaKHTuMaDP(maDP);
 
-            // Nếu mã đặt phòng không tồn tại, hiển thị thông báo cho người dùng
-            if (DP == null)
+
+            try
             {
+                // Gọi hàm lấy thông tin khách hàng từ DAL
+                string maDP = txt_MaDPHD.Texts.Trim();
+                DTO_DatPhong DP = bllhd.LayMaKHTuMaDP(maDP);
 
-                return;
+                // Nếu mã đặt phòng không tồn tại, hiển thị thông báo cho người dùng
+                if (DP == null)
+                {
+
+                    return;
+                }
+                // Gán các giá trị khác tương tự
+
+                txt_MaKH.Texts = DP.MaKH;
+
             }
-            // Gán các giá trị khác tương tự
-
-            txt_MaKH.Texts = DP.MaKH;
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Thông báo!");
+            }
         }
 
 
@@ -302,53 +364,100 @@ namespace GUI.Chức_năng
                 DateTime ngaytao = DateTime.Parse(dtp_NgayThanhToan.Value.ToShortDateString());
                 decimal tongtien = decimal.Parse(txt_TongTienCTDV.Texts.Trim());
                 DTO_HoaDon DP = new DTO_HoaDon(maHD, makh, maNV, maDP, tongtien, ngaytao, ghichu);
-                bllhd.SuaDH(DP);
-                MessageBox.Show("Sửa thành công");
-                refreshdatagridview();
+                if (!decimal.TryParse(txt_TongTienCTDV.Text.Trim(), out tongtien))
+                {
+                    MessageBox.Show("Vui lòng nhập đúng định dạng số cho Tổng tiền.");
+                    return;
+                }
+
+                if (string.IsNullOrEmpty(maHD) || string.IsNullOrEmpty(maDP) || string.IsNullOrEmpty(makh) || string.IsNullOrEmpty(maNV))
+                {
+                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin.");
+                    return;
+                }
+                else
+                {
+                    bllhd.SuaDH(DP);
+                    MessageBox.Show("Sửa thành công");
+                    refreshdatagridview();
+
+                }
+
+
+
 
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi: " + ex.Message);
+                MessageBox.Show(ex.Message, "Thông báo!");
             }
 
         }
         private void btn_XoaHD_Click(object sender, EventArgs e)
         {
-            string mahd = txt_MaHD.Text.Trim();
-            DialogResult dr = MessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            if (dr == DialogResult.Yes)
+            try
             {
-                if (bllhd.XoaHoaDon(mahd) == true)
+                string mahd = txt_MaHD.Text.Trim();
+
+                if (string.IsNullOrEmpty(mahd))
                 {
-                    MessageBox.Show("Xoá thành công");
-                    refreshdatagridview();
+                    MessageBox.Show("Vui lòng chọn thông tin muốn xoá");
                 }
+                else
+                {
+                    DialogResult dr = MessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (dr == DialogResult.Yes)
+                    {
+                        if (bllhd.XoaHoaDon(mahd) == true)
+                        {
+                            MessageBox.Show("Xoá thành công");
+                            refreshdatagridview();
+                        }
+                    }
+                }
+
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Thông báo!");
+            }
+
+
         }
 
         private void dgv_HoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int hang = e.RowIndex;
-            // Dữ liệu được hiển thị lên bảng điền thông tin
-            if (hang == -1) return;
-            txt_MaHD.Text = dgv_HoaDon[0, hang].Value.ToString();
-            txt_MaKH.Texts = dgv_HoaDon[1, hang].Value.ToString();
-            cbb_MaNV.Text = dgv_HoaDon[2, hang].Value.ToString();
-            txt_MaDPHD.Texts = dgv_HoaDon[3, hang].Value.ToString();
-            txt_MaDatPhong.Texts = dgv_HoaDon[3, hang].Value.ToString();
 
-            txt_TongTienCTDV.Texts = dgv_HoaDon[4, hang].Value.ToString();
-            dtp_NgayThanhToan.Text = dgv_HoaDon[5, hang].Value.ToString();
-            txt_GhiChu.Texts = dgv_HoaDon[6, hang].Value.ToString();
 
-            string madp = txt_MaDPHD.Texts;
+            try
+            {
+                int hang = e.RowIndex;
+                // Dữ liệu được hiển thị lên bảng điền thông tin
+                if (hang == -1) return;
+                txt_MaHD.Text = dgv_HoaDon[0, hang].Value.ToString();
+                txt_MaKH.Texts = dgv_HoaDon[1, hang].Value.ToString();
+                cbb_MaNV.Text = dgv_HoaDon[2, hang].Value.ToString();
+                txt_MaDPHD.Texts = dgv_HoaDon[3, hang].Value.ToString();
+                txt_MaDatPhong.Texts = dgv_HoaDon[3, hang].Value.ToString();
 
-            dgvCTDV.DataSource = bllhd.getChiTietDV(madp);
+                txt_TongTienCTDV.Texts = dgv_HoaDon[4, hang].Value.ToString();
+                dtp_NgayThanhToan.Text = dgv_HoaDon[5, hang].Value.ToString();
+                txt_GhiChu.Texts = dgv_HoaDon[6, hang].Value.ToString();
 
-            dgvDatPhong.DataSource = bllhd.getDPHD(madp);
+                string madp = txt_MaDPHD.Texts;
+
+                dgvCTDV.DataSource = bllhd.getChiTietDV(madp);
+
+                dgvDatPhong.DataSource = bllhd.getDPHD(madp);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Thông báo!");
+            }
         }
 
         private void txt_TimKiem_TextChanged(object sender, EventArgs e)
@@ -376,18 +485,25 @@ namespace GUI.Chức_năng
 
         private void dgvCTDV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int hang = e.RowIndex;
-            // Display data in controls
-            if (hang == -1) return;
 
-            txt_MaPhong.Texts = dgvCTDV[0, hang].Value.ToString();
-            cbb_MaDV.Text = dgvCTDV[1, hang].Value.ToString();
-            txt_TenDV.Text = dgvCTDV[2, hang].Value.ToString();
-            txt_SoLuong.Texts = dgvCTDV[3, hang].Value.ToString();
-            txt_MaPhong.Enabled = false;
-            cbb_MaDV.Enabled = false;
+            try
+            {
+                int hang = e.RowIndex;
+                // Display data in controls
+                if (hang == -1) return;
 
+                txt_MaPhong.Texts = dgvCTDV[0, hang].Value.ToString();
+                cbb_MaDV.Text = dgvCTDV[1, hang].Value.ToString();
+                txt_TenDV.Text = dgvCTDV[2, hang].Value.ToString();
+                txt_SoLuong.Texts = dgvCTDV[3, hang].Value.ToString();
+                txt_MaPhong.Enabled = false;
+                cbb_MaDV.Enabled = false;
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Thông báo!");
+            }
         }
 
         private void txt_SoLuong_KeyPress(object sender, KeyPressEventArgs e)

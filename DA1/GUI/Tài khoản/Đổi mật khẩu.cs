@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace GUI.Hệ_thống
 {
@@ -23,49 +24,89 @@ namespace GUI.Hệ_thống
 
         private void btn_DoiMK_Click(object sender, EventArgs e)
         {
-
-            string userName = txtTaiKhoan.Texts.Trim();
-            string password = txtMKCu.Texts.Trim();
-            string mkmoi = accBLL.GetMD5Hash(txtMKMoi.Texts.Trim());
-            string xacnhanmk = accBLL.GetMD5Hash(txtXacNhanMK.Texts.Trim());
-            AccountDTO account = new AccountDTO
+            try
             {
-                UserName = userName,
+                string userName = txtTaiKhoan.Texts.Trim();
+                string password = txtMKCu.Texts.Trim();
+                //string mkmoi = accBLL.GetMD5Hash(txtMKMoi.Texts.Trim());
+                //string xacnhanmk = accBLL.GetMD5Hash(txtXacNhanMK.Texts.Trim());
+                string mkmoi = "";
+                string xacnhanmk = "";
 
-                Password = mkmoi,
-
-            };
-
-            DialogResult dr = MessageBox.Show("Bạn có muốn đổi mật khẩu ko ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dr == DialogResult.Yes)
-            {
-                if (accBLL.kiemtramatrung(password) == 1)
+                if (!string.IsNullOrEmpty(txtMKMoi.Texts))
                 {
-                    MessageBox.Show("Mật khẩu cũ ko đúng, vui lòng nhập lại !!!", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                    txtMKCu.Texts = " ";
-                }
-                else if (mkmoi != xacnhanmk)
-                {
-                    MessageBox.Show("Mật khẩu ko trùng với mật khẩu mới, vui lòng nhập lại !!!", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                    mkmoi = accBLL.GetMD5Hash(txtMKMoi.Texts.Trim());
                 }
                 else
-
                 {
-                    if (accBLL.Doimk(account) == true)
-                    {
-                        MessageBox.Show("Chúc mừng bạn đổi mật khẩu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                        txtMKMoi.Texts = " ";
-                        txtMKCu.Texts = " ";
-                        txtXacNhanMK.Texts = " ";
-
-
-                    }
-
-
-
-
+                    MessageBox.Show("Vui lòng nhập mật khẩu mới!");
+                    return;
                 }
+
+                if (!string.IsNullOrEmpty(txtXacNhanMK.Texts))
+                {
+                    xacnhanmk = accBLL.GetMD5Hash(txtXacNhanMK.Texts.Trim());
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng xác nhận lại mật khẩu mới!");
+                    return;
+                }
+                if (string.IsNullOrEmpty(userName) || string.IsNullOrEmpty(password) )
+                {
+                    MessageBox.Show("Vui lòng nhập thông tin.");
+                    return;
+                }
+                AccountDTO account = new AccountDTO
+                {
+                    UserName = userName,
+
+                    Password = mkmoi,
+
+                };
+              
+               
+                    DialogResult dr = MessageBox.Show("Bạn có muốn đổi mật khẩu ko ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (dr == DialogResult.Yes)
+                    {
+                        AccountDTO checkUsername = accBLL.GetAccountByUsername(userName);
+                        AccountDTO checkPassword = accBLL.GetAccountByPassword(password);
+                        if (checkUsername != null && checkPassword == null)
+                        {
+                            MessageBox.Show("Mật khẩu sai, vui lòng nhập lại!");
+                            txtMKCu.Texts = " ";
+                            txtMKCu.Focus(); // di chuyển con trỏ đến ô textbox của username
+
+                        }
+                        else if (mkmoi != xacnhanmk)
+                        {
+                            MessageBox.Show("Mật khẩu ko trùng với mật khẩu mới, vui lòng nhập lại !!!", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            if (accBLL.Doimk(account) == true)
+                            {
+                                MessageBox.Show("Chúc mừng bạn đổi mật khẩu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                txtMKMoi.Texts = " ";
+                                txtMKCu.Texts = " ";
+                                txtXacNhanMK.Texts = " ";
+
+
+                            }
+
+
+
+
+                        }
+                    }
+                
+                
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Thông báo!");
             }
         }
 

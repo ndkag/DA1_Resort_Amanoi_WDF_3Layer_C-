@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Documents;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace GUI.Quản_lý
 {
@@ -32,17 +33,7 @@ namespace GUI.Quản_lý
             cbb_MaDV.DataSource = dsdv;
             cbb_MaDV.DisplayMember = "TenDV";
             cbb_MaDV.ValueMember = "MaDV";
-
-
-
-
-
-
-
-
             //thay đổi tiêu đề
-
-
             dgv_CTDV.Columns["STT"].HeaderText = "STT";
 
             //Đánh số thứ tự
@@ -52,46 +43,85 @@ namespace GUI.Quản_lý
         BLL_ChiTietDV bll_CTDV = new BLL_ChiTietDV();
         private void txt_TimKiem__TextChanged(object sender, EventArgs e)
         {
-            string keyword = txt_TimKiem.Text.Trim();
-            List<DTO_ChiTietDV> results = bll_CTDV.TimKiem(keyword);
-            dgv_CTDV.DataSource = results;
+          
+            try
+            {
+                string keyword = txt_TimKiem.Text.Trim();
+                List<DTO_ChiTietDV> results = bll_CTDV.TimKiem(keyword);
+                dgv_CTDV.DataSource = results;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Thông báo!");
+            }
         }
 
         private void cbb_MaDV_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Gọi hàm lấy thông tin khách hàng từ DAL
-            string madv = cbb_MaDV.SelectedValue.ToString();
-            DTO_DichVu DP = bll_CTDV.LayMaTuMaDV(madv);
+       
 
-            // Nếu mã đặt phòng không tồn tại, hiển thị thông báo cho người dùng
-            if (DP == null)
+            try
             {
-                return;
-            }
-            // Gán các giá trị khác tương tự
+                // Gọi hàm lấy thông tin khách hàng từ DAL
+                string madv = cbb_MaDV.SelectedValue.ToString();
+                DTO_DichVu DP = bll_CTDV.LayMaTuMaDV(madv);
 
-            txt_TenDV.Text = DP.TenDV;
+                // Nếu mã đặt phòng không tồn tại, hiển thị thông báo cho người dùng
+                if (DP == null)
+                {
+                    return;
+                }
+                // Gán các giá trị khác tương tự
+
+                txt_TenDV.Text = DP.TenDV;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Thông báo!");
+            }
         }
 
         private void btn_DatP_Click(object sender, EventArgs e)
         {
 
-            string maDP = cbb_MaDatPhong.SelectedValue.ToString();
-            string maDV = cbb_MaDV.SelectedValue.ToString();
-            string tenDV = txt_TenDV.Text.Trim();
-            decimal soLUong = decimal.Parse(txt_SoLuong.Text.Trim());
-            decimal TongTien = bll_CTDV.TinhTongTien(maDV, soLUong);
+           
 
-            DTO_ChiTietDV DP = new DTO_ChiTietDV(maDP, maDV, tenDV, soLUong, TongTien);
-
-            if (bll_CTDV.kiemtramatrung(maDV, maDP) == 1)
+            try
             {
-                MessageBox.Show("Mã trùng");
+                string maDP = cbb_MaDatPhong.SelectedValue.ToString();
+                string maDV = cbb_MaDV.SelectedValue.ToString();
+                string tenDV = txt_TenDV.Text.Trim();
+                decimal soLUong;
+                if (!decimal.TryParse(txt_SoLuong.Text.Trim(), out soLUong))
+                {
+                    MessageBox.Show("Vui lòng nhập số lượng hợp lệ!");
+                    return;
+                }
+                decimal TongTien = bll_CTDV.TinhTongTien(maDV, soLUong);
+
+                if (string.IsNullOrEmpty(maDP) || string.IsNullOrEmpty(maDV) || string.IsNullOrEmpty(tenDV))
+                {
+                    MessageBox.Show("Vui lòng nhập thông tin!");
+                    return;
+                }
+                DTO_ChiTietDV DP = new DTO_ChiTietDV(maDP, maDV, tenDV, soLUong, TongTien);
+
+                if (bll_CTDV.kiemtramatrung(maDV, maDP) == 1)
+                {
+                    MessageBox.Show("Mã trùng");
+                }
+                else
+                {
+                    bll_CTDV.ThemChiTietDichVu(DP);
+                    refreshdatagridview();
+                }
+
             }
-            else
+            catch (Exception ex)
             {
-                bll_CTDV.ThemChiTietDichVu(DP);
-                refreshdatagridview();
+                MessageBox.Show(ex.Message, "Thông báo!");
             }
         }
 
@@ -155,35 +185,53 @@ namespace GUI.Quản_lý
 
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
-            string madv = cbb_MaDV.SelectedValue.ToString();
-            string madp = cbb_MaDatPhong.SelectedValue.ToString();
-
-
-            DialogResult dr = MessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (dr == DialogResult.Yes)
+           
+            try
             {
-                if (bll_CTDV.Xoa(madv, madp) == true)
+                string madv = cbb_MaDV.SelectedValue.ToString();
+                string madp = cbb_MaDatPhong.SelectedValue.ToString();
+
+
+                DialogResult dr = MessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (dr == DialogResult.Yes)
                 {
-                    MessageBox.Show("Xoá thành công");
+                    if (bll_CTDV.Xoa(madv, madp) == true)
+                    {
+                        MessageBox.Show("Xoá thành công");
 
-                    refreshdatagridview();
+                        refreshdatagridview();
 
+                    }
                 }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Thông báo!");
             }
         }
 
         private void dgv_CTDV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int hang = e.RowIndex;
-            // Display data in controls
-            if (hang == -1) return;
-            cbb_MaDatPhong.Text = dgv_CTDV[1, hang].Value.ToString();
-            cbb_MaDV.Text = dgv_CTDV[2, hang].Value.ToString();
-            txt_TenDV.Text = dgv_CTDV[3, hang].Value.ToString();
-            txt_SoLuong.Text = dgv_CTDV[4, hang].Value.ToString();
-            cbb_MaDatPhong.Enabled = false;
-            cbb_MaDV.Enabled = false;
+         
+            try
+            {
+                int hang = e.RowIndex;
+                // Display data in controls
+                if (hang == -1) return;
+                cbb_MaDatPhong.Text = dgv_CTDV[1, hang].Value.ToString();
+                cbb_MaDV.Text = dgv_CTDV[2, hang].Value.ToString();
+                txt_TenDV.Text = dgv_CTDV[3, hang].Value.ToString();
+                txt_SoLuong.Text = dgv_CTDV[4, hang].Value.ToString();
+                cbb_MaDatPhong.Enabled = false;
+                cbb_MaDV.Enabled = false;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Thông báo!");
+            }
 
         }
 
@@ -199,21 +247,31 @@ namespace GUI.Quản_lý
 
         private void btn_LamMoi_Click(object sender, EventArgs e)
         {
-            cbb_MaDV.Enabled = true;
-            cbb_MaDatPhong.Enabled = true;
-            txt_SoLuong.Text = "";
-            txt_TenDV.Text = "";
-            refreshdatagridview();
-            foreach (Control ctrl in pl_Nhap.Controls)
+            
+
+            try
             {
-                if (ctrl is Guna2TextBox)
+                cbb_MaDV.Enabled = true;
+                cbb_MaDatPhong.Enabled = true;
+                txt_SoLuong.Text = "";
+                txt_TenDV.Text = "";
+                refreshdatagridview();
+                foreach (Control ctrl in pl_Nhap.Controls)
                 {
-                    (ctrl as Guna2TextBox).Text = "";
+                    if (ctrl is Guna2TextBox)
+                    {
+                        (ctrl as Guna2TextBox).Text = "";
+                    }
+                    if (ctrl is ComboBox)
+                    {
+                        (ctrl as ComboBox).Text = "";
+                    }
                 }
-                if (ctrl is ComboBox)
-                {
-                    (ctrl as ComboBox).Text = "";
-                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Thông báo!");
             }
         }
     }

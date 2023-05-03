@@ -53,109 +53,144 @@ namespace GUI.Báo_cáo_thống_kê
         }
         private void btn_ThongKe_Click(object sender, EventArgs e)
         {
-            int nam = int.Parse((cbb_nam.SelectedItem ?? "0").ToString());
-            int thang = int.Parse((cbb_Thang.SelectedItem ?? "0").ToString());
-            string top = (cbb_Top.SelectedItem ?? "Top 5 đặt nhiều nhất").ToString();
-            if (top == "Top 5 đặt nhiều nhất")
+         
+            try
             {
-                if (nam == 0 && thang == 0)
+                int nam = int.Parse((cbb_nam.SelectedItem ?? "0").ToString());
+                int thang = int.Parse((cbb_Thang.SelectedItem ?? "0").ToString());
+                string top = (cbb_Top.SelectedItem ?? "Top 5 đặt nhiều nhất").ToString();
+                if (top == "Top 5 đặt nhiều nhất")
                 {
-                    MessageBox.Show("Vui lòng chọn tháng và năm muốn thống kê.");
-                }
-                else if (thang == 0)
-                {
-                    DataTable dt = bll.ThongKePhongDatTheoNamnhat(nam);
-                    ThongKeNam(dt, nam,top);
-                }
-                else if (nam == 0)
-                {
-                    MessageBox.Show("Vui lòng chọn năm muốn thống kê.");
+                    if (nam == 0 && thang == 0)
+                    {
+                        MessageBox.Show("Vui lòng chọn tháng và năm muốn thống kê.");
+                    }
+                    else if (thang == 0)
+                    {
+                        DataTable dt = bll.ThongKePhongDatTheoNamnhat(nam);
+                        ThongKeNam(dt, nam, top);
+                    }
+                    else if (nam == 0)
+                    {
+                        MessageBox.Show("Vui lòng chọn năm muốn thống kê.");
 
+                    }
+                    else
+                    {
+                        DataTable dt = bll.ThongKePhongDatTheoNamnhat(nam);
+                        ThongKeNam(dt, nam, top);
+                        DataTable dtthang = bll.ThongKePhongDatTheoThangnhat(thang, nam);
+                        ThongKeThang(dtthang, thang, top);
+                    }
                 }
-                else
+                else if (top == "Top 5 đặt ít nhất")
                 {
-                    DataTable dt = bll.ThongKePhongDatTheoNamnhat(nam);
-                    ThongKeNam(dt, nam,top);
-                    DataTable dtthang = bll.ThongKePhongDatTheoThangnhat(thang, nam);
-                    ThongKeThang(dtthang, thang,top);
+                    if (nam == 0 && thang == 0)
+                    {
+                        MessageBox.Show("Vui lòng chọn tháng và năm muốn thống kê.");
+                    }
+                    else if (thang == 0)
+                    {
+                        DataTable dt = bll.ThongKePhongDatTheoNamit(nam);
+                        ThongKeNam(dt, nam, top);
+                    }
+                    else if (nam == 0)
+                    {
+                        MessageBox.Show("Vui lòng chọn năm muốn thống kê.");
+
+                    }
+                    else
+                    {
+                        DataTable dt = bll.ThongKePhongDatTheoNamit(nam);
+                        ThongKeNam(dt, nam, top);
+                        DataTable dtthang = bll.ThongKePhongDatTheoThangit(thang, nam);
+                        ThongKeThang(dtthang, thang, top);
+                    }
                 }
+
             }
-            else if (top == "Top 5 đặt ít nhất")
+            catch (Exception ex)
             {
-                if (nam == 0 && thang == 0)
-                {
-                    MessageBox.Show("Vui lòng chọn tháng và năm muốn thống kê.");
-                }
-                else if (thang == 0)
-                {
-                    DataTable dt = bll.ThongKePhongDatTheoNamit(nam);
-                    ThongKeNam(dt, nam, top);
-                }
-                else if (nam == 0)
-                {
-                    MessageBox.Show("Vui lòng chọn năm muốn thống kê.");
-
-                }
-                else
-                {
-                    DataTable dt = bll.ThongKePhongDatTheoNamit(nam);
-                    ThongKeNam(dt, nam, top);
-                    DataTable dtthang = bll.ThongKePhongDatTheoThangit(thang, nam);
-                    ThongKeThang(dtthang, thang, top);
-                }
+                MessageBox.Show(ex.Message, "Thông báo!");
             }
-           
         }
 
         private void btn_Xuat_BC_Click(object sender, EventArgs e)
         {
 
-            int nam = int.Parse((cbb_nam.SelectedItem ?? "2023").ToString());
-            int thang = int.Parse((cbb_Thang.SelectedItem ?? "4").ToString());
-            DataTable dt = bll.ThongKePhongDatTheoThang(thang, nam);
-            //khởi tạo đối tượng report
-            CR_DatPhong rpt = new CR_DatPhong();
-            //gán mã loại vào trong report
-            ((TextObject)rpt.ReportDefinition.ReportObjects["txt_Thang"]).Text = thang.ToString();
-            //thêm dữ liệu vào report
-            rpt.SetDataSource(dt);
-            //làm mới report-->để rpt rỗng
-            rpt.Refresh();
-            //khởi tạo đối tượng form chứa report
-            Xuất_báo_cáo frm = new Xuất_báo_cáo();
-            frm.crystalReportViewer1.ReportSource = rpt;//đổ dữ liệu từ dt
-            frm.ShowDialog();
+       
+            try
+            {
+                int nam = int.Parse((cbb_nam.SelectedItem ?? "2023").ToString());
+                int thang = int.Parse((cbb_Thang.SelectedItem ?? "4").ToString());
+                DataTable dt = bll.ThongKePhongDatTheoThang(thang, nam);
+                //khởi tạo đối tượng report
+                CR_DatPhong rpt = new CR_DatPhong();
+                //gán mã loại vào trong report
+                ((TextObject)rpt.ReportDefinition.ReportObjects["txt_Thang"]).Text = thang.ToString();
+                //thêm dữ liệu vào report
+                rpt.SetDataSource(dt);
+                //làm mới report-->để rpt rỗng
+                rpt.Refresh();
+                //khởi tạo đối tượng form chứa report
+                Xuất_báo_cáo frm = new Xuất_báo_cáo();
+                frm.crystalReportViewer1.ReportSource = rpt;//đổ dữ liệu từ dt
+                frm.ShowDialog();
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Thông báo!");
+            }
         }
 
         private void cbb_Thang_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int nam = int.Parse((cbb_nam.SelectedItem ??"0").ToString());
-            int thang = int.Parse((cbb_Thang.SelectedItem ??"0" ).ToString());
-            if (nam != 0)
-            {
-                dgv_BC.DataSource = bll.ThongKePhongDatTheoThang(thang, nam);
-                label6.Text = thang.ToString()+" năm "+nam.ToString();
-            }
-            else
-            {
-                MessageBox.Show("Vui lòng nhập năm:))");
-            }
-           
+          
 
+            try
+            {
+                int nam = int.Parse((cbb_nam.SelectedItem ?? "0").ToString());
+                int thang = int.Parse((cbb_Thang.SelectedItem ?? "0").ToString());
+                if (nam != 0)
+                {
+                    dgv_BC.DataSource = bll.ThongKePhongDatTheoThang(thang, nam);
+                    label6.Text = thang.ToString() + " năm " + nam.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng nhập năm:))");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Thông báo!");
+            }
         }
 
         private void cbb_nam_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int nam = int.Parse((cbb_nam.SelectedItem ?? "0").ToString());
-            int thang = int.Parse((cbb_Thang.SelectedItem ?? "0").ToString());
-            if (nam != 0)
+         
+            try
             {
-                dgv_BC.DataSource = bll.ThongKePhongDatTheoThang(thang, nam);
-                label6.Text = thang.ToString() + " năm " + nam.ToString();
+                int nam = int.Parse((cbb_nam.SelectedItem ?? "0").ToString());
+                int thang = int.Parse((cbb_Thang.SelectedItem ?? "0").ToString());
+                if (nam != 0)
+                {
+                    dgv_BC.DataSource = bll.ThongKePhongDatTheoThang(thang, nam);
+                    label6.Text = thang.ToString() + " năm " + nam.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng nhập năm:))");
+                }
+
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Vui lòng nhập năm:))");
+                MessageBox.Show(ex.Message, "Thông báo!");
             }
         }
     }
