@@ -1,15 +1,8 @@
 ﻿using DTO;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Net.NetworkInformation;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace DAL
 {
@@ -23,7 +16,6 @@ namespace DAL
             cmd.Parameters.AddWithValue("@maPhong", maPhong);
             da = new SqlDataAdapter(cmd);
             da.Fill(dt);
-
             return dt;
         }
         public decimal TinhTongDoanhThuTheoThang(int nam, int thang)
@@ -51,7 +43,7 @@ namespace DAL
 
         public string getMaDatPhongByMaPhong(string maPhong)
         {
-            string sql = "SELECT COALESCE(MAX(MaDatPhong), 'DP00000') as MaDatPhong FROM DatPhong WHERE MaPhong = '"+maPhong+"' ";
+            string sql = "SELECT COALESCE(MAX(MaDatPhong), 'DP00000') as MaDatPhong FROM DatPhong WHERE MaPhong = '" + maPhong + "' ";
             dt = new DataTable();
             da = new SqlDataAdapter(sql, chuoikn);
             da.Fill(dt);
@@ -66,7 +58,7 @@ namespace DAL
         }
 
         #region Datagridview
-      
+
         public DataTable getHoaDon(string maDatPhong)
         {
             chuoikn.Open();
@@ -96,48 +88,48 @@ namespace DAL
             chuoikn.Close();
             return dt;
         }
-   
-            public DTO_DatPhong LayMaKHTuMaDP(string maDP)
+
+        public DTO_DatPhong LayMaKHTuMaDP(string maDP)
+        {
+            DTO_DatPhong dp = null;
+            string query = "SELECT * FROM DatPhong WHERE MaDatPhong = @MaDatPhong";
+            SqlCommand cmd = new SqlCommand(query, chuoikn);
+            cmd.Parameters.AddWithValue("@MaDatPhong", maDP);
+
+            try
             {
-                DTO_DatPhong dp = null;
-                string query = "SELECT * FROM DatPhong WHERE MaDatPhong = @MaDatPhong";
-                SqlCommand cmd = new SqlCommand(query, chuoikn);
-                cmd.Parameters.AddWithValue("@MaDatPhong", maDP);
-
-                try
-                {
                 chuoikn.Open();
-                    SqlDataReader reader = cmd.ExecuteReader();
+                SqlDataReader reader = cmd.ExecuteReader();
 
-                    if (reader.Read())
-                    {
-
-                        string maKH = reader["MaKH"].ToString();
-                        string maPhong = reader["MaPhong"].ToString();
-                        DateTime ngayDen = DateTime.Parse(reader["NgayDen"].ToString());
-                        DateTime ngayDi = DateTime.Parse(reader["NgayDi"].ToString());
-                        string ghiChu = reader["GhiChu"].ToString();
-
-                        dp = new DTO_DatPhong(maDP, maKH, maPhong, ngayDen, ngayDi, ghiChu);
-                    }
-
-                    reader.Close();
-                }
-                catch (Exception ex)
+                if (reader.Read())
                 {
-                    throw ex;
+
+                    string maKH = reader["MaKH"].ToString();
+                    string maPhong = reader["MaPhong"].ToString();
+                    DateTime ngayDen = DateTime.Parse(reader["NgayDen"].ToString());
+                    DateTime ngayDi = DateTime.Parse(reader["NgayDi"].ToString());
+                    string ghiChu = reader["GhiChu"].ToString();
+
+                    dp = new DTO_DatPhong(maDP, maKH, maPhong, ngayDen, ngayDi, ghiChu);
                 }
-                finally
-                {
+
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
                 chuoikn.Close();
-                }
-
-                return dp;
             }
 
+            return dp;
+        }
 
 
-            public DataTable getChiTietDV(string maDatPhong)
+
+        public DataTable getChiTietDV(string maDatPhong)
         {
             chuoikn.Open();
             cmd = new SqlCommand("SELECT MaDatPhong as [Mã ĐP], MaDV as [Mã DV], TenDV as [Tên DV], SoLuong as [Số lượng] , TongTien as [Tổng tiền] FROM ChiTietDichVu WHERE MaDatPhong = '" + maDatPhong + "' ", chuoikn);

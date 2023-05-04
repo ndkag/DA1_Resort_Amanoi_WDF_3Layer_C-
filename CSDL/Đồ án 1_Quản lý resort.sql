@@ -212,3 +212,30 @@ SELECT DAY(NgayThanhToan) AS Ngay, SUM(TongTien) AS DoanhThu FROM HoaDon WHERE Y
 
 
 SELECT DAY(NgayThanhToan) AS Ngày, SUM(TongTien) AS DoanhThu FROM HoaDon WHERE MONTH(NgayThanhToan) = '4' and YEAR(NgayThanhToan) = '2023' GROUP BY DAY(NgayThanhToan)
+
+select *
+from ChiTietDichVu ct 
+inner join DatPhong dp on ct.MaDatPhong = dp.MaDatPhong
+inner join DichVu dv on ct.MaDV = dv.MaDV
+inner join HoaDon hd on hd.MaDatPhong = dp.MaDatPhong
+inner join KhachHang kh on hd.MaKH = kh.MaKH and dp.MaKH = kh.MaKH
+inner join NhanVien nv on hd.MaNV = nv.MaNV
+inner join Phong p on dp.MaPhong = p.MaPhong
+
+
+SELECT hd.MaHD, hd.MaNV, nv.TenNV, dp.MaKH, kh.TenKH, dp.MaDatPhong, dp.MaPhong, P.TenPhong, p.GiaTien, dp.NgayDen, dp.NgayDi, hd.NgayThanhToan, hd.TongTien
+FROM DatPhong dp INNER JOIN HoaDon hd ON dp.MaDatPhong = hd.MaDatPhong
+INNER JOIN Phong p ON dp.MaPhong = p.MaPhong
+INNER JOIN KhachHang kh ON dp.MaKH = kh.MaKH
+INNER JOIN NhanVien nv ON hd.MaNV = nv.MaNV
+WHERE dp.MaDatPhong = 'DP00003'
+
+
+
+SELECT ctdv.MaDV, ctdv.TenDV, dv.GiaTien, ctdv.SoLuong, ctdv.TongTien 
+FROM ChiTietDichVu ctdv
+INNER JOIN DichVu dv ON ctdv.MaDV = dv.MaDV
+WHERE ctdv.MaDatPhong = 'DP00003'
+
+select*from ChiTietDichVu
+

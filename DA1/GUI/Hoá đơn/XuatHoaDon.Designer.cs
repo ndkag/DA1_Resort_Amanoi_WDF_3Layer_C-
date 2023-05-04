@@ -31,8 +31,6 @@
             this.dgvCTDV = new System.Windows.Forms.DataGridView();
             this.dgvKH = new System.Windows.Forms.DataGridView();
             this.dgvDatPhong = new System.Windows.Forms.DataGridView();
-            this.txt_MaDatPhong = new GUI.BC.RJTextBox();
-            this.txt_MaPhong = new GUI.BC.RJTextBox();
             this.btn_HoanThanh = new GUI.BC.Button2();
             this.dgvHoaDon = new System.Windows.Forms.DataGridView();
             this.rjTextBox6 = new GUI.BC.RJTextBox();
@@ -47,6 +45,8 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btn_XuatHoaDon = new GUI.BC.Button2();
+            this.txt_MaPhong = new System.Windows.Forms.TextBox();
+            this.txt_MaDatPhong = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCTDV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatPhong)).BeginInit();
@@ -70,7 +70,7 @@
             this.dgvKH.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvKH.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvKH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvKH.Location = new System.Drawing.Point(42, 102);
+            this.dgvKH.Location = new System.Drawing.Point(35, 102);
             this.dgvKH.Name = "dgvKH";
             this.dgvKH.RowHeadersWidth = 51;
             this.dgvKH.RowTemplate.Height = 24;
@@ -88,52 +88,6 @@
             this.dgvDatPhong.RowTemplate.Height = 24;
             this.dgvDatPhong.Size = new System.Drawing.Size(940, 71);
             this.dgvDatPhong.TabIndex = 2;
-            // 
-            // txt_MaDatPhong
-            // 
-            this.txt_MaDatPhong.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_MaDatPhong.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txt_MaDatPhong.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txt_MaDatPhong.BorderRadius = 0;
-            this.txt_MaDatPhong.BorderSize = 2;
-            this.txt_MaDatPhong.Enabled = false;
-            this.txt_MaDatPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_MaDatPhong.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_MaDatPhong.Location = new System.Drawing.Point(657, 127);
-            this.txt_MaDatPhong.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_MaDatPhong.Multiline = false;
-            this.txt_MaDatPhong.Name = "txt_MaDatPhong";
-            this.txt_MaDatPhong.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_MaDatPhong.PasswordChar = false;
-            this.txt_MaDatPhong.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txt_MaDatPhong.PlaceholderText = "";
-            this.txt_MaDatPhong.Size = new System.Drawing.Size(250, 35);
-            this.txt_MaDatPhong.TabIndex = 3;
-            this.txt_MaDatPhong.Texts = "";
-            this.txt_MaDatPhong.UnderlinedStyle = false;
-            // 
-            // txt_MaPhong
-            // 
-            this.txt_MaPhong.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_MaPhong.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txt_MaPhong.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txt_MaPhong.BorderRadius = 0;
-            this.txt_MaPhong.BorderSize = 2;
-            this.txt_MaPhong.Enabled = false;
-            this.txt_MaPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_MaPhong.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_MaPhong.Location = new System.Drawing.Point(68, 127);
-            this.txt_MaPhong.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_MaPhong.Multiline = true;
-            this.txt_MaPhong.Name = "txt_MaPhong";
-            this.txt_MaPhong.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_MaPhong.PasswordChar = false;
-            this.txt_MaPhong.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txt_MaPhong.PlaceholderText = "";
-            this.txt_MaPhong.Size = new System.Drawing.Size(250, 46);
-            this.txt_MaPhong.TabIndex = 4;
-            this.txt_MaPhong.Texts = "";
-            this.txt_MaPhong.UnderlinedStyle = false;
             // 
             // btn_HoanThanh
             // 
@@ -304,6 +258,22 @@
             this.btn_XuatHoaDon.UseVisualStyleBackColor = false;
             this.btn_XuatHoaDon.Click += new System.EventHandler(this.btn_XuatHoaDon_Click);
             // 
+            // txt_MaPhong
+            // 
+            this.txt_MaPhong.Location = new System.Drawing.Point(408, 151);
+            this.txt_MaPhong.Name = "txt_MaPhong";
+            this.txt_MaPhong.Size = new System.Drawing.Size(100, 22);
+            this.txt_MaPhong.TabIndex = 41;
+            this.txt_MaPhong.Visible = false;
+            // 
+            // txt_MaDatPhong
+            // 
+            this.txt_MaDatPhong.Location = new System.Drawing.Point(536, 151);
+            this.txt_MaDatPhong.Name = "txt_MaDatPhong";
+            this.txt_MaDatPhong.Size = new System.Drawing.Size(100, 22);
+            this.txt_MaDatPhong.TabIndex = 42;
+            this.txt_MaDatPhong.Visible = false;
+            // 
             // XuatHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -326,9 +296,9 @@
             this.Controls.Add(this.dgvDatPhong);
             this.Controls.Add(this.dgvKH);
             this.Controls.Add(this.dgvCTDV);
-            this.Controls.Add(this.txt_MaPhong);
-            this.Controls.Add(this.txt_MaDatPhong);
             this.Controls.Add(this.rjTextBox6);
+            this.Controls.Add(this.txt_MaDatPhong);
+            this.Controls.Add(this.txt_MaPhong);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "XuatHoaDon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -348,8 +318,6 @@
         private System.Windows.Forms.DataGridView dgvCTDV;
         private System.Windows.Forms.DataGridView dgvKH;
         private System.Windows.Forms.DataGridView dgvDatPhong;
-        public BC.RJTextBox txt_MaDatPhong;
-        public BC.RJTextBox txt_MaPhong;
         private BC.Button2 btn_HoanThanh;
         private System.Windows.Forms.DataGridView dgvHoaDon;
         public BC.RJTextBox rjTextBox6;
@@ -364,5 +332,7 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
         private BC.Button2 btn_XuatHoaDon;
+        public System.Windows.Forms.TextBox txt_MaPhong;
+        public System.Windows.Forms.TextBox txt_MaDatPhong;
     }
 }

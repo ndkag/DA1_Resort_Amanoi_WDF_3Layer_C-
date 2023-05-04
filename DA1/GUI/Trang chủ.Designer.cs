@@ -67,12 +67,14 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.avt = new System.Windows.Forms.PictureBox();
             this.panelSlideMenu.SuspendLayout();
             this.panelThongKeSubmenu.SuspendLayout();
             this.panelChucNangSubmenu.SuspendLayout();
             this.panelHethongSubmenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelChildForm.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.avt)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_TroGiup
@@ -563,6 +565,7 @@
             // panelLogo
             // 
             this.panelLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelLogo.Controls.Add(this.avt);
             this.panelLogo.Controls.Add(this.lb_Ten);
             this.panelLogo.Controls.Add(this.lb_ID);
             this.panelLogo.Controls.Add(this.label2);
@@ -580,7 +583,7 @@
             this.lb_Ten.AutoSize = true;
             this.lb_Ten.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Ten.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            this.lb_Ten.Location = new System.Drawing.Point(57, 159);
+            this.lb_Ten.Location = new System.Drawing.Point(58, 159);
             this.lb_Ten.Name = "lb_Ten";
             this.lb_Ten.Size = new System.Drawing.Size(0, 25);
             this.lb_Ten.TabIndex = 30;
@@ -590,7 +593,7 @@
             this.lb_ID.AutoSize = true;
             this.lb_ID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_ID.ForeColor = System.Drawing.Color.DimGray;
-            this.lb_ID.Location = new System.Drawing.Point(77, 181);
+            this.lb_ID.Location = new System.Drawing.Point(44, 179);
             this.lb_ID.Name = "lb_ID";
             this.lb_ID.Size = new System.Drawing.Size(0, 20);
             this.lb_ID.TabIndex = 29;
@@ -600,7 +603,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(46, 181);
+            this.label2.Location = new System.Drawing.Point(13, 179);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(31, 20);
             this.label2.TabIndex = 28;
@@ -611,7 +614,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            this.label1.Location = new System.Drawing.Point(7, 159);
+            this.label1.Location = new System.Drawing.Point(8, 156);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 25);
             this.label1.TabIndex = 27;
@@ -624,14 +627,15 @@
             this.btn_Menu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btn_Menu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn_Menu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_Menu.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_Menu.FillColor = System.Drawing.Color.Transparent;
             this.btn_Menu.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold);
             this.btn_Menu.ForeColor = System.Drawing.Color.DimGray;
             this.btn_Menu.Image = global::GUI.Properties.Resources.icons8_Menu_48px;
             this.btn_Menu.ImageSize = new System.Drawing.Size(30, 30);
-            this.btn_Menu.Location = new System.Drawing.Point(12, 115);
+            this.btn_Menu.Location = new System.Drawing.Point(0, 0);
             this.btn_Menu.Name = "btn_Menu";
-            this.btn_Menu.Size = new System.Drawing.Size(232, 37);
+            this.btn_Menu.Size = new System.Drawing.Size(243, 37);
             this.btn_Menu.TabIndex = 26;
             this.btn_Menu.Tag = "Menu";
             this.btn_Menu.Click += new System.EventHandler(this.btn_Menu_Click);
@@ -645,7 +649,7 @@
             this.lb_LOGO.BackColor = System.Drawing.Color.Transparent;
             this.lb_LOGO.Font = new System.Drawing.Font("Magneto", 24F, System.Drawing.FontStyle.Bold);
             this.lb_LOGO.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lb_LOGO.Location = new System.Drawing.Point(32, 38);
+            this.lb_LOGO.Location = new System.Drawing.Point(26, 62);
             this.lb_LOGO.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_LOGO.Name = "lb_LOGO";
             this.lb_LOGO.Size = new System.Drawing.Size(192, 48);
@@ -740,6 +744,14 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Đề tài: Ứng dụng quản lý resort Amanoi";
             // 
+            // avt
+            // 
+            this.avt.Location = new System.Drawing.Point(63, 104);
+            this.avt.Name = "avt";
+            this.avt.Size = new System.Drawing.Size(100, 50);
+            this.avt.TabIndex = 31;
+            this.avt.TabStop = false;
+            // 
             // Trang_Chủ
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -763,6 +775,7 @@
             this.panelLogo.PerformLayout();
             this.panelChildForm.ResumeLayout(false);
             this.panelChildForm.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.avt)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -805,5 +818,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.PictureBox avt;
     }
 }

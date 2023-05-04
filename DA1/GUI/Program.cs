@@ -1,13 +1,4 @@
-﻿using BLL;
-using GUI.Báo_cáo_thống_kê;
-using GUI.Chức_năng;
-using GUI.Hệ_thống;
-using GUI.Hoá_đơn;
-using GUI.Quản_lý;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
 
 namespace GUI
@@ -22,7 +13,7 @@ namespace GUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
+            Application.Run(new Test_Xuat_HD());
         }
     }
 }

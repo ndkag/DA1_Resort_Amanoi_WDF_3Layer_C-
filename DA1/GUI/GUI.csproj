@@ -76,6 +76,9 @@
     <Reference Include="Bunifu.UI.WinForms.BunifuGradientPanel">
       <HintPath>..\..\..\..\Downloads\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuGradientPanel.dll</HintPath>
     </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuImageButton">
+      <HintPath>..\..\..\..\Downloads\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuImageButton.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuLabel">
       <HintPath>..\..\..\..\Downloads\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuLabel.dll</HintPath>
     </Reference>
@@ -198,6 +201,12 @@
     <Compile Include="Báo cáo thống kê\Xuất_báo_cáo.Designer.cs">
       <DependentUpon>Xuất_báo_cáo.cs</DependentUpon>
     </Compile>
+    <Compile Include="CR_XuatHD.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CR_XuatHD.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Hỗ trợ.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -257,6 +266,12 @@
     </Compile>
     <Compile Include="Hoá đơn\XuatHoaDon.Designer.cs">
       <DependentUpon>XuatHoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Test Xuat HD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Test Xuat HD.Designer.cs">
+      <DependentUpon>Test Xuat HD.cs</DependentUpon>
     </Compile>
     <Compile Include="Tài khoản\Đổi mật khẩu.cs">
       <SubType>Form</SubType>
@@ -321,6 +336,10 @@
     <EmbeddedResource Include="Báo cáo thống kê\Xuất_báo_cáo.resx">
       <DependentUpon>Xuất_báo_cáo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CR_XuatHD.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CR_XuatHD.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Hỗ trợ.resx">
       <DependentUpon>Hỗ trợ.cs</DependentUpon>
     </EmbeddedResource>
@@ -367,6 +386,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Hoá đơn\XuatHoaDon.resx">
       <DependentUpon>XuatHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Test Xuat HD.resx">
+      <DependentUpon>Test Xuat HD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tài khoản\Đổi mật khẩu.resx">
       <DependentUpon>Đổi mật khẩu.cs</DependentUpon>
@@ -695,6 +717,9 @@
     <Content Include="obj\Debug\TempPE\Hoá đơn.CR_CTHD.cs.dll" />
     <Content Include="obj\Debug\TempPE\Hoá đơn.CR_HoaDon.cs.dll" />
     <Content Include="obj\Debug\TempPE\Properties.Resources.Designer.cs.dll" />
+    <None Include="Resources\bot_icon.gif" />
+    <None Include="Resources\z4130297575803_0be77109c9399e9612a374f1a4ece6b7 - Copy2.jpg" />
+    <None Include="Resources\icons8_test_account_60px2.png" />
     <None Include="Resources\icons8_Close_64px_3.png" />
     <None Include="Resources\Screenshot 2023-05-02 173823.png" />
     <None Include="Resources\Ảnh trang chủ1.png" />

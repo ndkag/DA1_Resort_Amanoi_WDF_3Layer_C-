@@ -1,19 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Documents;
-using System.Windows.Forms;
-using BLL;
+﻿using BLL;
 using DTO;
-using GUI;
 using GUI.BC;
 using GUI.Hoá_đơn;
 using Guna.UI2.WinForms;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Windows.Forms;
 
 namespace GUI.Chức_năng
 {
@@ -244,8 +237,8 @@ namespace GUI.Chức_năng
                 bllhd.ThemHoaDon(DP);
 
                 XuatHoaDon xhd = new XuatHoaDon();
-                xhd.txt_MaDatPhong.Texts = txt_MaDatPhong.Texts.Trim();
-                xhd.txt_MaPhong.Texts = txt_MaPhong.Texts.Trim();
+                xhd.txt_MaDatPhong.Text = txt_MaDatPhong.Texts.Trim();
+                xhd.txt_MaPhong.Text = txt_MaPhong.Texts.Trim();
                 xhd.ShowDialog();
                 Close();
 

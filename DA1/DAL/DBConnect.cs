@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
+﻿
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DTO;
+using System.Data.SqlClient;
 using System.Security.Cryptography;
+using System.Text;
 
 
 
@@ -18,7 +14,7 @@ namespace DAL
         protected SqlConnection chuoikn = new SqlConnection(@"Data Source=LAPTOP-B8V4R50K\SQLEXPRESS;Initial Catalog=QL_Resort_DA1;Integrated Security=True");
         protected SqlCommand cmd;
         protected SqlDataAdapter da;
-        protected DataTable dt;       
+        protected DataTable dt;
         public void thucthisql(string sql)
         {
             chuoikn.Open();

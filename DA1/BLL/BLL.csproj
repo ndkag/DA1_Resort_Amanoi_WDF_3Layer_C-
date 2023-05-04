@@ -55,6 +55,7 @@
     <Compile Include="QLPhongBLL.cs" />
     <Compile Include="Thống kê\BLL_ThongKeKH.cs" />
     <Compile Include="Thống kê\BLL_Thống kê.cs" />
+    <Compile Include="Thống kê\BLL_XuatHD.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">

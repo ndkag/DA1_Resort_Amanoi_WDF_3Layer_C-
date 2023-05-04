@@ -3,13 +3,8 @@ using GUI.BC;
 using GUI.Chức_năng;
 using GUI.Quản_lý;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI
@@ -68,7 +63,7 @@ namespace GUI
 
                         // Gán mã phòng vào textbox txtMaPhong trên form Hoá Đơn
                         Hoá_Đơn formHoaDon = new Hoá_Đơn();
-                        formHoaDon.txt_MaDatPhong.Texts =  maDatPhong;
+                        formHoaDon.txt_MaDatPhong.Texts = maDatPhong;
                         formHoaDon.txt_MaDPHD.Texts = maDatPhong;
                         formHoaDon.txt_MaPhong.Texts = maPhong;
                         formHoaDon.label4.Visible = false;

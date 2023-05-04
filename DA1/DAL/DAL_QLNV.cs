@@ -1,16 +1,12 @@
 ﻿using DTO;
-using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.Common;
+using System.Data.SqlClient;
+
 
 namespace DAL
 {
-    public class DAL_QLNV:DBConnect
+    public class DAL_QLNV : DBConnect
     {
 
         public DataTable getQLNV()
@@ -58,8 +54,8 @@ namespace DAL
         }
 
         #endregion
- 
-  
+
+
         public bool ThemNV(DTO_QLNV NV)
         {
             string sql = "Insert into NhanVien(TenNV,DiaChi,SoDienThoai,ViTri,Luong) values(N'" + NV.TenNV + "',N'" + NV.DiaChi + "','" + NV.SoDienThoai + "',N'" + NV.ViTri + "','" + NV.Luong + "')";

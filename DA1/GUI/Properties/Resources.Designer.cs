@@ -83,6 +83,16 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bot_icon {
+            get {
+                object obj = ResourceManager.GetObject("bot_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap đã_chỉnh {
             get {
                 object obj = ResourceManager.GetObject("đã chỉnh", resourceCulture);
@@ -363,6 +373,16 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_test_account_60px2 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_test_account_60px2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_user_30px {
             get {
                 object obj = ResourceManager.GetObject("icons8_user_30px", resourceCulture);
@@ -446,6 +466,16 @@ namespace GUI.Properties {
         internal static System.Drawing.Bitmap z4130297575803_0be77109c9399e9612a374f1a4ece6b7___Copy {
             get {
                 object obj = ResourceManager.GetObject("z4130297575803_0be77109c9399e9612a374f1a4ece6b7 - Copy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap z4130297575803_0be77109c9399e9612a374f1a4ece6b7___Copy1 {
+            get {
+                object obj = ResourceManager.GetObject("z4130297575803_0be77109c9399e9612a374f1a4ece6b7 - Copy1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

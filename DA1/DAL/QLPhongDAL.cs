@@ -1,15 +1,8 @@
-﻿using System;
+﻿using DTO;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DTO;
-using System.Collections;
-using Microsoft.SqlServer.Management.Sdk.Sfc;
-using System.Net.NetworkInformation;
-using Microsoft.SqlServer.Management.Smo;
+using System.Data.SqlClient;
+
 
 namespace DAL
 {
@@ -60,7 +53,7 @@ namespace DAL
             return results;
         }
         #endregion
-     
+
         //Thêm phòng
         public bool ThemP(QLPhongDTO phong)
         {

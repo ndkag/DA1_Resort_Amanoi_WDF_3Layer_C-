@@ -1,23 +1,13 @@
 ﻿using BLL;
 using DTO;
 using GUI.Báo_cáo_thống_kê;
-using GUI.BC;
 using GUI.Chức_năng;
 using GUI.Hệ_thống;
 using GUI.Quản_lý;
 using Guna.UI2.WinForms;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Security.Principal;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Documents;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace GUI
 {
@@ -31,9 +21,9 @@ namespace GUI
         {
             InitializeComponent();
             customizeDesign();
-          
+
         }
-     
+
 
         private void customizeDesign()
         {
@@ -47,7 +37,7 @@ namespace GUI
         private void hideSubMenu()
         {
             if (panelHethongSubmenu.Visible == true)
-                panelHethongSubmenu.Visible = false;   
+                panelHethongSubmenu.Visible = false;
             if (panelThongKeSubmenu.Visible == true)
                 panelThongKeSubmenu.Visible = false;
             if (panelChucNangSubmenu.Visible == true)
@@ -64,6 +54,7 @@ namespace GUI
             else
                 subMenu.Visible = false;
         }
+
         private Form activeForm = null;
         private void openChildFormInPanel(Form childForm)
         {
@@ -88,13 +79,15 @@ namespace GUI
                 lb_ID.Visible = false;
                 lb_Ten.Visible = false;
                 label1.Visible = false;
+                avt.Visible = false;
+
 
                 label2.Visible = false;
                 foreach (Guna2Button menuButton in panelSlideMenu.Controls.OfType<Guna2Button>())
                 {
                     menuButton.Text = "";
                     menuButton.Padding = new Padding(0);
-                    
+
                 }
             }
             else
@@ -104,6 +97,7 @@ namespace GUI
                 lb_ID.Visible = true;
                 lb_Ten.Visible = true;
                 label1.Visible = true;
+                avt.Visible = true;
 
                 label2.Visible = true;
                 btn_Menu.Dock = DockStyle.None;
@@ -122,6 +116,7 @@ namespace GUI
             lb_ID.Visible = true;
             lb_Ten.Visible = true;
             label1.Visible = true;
+            avt.Visible = true;
 
             label2.Visible = true;
             btn_Menu.Dock = DockStyle.None;
@@ -138,6 +133,7 @@ namespace GUI
             lb_ID.Visible = false;
             lb_Ten.Visible = false;
             label1.Visible = false;
+            avt.Visible = false;
 
             label2.Visible = false;
             btn_Menu.Dock = DockStyle.Top;
@@ -169,7 +165,7 @@ namespace GUI
             Đổi_mật_khẩu doi = new Đổi_mật_khẩu();
             doi.txtTaiKhoan.Texts = lb_ID.Text;
             doi.ShowDialog();
-     
+
 
             hideSubMenu();
         }
@@ -253,14 +249,14 @@ namespace GUI
         }
         private void button217_Click(object sender, EventArgs e)
         {
-        
+
             hideSubMenu();
         }
 
         #endregion
 
 
-  
+
         private void btn_DangXuat_Click(object sender, EventArgs e)
         {
             DialogResult dr = MessageBox.Show("Bạn có chắc chắn muốn đăng xuất?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -272,7 +268,7 @@ namespace GUI
                 lg.ShowDialog();
             }
 
-          
+
         }
 
         private void btn_TrangChu_Click(object sender, EventArgs e)
