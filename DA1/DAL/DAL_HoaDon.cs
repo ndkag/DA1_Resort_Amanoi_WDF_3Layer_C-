@@ -282,6 +282,18 @@ namespace DAL
 
             return results;
         }
+
+
+        public int kiemtramatrung(string ma)
+        {
+            chuoikn.Open();
+            int i;
+            string sql = "Select count(*) from HoaDon where MaDatPhong='" + ma.Trim() + "'";
+            cmd = new SqlCommand(sql, chuoikn);
+            i = (int)cmd.ExecuteScalar();
+            chuoikn.Close();
+            return i;
+        }
         #endregion
     }
 }

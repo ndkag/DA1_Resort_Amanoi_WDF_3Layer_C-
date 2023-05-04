@@ -54,6 +54,7 @@
             this.btnQuanLyTK = new GUI.BC.Button2();
             this.btn_DoiMK = new GUI.BC.Button2();
             this.panelLogo = new System.Windows.Forms.Panel();
+            this.avt = new System.Windows.Forms.PictureBox();
             this.lb_Ten = new System.Windows.Forms.Label();
             this.lb_ID = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -67,14 +68,13 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.avt = new System.Windows.Forms.PictureBox();
             this.panelSlideMenu.SuspendLayout();
             this.panelThongKeSubmenu.SuspendLayout();
             this.panelChucNangSubmenu.SuspendLayout();
             this.panelHethongSubmenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
-            this.panelChildForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.avt)).BeginInit();
+            this.panelChildForm.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_TroGiup
@@ -578,6 +578,14 @@
             this.panelLogo.Size = new System.Drawing.Size(243, 221);
             this.panelLogo.TabIndex = 1;
             // 
+            // avt
+            // 
+            this.avt.Location = new System.Drawing.Point(63, 104);
+            this.avt.Name = "avt";
+            this.avt.Size = new System.Drawing.Size(100, 50);
+            this.avt.TabIndex = 31;
+            this.avt.TabStop = false;
+            // 
             // lb_Ten
             // 
             this.lb_Ten.AutoSize = true;
@@ -744,14 +752,6 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Đề tài: Ứng dụng quản lý resort Amanoi";
             // 
-            // avt
-            // 
-            this.avt.Location = new System.Drawing.Point(63, 104);
-            this.avt.Name = "avt";
-            this.avt.Size = new System.Drawing.Size(100, 50);
-            this.avt.TabIndex = 31;
-            this.avt.TabStop = false;
-            // 
             // Trang_Chủ
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -773,9 +773,9 @@
             this.panelHethongSubmenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             this.panelLogo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.avt)).EndInit();
             this.panelChildForm.ResumeLayout(false);
             this.panelChildForm.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.avt)).EndInit();
             this.ResumeLayout(false);
 
         }

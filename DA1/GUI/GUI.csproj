@@ -267,12 +267,6 @@
     <Compile Include="Hoá đơn\XuatHoaDon.Designer.cs">
       <DependentUpon>XuatHoaDon.cs</DependentUpon>
     </Compile>
-    <Compile Include="Test Xuat HD.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Test Xuat HD.Designer.cs">
-      <DependentUpon>Test Xuat HD.cs</DependentUpon>
-    </Compile>
     <Compile Include="Tài khoản\Đổi mật khẩu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -386,9 +380,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Hoá đơn\XuatHoaDon.resx">
       <DependentUpon>XuatHoaDon.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Test Xuat HD.resx">
-      <DependentUpon>Test Xuat HD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tài khoản\Đổi mật khẩu.resx">
       <DependentUpon>Đổi mật khẩu.cs</DependentUpon>
@@ -717,6 +708,9 @@
     <Content Include="obj\Debug\TempPE\Hoá đơn.CR_CTHD.cs.dll" />
     <Content Include="obj\Debug\TempPE\Hoá đơn.CR_HoaDon.cs.dll" />
     <Content Include="obj\Debug\TempPE\Properties.Resources.Designer.cs.dll" />
+    <None Include="Resources\icons8_cloud_bar_chart_48px_1.png" />
+    <None Include="Resources\icons8_Add_Pie_Chart_Report_60px_1.png" />
+    <None Include="Resources\icons8_Add_Pie_Chart_Report_60px.png" />
     <None Include="Resources\bot_icon.gif" />
     <None Include="Resources\z4130297575803_0be77109c9399e9612a374f1a4ece6b7 - Copy2.jpg" />
     <None Include="Resources\icons8_test_account_60px2.png" />

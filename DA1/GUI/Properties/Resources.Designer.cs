@@ -123,6 +123,26 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_Add_Pie_Chart_Report_60px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_Add_Pie_Chart_Report_60px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_Add_Pie_Chart_Report_60px_1 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_Add_Pie_Chart_Report_60px_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_advanced_search_64px {
             get {
                 object obj = ResourceManager.GetObject("icons8_advanced_search_64px", resourceCulture);
@@ -146,6 +166,16 @@ namespace GUI.Properties {
         internal static System.Drawing.Bitmap icons8_Close_64px_3 {
             get {
                 object obj = ResourceManager.GetObject("icons8_Close_64px_3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_cloud_bar_chart_48px_1 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_cloud_bar_chart_48px_1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

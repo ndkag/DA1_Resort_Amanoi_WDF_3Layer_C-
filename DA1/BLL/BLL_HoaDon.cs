@@ -3,9 +3,6 @@ using DTO;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BLL
 {
@@ -54,12 +51,12 @@ namespace BLL
             return tongTien;
         }
 
-     
+
         public bool ThemHoaDon(DTO_HoaDon hd)
         {
             return dalhd.ThemHoaDon(hd);
         }
-       
+
         public bool CapNhatTrangThaiPhong(string maPhong, string trangThai)
         {
             return dalhd.CapNhatTrangThaiPhong(maPhong, trangThai);
@@ -119,6 +116,10 @@ namespace BLL
             }
 
             return data;
+        }
+        public int kiemtramatrung(string ma)
+        {
+            return dalhd.kiemtramatrung(ma);
         }
 
     }

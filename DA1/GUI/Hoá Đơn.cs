@@ -1,7 +1,8 @@
 ﻿using BLL;
+using BLL.Thống_kê;
 using DTO;
+using GUI.Báo_cáo_thống_kê;
 using GUI.BC;
-using GUI.Hoá_đơn;
 using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
@@ -31,7 +32,38 @@ namespace GUI.Chức_năng
             cbb_MaNV.ValueMember = "MaNV";
         }
 
+        BLL_XuatHD dal = new BLL_XuatHD();
+        private void XuatHD(string maDatPhong)
+        {
 
+
+            if (string.IsNullOrEmpty(maDatPhong))
+            {
+                MessageBox.Show("Vui lòng nhập mã đặt phòng để in hóa đơn.");
+                return;
+            }
+
+            DataTable dtHoaDon = dal.GetHoaDon(maDatPhong);
+            DataTable dtChiTietDV = dal.GetChiTietDichVu(maDatPhong);
+
+            if (dtHoaDon.Rows.Count == 0)
+            {
+                MessageBox.Show("Không tìm thấy hóa đơn nào cho mã đặt phòng này.");
+                return;
+            }
+
+            //khởi tạo đối tượng report
+            CR_XuatHD rpt = new CR_XuatHD();
+            //thêm dữ liệu vào report
+            rpt.SetDataSource(dtHoaDon);
+            rpt.Subreports[0].SetDataSource(dtChiTietDV);
+            //làm mới report-->để rpt rỗng
+            rpt.Refresh();
+            //khởi tạo đối tượng form chứa report
+            Xuất_báo_cáo frm = new Xuất_báo_cáo();
+            frm.crystalReportViewer1.ReportSource = rpt;//đổ dữ liệu từ dt
+            frm.ShowDialog();
+        }
 
         private void btn_Them_Click(object sender, EventArgs e)
         {
@@ -41,6 +73,11 @@ namespace GUI.Chức_năng
                 string maDP = txt_MaDatPhong.Texts.Trim();
                 string maDV = cbb_MaDV.SelectedValue.ToString();
                 string tenDV = txt_TenDV.Text.Trim();
+                if (string.IsNullOrEmpty(maDP) || string.IsNullOrEmpty(maDV) || string.IsNullOrEmpty(tenDV) || string.IsNullOrEmpty(txt_SoLuong.Texts))
+                {
+                    MessageBox.Show("Vui lòng điền đầy đủ thông tin chi tiết dịch vụ!");
+                    return;
+                }
                 decimal soLUong = decimal.Parse(txt_SoLuong.Texts.Trim());
                 decimal TongTien = bll_CTDV.TinhTongTien(maDV, soLUong);
 
@@ -210,10 +247,6 @@ namespace GUI.Chức_năng
 
         private void btn_ThanhToan_Click(object sender, EventArgs e)
         {
-
-
-
-
             try
             {
 
@@ -221,9 +254,16 @@ namespace GUI.Chức_năng
                 string makh = txt_MaKH.Texts.Trim();
                 string maNV = cbb_MaNV.SelectedValue.ToString();
                 string ghichu = txt_GhiChu.Texts.Trim();
-
                 DateTime ngaytao = DateTime.Now;
+                string mp = txt_MaPhong.Texts.Trim();
+                if (string.IsNullOrEmpty(maDP) || string.IsNullOrEmpty(makh) || string.IsNullOrEmpty(maNV) || string.IsNullOrEmpty(mp) || string.IsNullOrEmpty(txt_TongTienCTDV.Texts))
+                {
+                    MessageBox.Show("Vui lòng điền đầy đủ thông tin hoá đơn!");
+                    return;
+                }
+
                 decimal tongtien = decimal.Parse(txt_TongTienCTDV.Texts.Trim());
+
                 DTO_HoaDon DP = new DTO_HoaDon
                 {
                     MaKH = makh,
@@ -233,14 +273,28 @@ namespace GUI.Chức_năng
                     NgayThanhToan = ngaytao,
                     GhiChu = ghichu
                 };
+                if (bllhd.kiemtramatrung(maDP) == 1)
+                {
+                    MessageBox.Show("Hoá đơn đã được tạo.", "Thông báo");
 
-                bllhd.ThemHoaDon(DP);
+                }
+                else
+                {
+                    if (bllhd.ThemHoaDon(DP))
+                    {
+                        bllhd.CapNhatTrangThaiPhong(mp, "Trống");
+                        MessageBox.Show("Thanh toán thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        XuatHD(maDP);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Tạo hoá đơn không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                XuatHoaDon xhd = new XuatHoaDon();
-                xhd.txt_MaDatPhong.Text = txt_MaDatPhong.Texts.Trim();
-                xhd.txt_MaPhong.Text = txt_MaPhong.Texts.Trim();
-                xhd.ShowDialog();
-                Close();
+                    }
+
+                }
+
+
 
             }
             catch (Exception ex)
@@ -507,6 +561,24 @@ namespace GUI.Chức_năng
                 // (ví dụ như phím xoá, phím backspace) thì hủy sự kiện
                 e.Handled = true;
             }
+        }
+
+        private void btn_Xuat_Bao_Cao_Click(object sender, EventArgs e)
+        {
+            string mdp = txt_MaDPHD.Texts;
+            if (string.IsNullOrEmpty(mdp))
+            {
+                MessageBox.Show("Vui lòng hoá đơn muốn xuất!");
+                return;
+            }
+            DialogResult result = MessageBox.Show("Bạn có muốn xuất hóa đơn không?", "Xuất hóa đơn", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                // Thực hiện các lệnh nếu người dùng chọn Yes
+                XuatHD(mdp);
+            }
+
+
         }
     }
 }

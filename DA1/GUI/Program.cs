@@ -13,7 +13,7 @@ namespace GUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Test_Xuat_HD());
+            Application.Run(new LoginForm());
         }
     }
 }

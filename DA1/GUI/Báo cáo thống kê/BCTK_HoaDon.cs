@@ -1,13 +1,7 @@
 ﻿using BLL.Thống_kê;
 using CrystalDecisions.CrystalReports.Engine;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 
@@ -104,7 +98,7 @@ namespace GUI.Báo_cáo_thống_kê
         private void btn_ThongKe_Click(object sender, EventArgs e)
         {
 
-          
+
             try
             {
                 int nam = int.Parse((cbb_nam.SelectedItem ?? "0").ToString());
@@ -140,7 +134,7 @@ namespace GUI.Báo_cáo_thống_kê
 
         private void btn_Xuat_BC_Click(object sender, EventArgs e)
         {
-          
+
 
             try
             {

@@ -152,7 +152,7 @@
             this.btn_ThongKe.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(176)))), ((int)(((byte)(122)))));
             this.btn_ThongKe.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ThongKe.ForeColor = System.Drawing.Color.White;
-            this.btn_ThongKe.Image = global::GUI.Properties.Resources.icons8_add_64px;
+            this.btn_ThongKe.Image = global::GUI.Properties.Resources.icons8_cloud_bar_chart_48px_1;
             this.btn_ThongKe.ImageSize = new System.Drawing.Size(40, 40);
             this.btn_ThongKe.Location = new System.Drawing.Point(264, 339);
             this.btn_ThongKe.Name = "btn_ThongKe";
@@ -172,7 +172,7 @@
             this.btn_Xuat_BC.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(176)))), ((int)(((byte)(122)))));
             this.btn_Xuat_BC.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Xuat_BC.ForeColor = System.Drawing.Color.White;
-            this.btn_Xuat_BC.Image = global::GUI.Properties.Resources.icons8_add_64px;
+            this.btn_Xuat_BC.Image = global::GUI.Properties.Resources.icons8_Add_Pie_Chart_Report_60px_1;
             this.btn_Xuat_BC.ImageSize = new System.Drawing.Size(40, 40);
             this.btn_Xuat_BC.Location = new System.Drawing.Point(55, 339);
             this.btn_Xuat_BC.Name = "btn_Xuat_BC";
