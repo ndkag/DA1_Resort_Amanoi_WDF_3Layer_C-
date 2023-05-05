@@ -91,7 +91,6 @@ C:\Users\duykh\Desktop\Đồ án 1\DA1\GUI\obj\Debug\GUI.Quản_lý.QL_Khách_H�
 C:\Users\duykh\Desktop\Đồ án 1\DA1\GUI\obj\Debug\GUI.Quản_lý.QL_Phòng.resources
 C:\Users\duykh\Desktop\Đồ án 1\DA1\GUI\obj\Debug\GUI.Quản_lý.QL_Nhân_Viên.resources
 C:\Users\duykh\Desktop\Đồ án 1\DA1\GUI\obj\Debug\GUI.Quản_lý.QL_Đặt_Phòng.resources
-C:\Users\duykh\Desktop\Đồ án 1\DA1\GUI\obj\Debug\GUI.Hoá_đơn.XuatHoaDon.resources
 C:\Users\duykh\Desktop\Đồ án 1\DA1\GUI\obj\Debug\GUI.Hệ_thống.Đổi_mật_khẩu.resources
 C:\Users\duykh\Desktop\Đồ án 1\DA1\GUI\obj\Debug\GUI.Hệ_thống.Quản_lý_tài_khoản.resources
 C:\Users\duykh\Desktop\Đồ án 1\DA1\GUI\obj\Debug\GUI.LoadPhong.resources

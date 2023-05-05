@@ -261,12 +261,6 @@
     <Compile Include="Quản lý\QL_Đặt_Phòng.Designer.cs">
       <DependentUpon>QL_Đặt_Phòng.cs</DependentUpon>
     </Compile>
-    <Compile Include="Hoá đơn\XuatHoaDon.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Hoá đơn\XuatHoaDon.Designer.cs">
-      <DependentUpon>XuatHoaDon.cs</DependentUpon>
-    </Compile>
     <Compile Include="Tài khoản\Đổi mật khẩu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -377,9 +371,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Quản lý\QL_Đặt_Phòng.resx">
       <DependentUpon>QL_Đặt_Phòng.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hoá đơn\XuatHoaDon.resx">
-      <DependentUpon>XuatHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tài khoản\Đổi mật khẩu.resx">
       <DependentUpon>Đổi mật khẩu.cs</DependentUpon>
