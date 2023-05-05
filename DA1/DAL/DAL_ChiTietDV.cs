@@ -13,7 +13,7 @@ namespace DAL
         public DataTable getChiTietDV()
         {
             chuoikn.Open();
-            da = new SqlDataAdapter("select MaDatPhong as [Mã ĐP], MaDV as [Mã DV], TenDV as [Tên dịch vụ], SoLuong as [Số lượng] , TongTien as [Tổng tiền] from ChiTietDichVu\r\n", chuoikn);
+            da = new SqlDataAdapter("select MaDatPhong as [Mã ĐP], MaDV as [Mã DV], TenDV as [Tên dịch vụ], SoLuong as [Số lượng] , TongTien as [Tổng tiền] from ChiTietDatPhong\r\n", chuoikn);
             dt = new DataTable();
             da.Fill(dt);
             chuoikn.Close();
@@ -24,7 +24,7 @@ namespace DAL
         {
             chuoikn.Open();
             int i;
-            string sql = "SELECT COUNT(*) FROM ChiTietDichVu WHERE MaDV='" + ma.Trim() + "' AND MaDatPhong='" + madp + "'";
+            string sql = "SELECT COUNT(*) FROM ChiTietDatPhong WHERE MaDV='" + ma.Trim() + "' AND MaDatPhong='" + madp + "'";
             cmd = new SqlCommand(sql, chuoikn);
             i = (int)cmd.ExecuteScalar();
             chuoikn.Close();
@@ -36,7 +36,7 @@ namespace DAL
             decimal tongTien = 0;
             try
             {
-                string sql = string.Format("SELECT SUM(TongTien) FROM ChiTietDichVu WHERE MaDatPhong = '{0}'", maDatPhong);
+                string sql = string.Format("SELECT SUM(TongTien) FROM ChiTietDatPhong WHERE MaDatPhong = '{0}'", maDatPhong);
                 SqlDataAdapter da = new SqlDataAdapter(sql, chuoikn);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
@@ -58,7 +58,7 @@ namespace DAL
             List<string> listMaDP = new List<string>();
             try
             {
-                string sql = "SELECT MaCTDV FROM ChiTietDichVu";
+                string sql = "SELECT MaCTDV FROM ChiTietDatPhong";
                 SqlDataAdapter da = new SqlDataAdapter(sql, chuoikn);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
@@ -78,20 +78,20 @@ namespace DAL
         }
         public void ThemChiTietDichVu(DTO_ChiTietDV ctdv)
         {
-            string sql = string.Format("INSERT INTO ChiTietDichVu( MaDatPhong, MaDV,TenDV, SoLuong, TongTien) VALUES ('{0}', '{1}', N'{2}', {3}, {4})", ctdv.MaDatPhong, ctdv.MaDV, ctdv.TenDV, ctdv.SoLuong, ctdv.TongTien);
+            string sql = string.Format("INSERT INTO ChiTietDatPhong( MaDatPhong, MaDV,TenDV, SoLuong, TongTien) VALUES ('{0}', '{1}', N'{2}', {3}, {4})", ctdv.MaDatPhong, ctdv.MaDV, ctdv.TenDV, ctdv.SoLuong, ctdv.TongTien);
             thucthisql(sql);
         }
 
         public bool SuaCTDV(DTO_ChiTietDV ctdv)
         {
-            string sql = string.Format("update ChiTietDichVu SET MaDatPhong = '" + ctdv.MaDatPhong + "', MaDV = '" + ctdv.MaDV + "' ,TenDV = N'" + ctdv.TenDV + "' , SoLuong = '" + ctdv.SoLuong + "', TongTien = '" + ctdv.TongTien + "' WHERE MaDV = '" + ctdv.MaDV + "' AND MaDatPhong='" + ctdv.MaDatPhong + "' ");
+            string sql = string.Format("update ChiTietDatPhong SET MaDatPhong = '" + ctdv.MaDatPhong + "', MaDV = '" + ctdv.MaDV + "' ,TenDV = N'" + ctdv.TenDV + "' , SoLuong = '" + ctdv.SoLuong + "', TongTien = '" + ctdv.TongTien + "' WHERE MaDV = '" + ctdv.MaDV + "' AND MaDatPhong='" + ctdv.MaDatPhong + "' ");
             thucthisql(sql);
             return true;
         }
 
         public bool Xoa(string DV, string madp)
         {
-            string sql = "Delete from ChiTietDichVu where MaDV='" + DV + "' AND MaDatPhong='" + madp + "' ";
+            string sql = "Delete from ChiTietDatPhong where MaDV='" + DV + "' AND MaDatPhong='" + madp + "' ";
             thucthisql(sql);
             return true;
         }
@@ -102,7 +102,7 @@ namespace DAL
             List<DTO_ChiTietDV> results = new List<DTO_ChiTietDV>();
             chuoikn.Open();
 
-            string sql = "SELECT * FROM ChiTietDichVu WHERE  MaDatPhong LIKE @Keyword OR MaDV LIKE @Keyword OR TenDV LIKE @Keyword OR SoLuong LIKE @Keyword OR TongTien LIKE @Keyword";
+            string sql = "SELECT * FROM ChiTietDatPhong WHERE  MaDatPhong LIKE @Keyword OR MaDV LIKE @Keyword OR TenDV LIKE @Keyword OR SoLuong LIKE @Keyword OR TongTien LIKE @Keyword";
             using (SqlCommand command = new SqlCommand(sql, chuoikn))
             {
                 command.Parameters.AddWithValue("@Keyword", "%" + keyword + "%");

@@ -77,6 +77,7 @@ namespace DAL.Thống_kê
                 chuoikn.Close();
             }
         }
+
         public DataTable ThongKePhongDatTheoThang(int thang, int nam)
         {
             try

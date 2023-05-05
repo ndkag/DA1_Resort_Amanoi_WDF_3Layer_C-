@@ -59,9 +59,9 @@
             this.btn_LamMoi = new Guna.UI2.WinForms.Guna2Button();
             this.btn_Xoá = new Guna.UI2.WinForms.Guna2Button();
             this.btn_Sua = new Guna.UI2.WinForms.Guna2Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.rjTextBox1 = new GUI.BC.RJTextBox();
             this.rjTextBox2 = new GUI.BC.RJTextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_QLP)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -221,7 +221,7 @@
             this.txt_SoNguoiP.PlaceholderText = "VD: 10";
             this.txt_SoNguoiP.SelectedText = "";
             this.txt_SoNguoiP.Size = new System.Drawing.Size(316, 45);
-            this.txt_SoNguoiP.TabIndex = 51;
+            this.txt_SoNguoiP.TabIndex = 63;
             this.txt_SoNguoiP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_SoNguoiP_KeyPress);
             // 
             // label8
@@ -257,7 +257,7 @@
             this.txt_NgayOP.PlaceholderText = "VD: 10";
             this.txt_NgayOP.SelectedText = "";
             this.txt_NgayOP.Size = new System.Drawing.Size(316, 45);
-            this.txt_NgayOP.TabIndex = 49;
+            this.txt_NgayOP.TabIndex = 64;
             this.txt_NgayOP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_NgayOP_KeyPress);
             // 
             // label7
@@ -304,7 +304,7 @@
             this.txt_GiaTienP.PlaceholderText = "VNĐ";
             this.txt_GiaTienP.SelectedText = "";
             this.txt_GiaTienP.Size = new System.Drawing.Size(316, 45);
-            this.txt_GiaTienP.TabIndex = 37;
+            this.txt_GiaTienP.TabIndex = 62;
             this.txt_GiaTienP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_GiaTienP_KeyPress);
             // 
             // panel3
@@ -384,7 +384,7 @@
             this.txt_TimKiemP.PlaceholderText = "Tìm kiếm";
             this.txt_TimKiemP.SelectedText = "";
             this.txt_TimKiemP.Size = new System.Drawing.Size(316, 45);
-            this.txt_TimKiemP.TabIndex = 29;
+            this.txt_TimKiemP.TabIndex = 65;
             this.txt_TimKiemP.TextChanged += new System.EventHandler(this.txt_TimKiemP_TextChanged);
             // 
             // txt_TrangThaiP
@@ -409,7 +409,7 @@
             this.txt_TrangThaiP.PlaceholderText = "VD: Trống ";
             this.txt_TrangThaiP.SelectedText = "";
             this.txt_TrangThaiP.Size = new System.Drawing.Size(316, 45);
-            this.txt_TrangThaiP.TabIndex = 28;
+            this.txt_TrangThaiP.TabIndex = 61;
             this.txt_TrangThaiP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_TrangThaiP_KeyPress);
             // 
             // txt_TenP
@@ -434,7 +434,7 @@
             this.txt_TenP.PlaceholderText = "VD: Phòng đôi";
             this.txt_TenP.SelectedText = "";
             this.txt_TenP.Size = new System.Drawing.Size(316, 45);
-            this.txt_TenP.TabIndex = 27;
+            this.txt_TenP.TabIndex = 60;
             this.txt_TenP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_TenP_KeyPress);
             // 
             // txt_MaP
@@ -539,6 +539,17 @@
             this.btn_Sua.Text = "Sửa";
             this.btn_Sua.Click += new System.EventHandler(this.btn_SuaP_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Window;
+            this.panel1.BackgroundImage = global::GUI.Properties.Resources.Nền;
+            this.panel1.Controls.Add(this.guna2Panel1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1484, 787);
+            this.panel1.TabIndex = 4;
+            // 
             // rjTextBox1
             // 
             this.rjTextBox1.BackColor = System.Drawing.SystemColors.Window;
@@ -584,17 +595,6 @@
             this.rjTextBox2.TabIndex = 26;
             this.rjTextBox2.Texts = "";
             this.rjTextBox2.UnderlinedStyle = false;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Window;
-            this.panel1.BackgroundImage = global::GUI.Properties.Resources.Nền;
-            this.panel1.Controls.Add(this.guna2Panel1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1484, 787);
-            this.panel1.TabIndex = 4;
             // 
             // QL_Phòng
             // 

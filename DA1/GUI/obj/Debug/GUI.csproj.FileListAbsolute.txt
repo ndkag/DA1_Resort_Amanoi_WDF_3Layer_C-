@@ -85,7 +85,6 @@ C:\Users\duykh\Desktop\Đồ án 1\DA1\GUI\obj\Debug\GUI.BC.RJTextBox.resources
 C:\Users\duykh\Desktop\Đồ án 1\DA1\GUI\obj\Debug\GUI.Báo_cáo_thống_kê.Xuất_báo_cáo.resources
 C:\Users\duykh\Desktop\Đồ án 1\DA1\GUI\obj\Debug\GUI.Hỗ_trợ.resources
 C:\Users\duykh\Desktop\Đồ án 1\DA1\GUI\obj\Debug\GUI.Chức_năng.Hoá_Đơn.resources
-C:\Users\duykh\Desktop\Đồ án 1\DA1\GUI\obj\Debug\GUI.Quản_lý.QL_CTDV.resources
 C:\Users\duykh\Desktop\Đồ án 1\DA1\GUI\obj\Debug\GUI.Quản_lý.QL_dịch_vụ.resources
 C:\Users\duykh\Desktop\Đồ án 1\DA1\GUI\obj\Debug\GUI.Quản_lý.QL_Khách_Hàng.resources
 C:\Users\duykh\Desktop\Đồ án 1\DA1\GUI\obj\Debug\GUI.Quản_lý.QL_Phòng.resources
@@ -104,3 +103,4 @@ C:\Users\duykh\Desktop\Đồ án 1\DA1\GUI\obj\Debug\GUI.csproj.CopyComplete
 C:\Users\duykh\Desktop\Đồ án 1\DA1\GUI\obj\Debug\GUI.exe
 C:\Users\duykh\Desktop\Đồ án 1\DA1\GUI\obj\Debug\GUI.pdb
 C:\Users\duykh\Desktop\Đồ án 1\DA1\GUI\bin\Debug\Bunifu.UI.WinForms.BunifuImageButton.dll
+C:\Users\duykh\Desktop\Đồ án 1\DA1\GUI\obj\Debug\GUI.Quản_lý.QL_CTDP.resources

@@ -22,6 +22,7 @@ namespace DAL
             cmd.ExecuteNonQuery();
             chuoikn.Close();
         }
+
         public string GetMD5Hash(string input)
         {
             using (MD5 md5 = MD5.Create())

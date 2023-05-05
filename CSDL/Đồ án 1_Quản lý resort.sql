@@ -2,7 +2,14 @@ create database QL_Resort_DA1
 go
 use QL_Resort_DA1
 go
---1.Bảng tài khoản
+
+
+--===================================================================
+---------  CÁC BẢNG CƠ SỞ DỮ LIỆU QUẢN LÝ RESORT AMANOI  ------------
+--===================================================================
+--                                                                  |
+--                                                                  |
+--------------------------BẢNG TÀI KHOẢN-----------------------------
 CREATE TABLE Account
 (
     UserName VARCHAR(100) PRIMARY KEY,
@@ -11,9 +18,7 @@ CREATE TABLE Account
 	Type int default 1 --User =1 and Admin =0.
 );
 
-
-
---7. Bảng nhân viên
+--------------------------BẢNG NHÂN VIÊN-----------------------------
 CREATE TABLE NhanVien (
   MaNV varchar(10) PRIMARY KEY ,
   TenNV NVARCHAR(100) NOT NULL,
@@ -22,20 +27,8 @@ CREATE TABLE NhanVien (
   ViTri NVARCHAR(50) NOT NULL,
   Luong DECIMAL(18, 0) NOT NULL
 );
-CREATE SEQUENCE SEQ_MaNV
-AS INT
-START WITH 1
-INCREMENT BY 1
-MINVALUE 1
-MAXVALUE 99999
-CYCLE;
-ALTER TABLE NhanVien
-ADD CONSTRAINT DF_NhanVien_MaNV
-DEFAULT ('NV' + FORMAT(NEXT VALUE FOR SEQ_MaNV, '00000')) FOR MaNV;
 
-
-
-
+--------------------------BẢNG KHÁCH HÀNG-----------------------------
 CREATE TABLE KhachHang (
   MaKH varchar(10) PRIMARY KEY,
   TenKH NVARCHAR(100) NOT NULL,
@@ -43,36 +36,15 @@ CREATE TABLE KhachHang (
   SoDienThoai NVARCHAR(20),
   NgayTao date DEFAULT GETDATE()
 );
-CREATE SEQUENCE SEQ_MaKH
-AS INT
-START WITH 1
-INCREMENT BY 1
-MINVALUE 1
-MAXVALUE 99999
-CYCLE;
-ALTER TABLE KhachHang
-ADD CONSTRAINT DF_KhachHang_MaKH
-DEFAULT ('KH' + FORMAT(NEXT VALUE FOR SEQ_MaKH, '00000')) FOR MaKH;
 
-
-
+--------------------------BẢNG DỊCH VỤ-------------------------------
 CREATE TABLE DichVu (
   MaDV varchar(10) PRIMARY KEY,
   TenDV NVARCHAR(100) NOT NULL,
   GiaTien DECIMAL(18, 0) NOT NULL
 );
-CREATE SEQUENCE SEQ_MaDV
-AS INT
-START WITH 1
-INCREMENT BY 1
-MINVALUE 1
-MAXVALUE 99999
-CYCLE;
-ALTER TABLE DichVu
-ADD CONSTRAINT DF_DichVu_MaDV
-DEFAULT ('DV' + FORMAT(NEXT VALUE FOR SEQ_MaDV, '00000')) FOR MaDV;
 
-
+--------------------------BẢNG PHÒNG---------------------------------
 CREATE TABLE Phong (
   MaPhong varchar(10) PRIMARY KEY,
   TenPhong NVARCHAR(50) NOT NULL,
@@ -81,18 +53,8 @@ CREATE TABLE Phong (
   SoLuongNguoi INT NOT NULL default 1 ,
   KhaNangDatPhong INT NOT NULL default 1 --Là số ngày khách có thể thuê phòng
 );
-CREATE SEQUENCE SEQ_MaPhong
-AS INT
-START WITH 1
-INCREMENT BY 1
-MINVALUE 1
-MAXVALUE 99999
-CYCLE;
-ALTER TABLE Phong
-ADD CONSTRAINT DF_Phong_MaPhong
-DEFAULT ('P' + FORMAT(NEXT VALUE FOR SEQ_MaPhong, '00000')) FOR MaPhong;
 
-
+--------------------------BẢNG ĐẶT PHÒNG-----------------------------
 CREATE TABLE DatPhong (
   MaDatPhong varchar(10) PRIMARY KEY,
   MaKH varchar(10) not null ,
@@ -103,20 +65,9 @@ CREATE TABLE DatPhong (
   constraint FK_MaKH_DP  FOREIGN KEY (MaKH) REFERENCES KhachHang(MaKH) on delete cascade on update cascade,
   constraint FK_MaPhong_DP  FOREIGN KEY (MaPhong) REFERENCES Phong(MaPhong)on delete cascade on update cascade
 );
-CREATE SEQUENCE SEQ_MaDatPhong
-AS INT
-START WITH 1
-INCREMENT BY 1
-MINVALUE 1
-MAXVALUE 99999
-CYCLE;
-ALTER TABLE DatPhong
-ADD CONSTRAINT DF_DatPhong_MaDatPhong
-DEFAULT ('DP' + FORMAT(NEXT VALUE FOR SEQ_MaDatPhong, '00000')) FOR MaDatPhong;
 
-
--- Bảng chi tiết chi tiết dịch vụ
-CREATE TABLE ChiTietDichVu (
+--------------------------BẢNG CHI TIẾT ĐẶT PHÒNG--------------------
+CREATE TABLE ChiTietDatPhong (
   MaDatPhong varchar(10)NOT NULL, 
   MaDV varchar(10) NOT NULL,
   TenDV nvarchar(100) not null,
@@ -125,10 +76,8 @@ CREATE TABLE ChiTietDichVu (
    constraint FK_MaDatPhong_CTDV FOREIGN KEY (MaDatPhong) REFERENCES DatPhong(MaDatPhong) on delete cascade on update cascade,
   constraint FK_MaDV_CTDV FOREIGN KEY (MaDV) REFERENCES DichVu(MaDV) on delete cascade on update cascade
 );
----------------------------------------------------------------------
 
-select*from ChiTietDichVu
---8. Bảng hoá đơn
+---------------------------BẢNG HOÁ ĐƠN------------------------------
 CREATE TABLE HoaDon (
   MaHD varchar(10) PRIMARY KEY NOT NULL,
   MaKH varchar(10) not null,
@@ -141,6 +90,76 @@ CREATE TABLE HoaDon (
 	constraint FK_NhanVien_HD FOREIGN KEY (MaNV) REFERENCES NhanVien(MaNV) ,
 		constraint FK_KhachHang_MaKH FOREIGN KEY (MaKH) REFERENCES KhachHang(MaKH) 
 );
+--==================================================================
+--==================================================================
+
+
+
+--==================================================================
+------------------------ TẠO MÃ TỰ ĐỘNG ----------------------------
+--==================================================================
+
+-- TẠO MÃ TỰ ĐỘNG CHO BẢNG NHANVIEN
+CREATE SEQUENCE SEQ_MaNV
+AS INT
+START WITH 1
+INCREMENT BY 1
+MINVALUE 1
+MAXVALUE 99999
+CYCLE;
+ALTER TABLE NhanVien
+ADD CONSTRAINT DF_NhanVien_MaNV
+DEFAULT ('NV' + FORMAT(NEXT VALUE FOR SEQ_MaNV, '00000')) FOR MaNV;
+
+-- TẠO MÃ TỰ ĐỘNG CHO BẢNG KHACHHANG
+CREATE SEQUENCE SEQ_MaKH
+AS INT
+START WITH 1
+INCREMENT BY 1
+MINVALUE 1
+MAXVALUE 99999
+CYCLE;
+ALTER TABLE KhachHang
+ADD CONSTRAINT DF_KhachHang_MaKH
+DEFAULT ('KH' + FORMAT(NEXT VALUE FOR SEQ_MaKH, '00000')) FOR MaKH;
+
+-- TẠO MÃ TỰ ĐỘNG CHO BẢNG DICHVU
+CREATE SEQUENCE SEQ_MaDV
+AS INT
+START WITH 1
+INCREMENT BY 1
+MINVALUE 1
+MAXVALUE 99999
+CYCLE;
+ALTER TABLE DichVu
+ADD CONSTRAINT DF_DichVu_MaDV
+DEFAULT ('DV' + FORMAT(NEXT VALUE FOR SEQ_MaDV, '00000')) FOR MaDV;
+
+-- TẠO MÃ TỰ ĐỘNG CHO BẢNG PHONG
+CREATE SEQUENCE SEQ_MaPhong
+AS INT
+START WITH 1
+INCREMENT BY 1
+MINVALUE 1
+MAXVALUE 99999
+CYCLE;
+ALTER TABLE Phong
+ADD CONSTRAINT DF_Phong_MaPhong
+DEFAULT ('P' + FORMAT(NEXT VALUE FOR SEQ_MaPhong, '00000')) FOR MaPhong;
+
+-- TẠO MÃ TỰ ĐỘNG CHO BẢNG DATPHONG
+CREATE SEQUENCE SEQ_MaDatPhong
+AS INT
+START WITH 1
+INCREMENT BY 1
+MINVALUE 1
+MAXVALUE 99999
+CYCLE;
+ALTER TABLE DatPhong
+ADD CONSTRAINT DF_DatPhong_MaDatPhong
+DEFAULT ('DP' + FORMAT(NEXT VALUE FOR SEQ_MaDatPhong, '00000')) FOR MaDatPhong;
+
+-- TẠO MÃ TỰ ĐỘNG CHO BẢNG HOADON
 CREATE SEQUENCE SEQ_MaHDB
 AS INT
 START WITH 1
@@ -151,6 +170,29 @@ CYCLE;
 ALTER TABLE HoaDon
 ADD CONSTRAINT DF_HoaDon_MaHD
 DEFAULT ('HD' + FORMAT(NEXT VALUE FOR SEQ_MaHDB, '00000')) FOR MaHD;
+--==================================================================
+--==================================================================
+
+
+
+
+--==================================================================
+---------------------  CÁC LỆNH TRUY VẤN NHÁP  ---------------------
+--==================================================================
+
+
+
+
+
+
+
+
+---------------------------------------------------------------------
+sp_rename 'ChiTietDatPhong', 'ChiTietDatPhong'
+INSERT INTO ChiTietDichVuNhap SELECT * FROM ChiTietDatPhong where MaDatPhong = 'DP00002'
+select*from ChiTietDatPhong
+--8. Bảng hoá đơn
+
 
 drop SEQUENCE SEQ_MaHDB
 
@@ -214,7 +256,7 @@ SELECT DAY(NgayThanhToan) AS Ngay, SUM(TongTien) AS DoanhThu FROM HoaDon WHERE Y
 SELECT DAY(NgayThanhToan) AS Ngày, SUM(TongTien) AS DoanhThu FROM HoaDon WHERE MONTH(NgayThanhToan) = '4' and YEAR(NgayThanhToan) = '2023' GROUP BY DAY(NgayThanhToan)
 
 select *
-from ChiTietDichVu ct 
+from ChiTietDatPhong ct 
 inner join DatPhong dp on ct.MaDatPhong = dp.MaDatPhong
 inner join DichVu dv on ct.MaDV = dv.MaDV
 inner join HoaDon hd on hd.MaDatPhong = dp.MaDatPhong
@@ -233,9 +275,9 @@ WHERE dp.MaDatPhong = 'DP00003'
 
 
 SELECT ctdv.MaDV, ctdv.TenDV, dv.GiaTien, ctdv.SoLuong, ctdv.TongTien 
-FROM ChiTietDichVu ctdv
+FROM ChiTietDatPhong ctdv
 INNER JOIN DichVu dv ON ctdv.MaDV = dv.MaDV
 WHERE ctdv.MaDatPhong = 'DP00003'
 
-select*from ChiTietDichVu
+select*from ChiTietDatPhong
 

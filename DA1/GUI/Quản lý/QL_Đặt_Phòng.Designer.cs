@@ -62,13 +62,13 @@
             this.btn_Xoa = new Guna.UI2.WinForms.Guna2Button();
             this.btn_Sua = new Guna.UI2.WinForms.Guna2Button();
             this.btn_DatP = new Guna.UI2.WinForms.Guna2Button();
+            this.dgv_DatPhong = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rjTextBox1 = new GUI.BC.RJTextBox();
             this.txt_MaPhongCu = new System.Windows.Forms.TextBox();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_DatPhong = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.rjTextBox1 = new GUI.BC.RJTextBox();
             this.pl_Nhap.SuspendLayout();
             this.pl_HienThi.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DatPhong)).BeginInit();
@@ -170,7 +170,7 @@
             this.txt_GhiChu.PlaceholderText = "Note";
             this.txt_GhiChu.SelectedText = "";
             this.txt_GhiChu.Size = new System.Drawing.Size(316, 45);
-            this.txt_GhiChu.TabIndex = 60;
+            this.txt_GhiChu.TabIndex = 72;
             // 
             // panel3
             // 
@@ -230,7 +230,7 @@
             this.dtp_NgayDi.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtp_NgayDi.Name = "dtp_NgayDi";
             this.dtp_NgayDi.Size = new System.Drawing.Size(316, 45);
-            this.dtp_NgayDi.TabIndex = 41;
+            this.dtp_NgayDi.TabIndex = 74;
             this.dtp_NgayDi.Value = new System.DateTime(2023, 4, 17, 21, 36, 23, 352);
             // 
             // dtp_NgayDat
@@ -247,7 +247,7 @@
             this.dtp_NgayDat.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtp_NgayDat.Name = "dtp_NgayDat";
             this.dtp_NgayDat.Size = new System.Drawing.Size(316, 45);
-            this.dtp_NgayDat.TabIndex = 40;
+            this.dtp_NgayDat.TabIndex = 73;
             this.dtp_NgayDat.Value = new System.DateTime(2023, 4, 17, 21, 36, 23, 352);
             // 
             // cbb_MaP
@@ -259,7 +259,7 @@
             this.cbb_MaP.Location = new System.Drawing.Point(62, 353);
             this.cbb_MaP.Name = "cbb_MaP";
             this.cbb_MaP.Size = new System.Drawing.Size(292, 33);
-            this.cbb_MaP.TabIndex = 32;
+            this.cbb_MaP.TabIndex = 71;
             // 
             // label7
             // 
@@ -281,7 +281,7 @@
             this.cbb_MaKH.Location = new System.Drawing.Point(62, 264);
             this.cbb_MaKH.Name = "cbb_MaKH";
             this.cbb_MaKH.Size = new System.Drawing.Size(291, 33);
-            this.cbb_MaKH.TabIndex = 31;
+            this.cbb_MaKH.TabIndex = 70;
             // 
             // label6
             // 
@@ -488,35 +488,6 @@
             this.btn_DatP.Text = "Đặt phòng";
             this.btn_DatP.Click += new System.EventHandler(this.btn_DatP_Click);
             // 
-            // txt_MaPhongCu
-            // 
-            this.txt_MaPhongCu.Location = new System.Drawing.Point(73, 166);
-            this.txt_MaPhongCu.Name = "txt_MaPhongCu";
-            this.txt_MaPhongCu.Size = new System.Drawing.Size(100, 22);
-            this.txt_MaPhongCu.TabIndex = 63;
-            this.txt_MaPhongCu.Visible = false;
-            // 
-            // bunifuElipse1
-            // 
-            this.bunifuElipse1.ElipseRadius = 40;
-            this.bunifuElipse1.TargetControl = this.pl_Nhap;
-            // 
-            // bunifuElipse2
-            // 
-            this.bunifuElipse2.ElipseRadius = 40;
-            this.bunifuElipse2.TargetControl = this.pl_HienThi;
-            // 
-            // bunifuElipse3
-            // 
-            this.bunifuElipse3.ElipseRadius = 33;
-            this.bunifuElipse3.TargetControl = this.dgv_DatPhong;
-            // 
-            // STT
-            // 
-            this.STT.HeaderText = "STT";
-            this.STT.MinimumWidth = 6;
-            this.STT.Name = "STT";
-            // 
             // dgv_DatPhong
             // 
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomLeft;
@@ -590,6 +561,12 @@
             this.dgv_DatPhong.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_DatPhong_CellClick);
             this.dgv_DatPhong.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgv_DatPhong_RowPostPaint);
             // 
+            // STT
+            // 
+            this.STT.HeaderText = "STT";
+            this.STT.MinimumWidth = 6;
+            this.STT.Name = "STT";
+            // 
             // rjTextBox1
             // 
             this.rjTextBox1.BackColor = System.Drawing.SystemColors.Window;
@@ -612,6 +589,29 @@
             this.rjTextBox1.TabIndex = 55;
             this.rjTextBox1.Texts = "";
             this.rjTextBox1.UnderlinedStyle = false;
+            // 
+            // txt_MaPhongCu
+            // 
+            this.txt_MaPhongCu.Location = new System.Drawing.Point(73, 166);
+            this.txt_MaPhongCu.Name = "txt_MaPhongCu";
+            this.txt_MaPhongCu.Size = new System.Drawing.Size(100, 22);
+            this.txt_MaPhongCu.TabIndex = 63;
+            this.txt_MaPhongCu.Visible = false;
+            // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 40;
+            this.bunifuElipse1.TargetControl = this.pl_Nhap;
+            // 
+            // bunifuElipse2
+            // 
+            this.bunifuElipse2.ElipseRadius = 40;
+            this.bunifuElipse2.TargetControl = this.pl_HienThi;
+            // 
+            // bunifuElipse3
+            // 
+            this.bunifuElipse3.ElipseRadius = 33;
+            this.bunifuElipse3.TargetControl = this.dgv_DatPhong;
             // 
             // QL_Đặt_Phòng
             // 

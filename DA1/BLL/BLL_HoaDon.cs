@@ -71,16 +71,16 @@ namespace BLL
             return dalhd.XoaChiTietDV(DP);
 
         }
-        public bool ChuyendulieuDP(string maDP)
-        {
-            return dalhd.ChuyendulieuDP(maDP);
+        //public bool ChuyendulieuDP(string maDP)
+        //{
+        //    return dalhd.ChuyendulieuDP(maDP);
 
-        }
-        public bool ChuyendulieuCTDV(string maDP)
-        {
-            return dalhd.ChuyendulieuCTDV(maDP);
+        //}
+        //public bool ChuyendulieuCTDV(string maDP)
+        //{
+        //    return dalhd.ChuyendulieuCTDV(maDP);
 
-        }
+        //}
 
         #region from quản lý hoá đơn
         public DataTable getQLHoaDon()

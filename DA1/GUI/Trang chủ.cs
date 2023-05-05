@@ -231,7 +231,7 @@ namespace GUI
         }
         private void btn_ChiTietDV_Click(object sender, EventArgs e)
         {
-            openChildFormInPanel(new QL_CTDV());
+            openChildFormInPanel(new QL_CTDP());
             CollapseMenu3();
 
             hideSubMenu();

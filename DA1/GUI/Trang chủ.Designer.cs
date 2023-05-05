@@ -473,7 +473,7 @@
             this.btn_ChiTietDV.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.btn_ChiTietDV.Size = new System.Drawing.Size(243, 40);
             this.btn_ChiTietDV.TabIndex = 4;
-            this.btn_ChiTietDV.Text = "Chi tiết dịch vụ";
+            this.btn_ChiTietDV.Text = "Chi tiết đặt phòng";
             this.btn_ChiTietDV.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_ChiTietDV.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btn_ChiTietDV.UseVisualStyleBackColor = false;

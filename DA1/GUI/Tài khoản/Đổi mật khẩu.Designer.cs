@@ -115,7 +115,7 @@
             this.txtXacNhanMK.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtXacNhanMK.PlaceholderText = "Ghi lại mật khẩu";
             this.txtXacNhanMK.Size = new System.Drawing.Size(250, 40);
-            this.txtXacNhanMK.TabIndex = 13;
+            this.txtXacNhanMK.TabIndex = 75;
             this.txtXacNhanMK.Texts = "";
             this.txtXacNhanMK.UnderlinedStyle = false;
             this.txtXacNhanMK.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtXacNhanMK_KeyPress);
@@ -138,7 +138,7 @@
             this.txtMKMoi.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtMKMoi.PlaceholderText = "Mật khẩu mới";
             this.txtMKMoi.Size = new System.Drawing.Size(250, 40);
-            this.txtMKMoi.TabIndex = 12;
+            this.txtMKMoi.TabIndex = 74;
             this.txtMKMoi.Texts = "";
             this.txtMKMoi.UnderlinedStyle = false;
             this.txtMKMoi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMKMoi_KeyPress);
@@ -161,7 +161,7 @@
             this.txtMKCu.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtMKCu.PlaceholderText = "Mật khẩu cũ";
             this.txtMKCu.Size = new System.Drawing.Size(250, 40);
-            this.txtMKCu.TabIndex = 11;
+            this.txtMKCu.TabIndex = 73;
             this.txtMKCu.Texts = "";
             this.txtMKCu.UnderlinedStyle = false;
             this.txtMKCu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMKCu_KeyPress);
@@ -241,6 +241,7 @@
             // 
             // Đổi_mật_khẩu
             // 
+            this.AcceptButton = this.btn_DoiMK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));

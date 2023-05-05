@@ -30,7 +30,7 @@ namespace DAL.Thống_kê
         public DataTable GetChiTietDichVu(string maDatPhong)
         {
             string query = "SELECT ctdv.MaDV, ctdv.TenDV, dv.GiaTien, ctdv.SoLuong, ctdv.TongTien " +
-                           "FROM ChiTietDichVu ctdv " +
+                           "FROM ChiTietDatPhong ctdv " +
                            "INNER JOIN DatPhong dp ON ctdv.MaDatPhong=dp.MaDatPhong " +
                            "INNER JOIN DichVu dv ON ctdv.MaDV= dv.MaDV " +
                            "WHERE dp.MaDatPhong = @maDatPhong";

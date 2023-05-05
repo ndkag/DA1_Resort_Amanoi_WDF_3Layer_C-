@@ -36,9 +36,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.guna2Elipse3 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.panel1 = new System.Windows.Forms.Panel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label9 = new System.Windows.Forms.Label();
             this.dgv_QLKH = new Guna.UI2.WinForms.Guna2DataGridView();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rjTextBox2 = new GUI.BC.RJTextBox();
@@ -61,10 +60,11 @@
             this.btn_Xoá = new Guna.UI2.WinForms.Guna2Button();
             this.btn_Sua = new Guna.UI2.WinForms.Guna2Button();
             this.rjTextBox1 = new GUI.BC.RJTextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.guna2Elipse3 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_QLKH)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Elipse2
@@ -75,22 +75,6 @@
             // 
             this.guna2Elipse1.BorderRadius = 40;
             this.guna2Elipse1.TargetControl = this.guna2Panel1;
-            // 
-            // guna2Elipse3
-            // 
-            this.guna2Elipse3.BorderRadius = 33;
-            this.guna2Elipse3.TargetControl = this.dgv_QLKH;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Window;
-            this.panel1.BackgroundImage = global::GUI.Properties.Resources.Nền;
-            this.panel1.Controls.Add(this.guna2Panel1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1502, 834);
-            this.panel1.TabIndex = 1;
             // 
             // guna2Panel1
             // 
@@ -121,6 +105,18 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(1430, 750);
             this.guna2Panel1.TabIndex = 0;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 28.2F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(176)))), ((int)(((byte)(122)))));
+            this.label9.Location = new System.Drawing.Point(508, 14);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(457, 52);
+            this.label9.TabIndex = 58;
+            this.label9.Text = "Quản Lý Khách Hàng";
             // 
             // dgv_QLKH
             // 
@@ -249,7 +245,7 @@
             this.dtp_NgayTao.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtp_NgayTao.Name = "dtp_NgayTao";
             this.dtp_NgayTao.Size = new System.Drawing.Size(316, 45);
-            this.dtp_NgayTao.TabIndex = 39;
+            this.dtp_NgayTao.TabIndex = 54;
             this.dtp_NgayTao.Value = new System.DateTime(2023, 4, 17, 21, 36, 23, 352);
             // 
             // label5
@@ -285,7 +281,7 @@
             this.txt_DiaChi.PlaceholderText = "Tỉnh";
             this.txt_DiaChi.SelectedText = "";
             this.txt_DiaChi.Size = new System.Drawing.Size(316, 45);
-            this.txt_DiaChi.TabIndex = 37;
+            this.txt_DiaChi.TabIndex = 53;
             this.txt_DiaChi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_DiaChi_KeyPress);
             // 
             // panel3
@@ -373,7 +369,7 @@
             this.txt_TimKiem.PlaceholderText = "Tìm kiếm";
             this.txt_TimKiem.SelectedText = "";
             this.txt_TimKiem.Size = new System.Drawing.Size(316, 45);
-            this.txt_TimKiem.TabIndex = 29;
+            this.txt_TimKiem.TabIndex = 56;
             this.txt_TimKiem.TextChanged += new System.EventHandler(this.txt_TimKiem_TextChanged);
             // 
             // txt_SDT
@@ -398,7 +394,7 @@
             this.txt_SDT.PlaceholderText = "VD: 012345678";
             this.txt_SDT.SelectedText = "";
             this.txt_SDT.Size = new System.Drawing.Size(316, 45);
-            this.txt_SDT.TabIndex = 28;
+            this.txt_SDT.TabIndex = 51;
             this.txt_SDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_SDT_KeyPress);
             // 
             // txt_TenKH
@@ -423,7 +419,7 @@
             this.txt_TenKH.PlaceholderText = "VD: Nguyễn Văn A";
             this.txt_TenKH.SelectedText = "";
             this.txt_TenKH.Size = new System.Drawing.Size(316, 45);
-            this.txt_TenKH.TabIndex = 27;
+            this.txt_TenKH.TabIndex = 50;
             this.txt_TenKH.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_TenKH_KeyPress);
             // 
             // txt_MaKH
@@ -551,17 +547,21 @@
             this.rjTextBox1.Texts = "";
             this.rjTextBox1.UnderlinedStyle = false;
             // 
-            // label9
+            // guna2Elipse3
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Times New Roman", 28.2F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
-                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(176)))), ((int)(((byte)(122)))));
-            this.label9.Location = new System.Drawing.Point(508, 14);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(457, 52);
-            this.label9.TabIndex = 58;
-            this.label9.Text = "Quản Lý Khách Hàng";
+            this.guna2Elipse3.BorderRadius = 33;
+            this.guna2Elipse3.TargetControl = this.dgv_QLKH;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Window;
+            this.panel1.BackgroundImage = global::GUI.Properties.Resources.Nền;
+            this.panel1.Controls.Add(this.guna2Panel1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1502, 834);
+            this.panel1.TabIndex = 1;
             // 
             // QL_Khách_Hàng
             // 
@@ -574,10 +574,10 @@
             this.Name = "QL_Khách_Hàng";
             this.Text = "QL_Khách_Hàng";
             this.Load += new System.EventHandler(this.QL_Khách_Hàng_Load);
-            this.panel1.ResumeLayout(false);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_QLKH)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

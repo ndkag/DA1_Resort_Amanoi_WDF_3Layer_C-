@@ -11,7 +11,7 @@ namespace DAL
         public DataTable getDatPhongByMaPhong(string maPhong)
         {
             DataTable dt = new DataTable();
-            string sql = "SELECT * FROM ChiTietDichVu WHERE MaDatPhong IN (SELECT MaDatPhong FROM DatPhong WHERE MaPhong = '" + maPhong + "')";
+            string sql = "SELECT * FROM ChiTietDatPhong WHERE MaDatPhong IN (SELECT MaDatPhong FROM DatPhong WHERE MaPhong = '" + maPhong + "')";
             cmd = new SqlCommand(sql, chuoikn);
             cmd.Parameters.AddWithValue("@maPhong", maPhong);
             da = new SqlDataAdapter(cmd);
@@ -132,7 +132,7 @@ namespace DAL
         public DataTable getChiTietDV(string maDatPhong)
         {
             chuoikn.Open();
-            cmd = new SqlCommand("SELECT MaDatPhong as [Mã ĐP], MaDV as [Mã DV], TenDV as [Tên DV], SoLuong as [Số lượng] , TongTien as [Tổng tiền] FROM ChiTietDichVu WHERE MaDatPhong = '" + maDatPhong + "' ", chuoikn);
+            cmd = new SqlCommand("SELECT MaDatPhong as [Mã ĐP], MaDV as [Mã DV], TenDV as [Tên DV], SoLuong as [Số lượng] , TongTien as [Tổng tiền] FROM ChiTietDatPhong WHERE MaDatPhong = '" + maDatPhong + "' ", chuoikn);
             da = new SqlDataAdapter(cmd);
             dt = new DataTable();
             da.Fill(dt);
@@ -178,7 +178,7 @@ namespace DAL
 
         public bool XoaChiTietDV(string DP)
         {
-            string sql = string.Format("DELETE FROM ChiTietDichVu WHERE MaDatPhong = '{0}'", DP);
+            string sql = string.Format("DELETE FROM ChiTietDatPhong WHERE MaDatPhong = '{0}'", DP);
             thucthisql(sql);
             return true;
         }
@@ -211,19 +211,6 @@ namespace DAL
             {
                 chuoikn.Close();
             }
-        }
-
-        public bool ChuyendulieuDP(string maDP)
-        {
-            string sql = "INSERT INTO DatPhongNhap SELECT * FROM DatPhong where MaDatPhong = '" + maDP + "' ";
-            thucthisql(sql);
-            return true;
-        }
-        public bool ChuyendulieuCTDV(string maDP)
-        {
-            string sql = "INSERT INTO ChiTietDichVuNhap SELECT * FROM ChiTietDichVu where MaDatPhong = '" + maDP + "' ";
-            thucthisql(sql);
-            return true;
         }
 
         #region form quản lý hoá đơn

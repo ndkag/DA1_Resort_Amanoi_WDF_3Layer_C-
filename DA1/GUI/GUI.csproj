@@ -225,11 +225,11 @@
     <Compile Include="Hoá Đơn.Designer.cs">
       <DependentUpon>Hoá Đơn.cs</DependentUpon>
     </Compile>
-    <Compile Include="Quản lý\QL CTDV.cs">
+    <Compile Include="Quản lý\QL CTDP.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Quản lý\QL CTDV.Designer.cs">
-      <DependentUpon>QL CTDV.cs</DependentUpon>
+    <Compile Include="Quản lý\QL CTDP.Designer.cs">
+      <DependentUpon>QL CTDP.cs</DependentUpon>
     </Compile>
     <Compile Include="Quản lý\QL dịch vụ.cs">
       <SubType>Form</SubType>
@@ -354,8 +354,8 @@
     <EmbeddedResource Include="Hoá Đơn.resx">
       <DependentUpon>Hoá Đơn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Quản lý\QL CTDV.resx">
-      <DependentUpon>QL CTDV.cs</DependentUpon>
+    <EmbeddedResource Include="Quản lý\QL CTDP.resx">
+      <DependentUpon>QL CTDP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Quản lý\QL dịch vụ.resx">
       <DependentUpon>QL dịch vụ.cs</DependentUpon>

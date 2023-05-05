@@ -121,7 +121,6 @@ namespace GUI.Chức_năng
 
                 cbb_MaDV.Text = "";
                 txt_TenDV.Text = "";
-                txt_MaDatPhong.Texts = "";
 
                 refreshdatagridview();
                 HienThiTongTienChiTietDichVu();
@@ -338,13 +337,11 @@ namespace GUI.Chức_năng
             if (checkbox_chinhsuahd.Checked)
             {
 
-                txt_MaKH.Visible = true;
-                dtp_NgayThanhToan.Visible = true;
+
                 btn_SuaHD.Visible = true;
                 btn_XoaHD.Visible = true;
                 btn_LamMoiHD.Visible = true;
-                label7.Visible = true;
-                label8.Visible = true;
+
 
 
             }
@@ -353,13 +350,11 @@ namespace GUI.Chức_năng
                 // nếu checkbox không được chọn thì trả lại vị trí ban đầu của textbox và label
 
 
-                txt_MaKH.Visible = false;
-                dtp_NgayThanhToan.Visible = false;
+
                 btn_SuaHD.Visible = false;
                 btn_XoaHD.Visible = false;
                 btn_LamMoiHD.Visible = false;
-                label7.Visible = false;
-                label8.Visible = false;
+
 
 
 
@@ -539,7 +534,7 @@ namespace GUI.Chức_năng
                 // Display data in controls
                 if (hang == -1) return;
 
-                txt_MaPhong.Texts = dgvCTDV[0, hang].Value.ToString();
+                txt_MaDatPhong.Texts = dgvCTDV[0, hang].Value.ToString();
                 cbb_MaDV.Text = dgvCTDV[1, hang].Value.ToString();
                 txt_TenDV.Text = dgvCTDV[2, hang].Value.ToString();
                 txt_SoLuong.Texts = dgvCTDV[3, hang].Value.ToString();

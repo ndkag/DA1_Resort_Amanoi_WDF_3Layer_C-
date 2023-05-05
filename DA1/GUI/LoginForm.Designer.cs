@@ -90,7 +90,7 @@
             this.loginButton.Margin = new System.Windows.Forms.Padding(4);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(401, 49);
-            this.loginButton.TabIndex = 11;
+            this.loginButton.TabIndex = 22;
             this.loginButton.Text = "Login";
             this.loginButton.TextColor = System.Drawing.Color.White;
             this.loginButton.UseVisualStyleBackColor = false;
@@ -111,7 +111,7 @@
             this.btn_Exit.MaDatPhong = null;
             this.btn_Exit.Name = "btn_Exit";
             this.btn_Exit.Size = new System.Drawing.Size(349, 49);
-            this.btn_Exit.TabIndex = 14;
+            this.btn_Exit.TabIndex = 23;
             this.btn_Exit.Text = "Exit";
             this.btn_Exit.TextColor = System.Drawing.Color.RosyBrown;
             this.btn_Exit.UseVisualStyleBackColor = false;
@@ -375,7 +375,7 @@
             this.hienthimk.OnUncheck.CheckBoxColor = System.Drawing.Color.Transparent;
             this.hienthimk.Size = new System.Drawing.Size(27, 27);
             this.hienthimk.Style = Bunifu.UI.WinForms.BunifuCheckBox.CheckBoxStyles.Bunifu;
-            this.hienthimk.TabIndex = 25;
+            this.hienthimk.TabIndex = 21;
             this.hienthimk.ThreeState = false;
             this.hienthimk.ToolTipText = "";
             this.hienthimk.CheckedChanged += new System.EventHandler<Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs>(this.hienthimk_CheckedChanged);

@@ -129,7 +129,7 @@
             this.txt_Password.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txt_Password.PlaceholderText = "";
             this.txt_Password.Size = new System.Drawing.Size(348, 54);
-            this.txt_Password.TabIndex = 13;
+            this.txt_Password.TabIndex = 72;
             this.txt_Password.Texts = "";
             this.txt_Password.UnderlinedStyle = false;
             // 
@@ -151,7 +151,7 @@
             this.txt_UserName.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txt_UserName.PlaceholderText = "";
             this.txt_UserName.Size = new System.Drawing.Size(348, 54);
-            this.txt_UserName.TabIndex = 12;
+            this.txt_UserName.TabIndex = 71;
             this.txt_UserName.Texts = "";
             this.txt_UserName.UnderlinedStyle = false;
             // 
@@ -173,7 +173,7 @@
             this.txt_DisplayName.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txt_DisplayName.PlaceholderText = "";
             this.txt_DisplayName.Size = new System.Drawing.Size(348, 54);
-            this.txt_DisplayName.TabIndex = 11;
+            this.txt_DisplayName.TabIndex = 70;
             this.txt_DisplayName.Texts = "";
             this.txt_DisplayName.UnderlinedStyle = false;
             // 
