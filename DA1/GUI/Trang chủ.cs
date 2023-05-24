@@ -79,7 +79,7 @@ namespace GUI
                 lb_ID.Visible = false;
                 lb_Ten.Visible = false;
                 label1.Visible = false;
-                avt.Visible = false;
+
 
 
                 label2.Visible = false;
@@ -97,7 +97,7 @@ namespace GUI
                 lb_ID.Visible = true;
                 lb_Ten.Visible = true;
                 label1.Visible = true;
-                avt.Visible = true;
+
 
                 label2.Visible = true;
                 btn_Menu.Dock = DockStyle.None;
@@ -116,7 +116,6 @@ namespace GUI
             lb_ID.Visible = true;
             lb_Ten.Visible = true;
             label1.Visible = true;
-            avt.Visible = true;
 
             label2.Visible = true;
             btn_Menu.Dock = DockStyle.None;
@@ -133,7 +132,6 @@ namespace GUI
             lb_ID.Visible = false;
             lb_Ten.Visible = false;
             label1.Visible = false;
-            avt.Visible = false;
 
             label2.Visible = false;
             btn_Menu.Dock = DockStyle.Top;
@@ -161,13 +159,14 @@ namespace GUI
         private void btn_DoiMK_Click(object sender, EventArgs e)
         {
 
+            hideSubMenu();
+            CollapseMenu3();
             // Tạo form đổi mật khẩu
             Đổi_mật_khẩu doi = new Đổi_mật_khẩu();
             doi.txtTaiKhoan.Texts = lb_ID.Text;
             doi.ShowDialog();
 
 
-            hideSubMenu();
         }
 
         private void btnQuanLyTK_Click(object sender, EventArgs e)

@@ -1,6 +1,7 @@
 ﻿using BLL;
 using DTO;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace GUI
@@ -83,13 +84,15 @@ namespace GUI
                 else
                 {
                     // User login
-                    MessageBox.Show("Chào mừng " + account.DisplayName + "đăng nhập thành công.");
+                    MessageBox.Show("Chào mừng " + account.DisplayName + " đăng nhập thành công.");
                     Trang_Chủ mainMenu = new Trang_Chủ();
-                    mainMenu.btn_TaiKhoan.Visible = false;
+                    mainMenu.btnQuanLyTK.Visible = false;
                     mainMenu.btn_QLDichVu.Visible = false;
                     mainMenu.btn_QLPhong.Visible = false;
                     mainMenu.btn_Nhanvien.Visible = false;
-
+                    mainMenu.btn_HoaDon.Visible = false;
+                    mainMenu.panelHethongSubmenu.Size = new Size(243, 45);
+                    mainMenu.panelChucNangSubmenu.Size = new Size(243, 129);
 
                     mainMenu.lb_Ten.Text = account.DisplayName;
                     mainMenu.lb_ID.Text = account.UserName;

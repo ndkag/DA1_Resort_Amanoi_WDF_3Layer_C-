@@ -1,5 +1,4 @@
 ﻿using DTO;
-using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -9,16 +8,16 @@ namespace DAL
 {
     public class DAL_QLKhachHang : DBConnect
     {
-        public int kiemtramatrung(string ma)
-        {
-            chuoikn.Open();
-            int i;
-            string sql = "Select count(*) from KhachHang where MaKH='" + ma.Trim() + "'";
-            cmd = new SqlCommand(sql, chuoikn);
-            i = (int)cmd.ExecuteScalar();
-            chuoikn.Close();
-            return i;
-        }
+        //public int kiemtramatrung(string ma)
+        //{
+        //    chuoikn.Open();
+        //    int i;
+        //    string sql = "Select count(*) from KhachHang where MaKH='" + ma.Trim() + "'";
+        //    cmd = new SqlCommand(sql, chuoikn);
+        //    i = (int)cmd.ExecuteScalar();
+        //    chuoikn.Close();
+        //    return i;
+        //}
 
         public DataTable getQLKhachHang()
         {
@@ -65,29 +64,8 @@ namespace DAL
         }
 
         #endregion
-        public List<string> LayDanhSachMa()
-        {
-            List<string> listMaDP = new List<string>();
-            try
-            {
-                string sql = "SELECT MaKH FROM KhachHang";
-                SqlDataAdapter da = new SqlDataAdapter(sql, chuoikn);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                if (dt.Rows.Count > 0)
-                {
-                    foreach (DataRow row in dt.Rows)
-                    {
-                        listMaDP.Add(row["MaKH"].ToString());
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            return listMaDP;
-        }
+
+
         //Thêm phòng
         public bool ThemKH(DTO_QLKhachHang KH)
         {

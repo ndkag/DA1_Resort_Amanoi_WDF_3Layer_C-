@@ -1,9 +1,7 @@
 ﻿using DAL;
 using DTO;
-using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
 
 namespace BLL
 {
@@ -15,14 +13,14 @@ namespace BLL
         {
             return QLKH.TimKiems(keyword);
         }
-      
+
         public DataTable getQLKhachHang()
         {
             return QLKH.getQLKhachHang();
         }
         public bool ThemKH(DTO_QLKhachHang KH)
         {
-            
+
             return QLKH.ThemKH(KH);
         }
         public bool SuaKH(DTO_QLKhachHang KH)
@@ -33,9 +31,9 @@ namespace BLL
         {
             return QLKH.XoaKH(KH);
         }
-        public int kiemtramatrung(string ma)
-        {
-            return QLKH.kiemtramatrung(ma);
-        }
+        //public int kiemtramatrung(string ma)
+        //{
+        //    return QLKH.kiemtramatrung(ma);
+        //}
     }
 }

@@ -18,27 +18,27 @@ namespace DAL
             da.Fill(dt);
             return dt;
         }
-        public decimal TinhTongDoanhThuTheoThang(int nam, int thang)
-        {
-            decimal tongDoanhThu = 0;
-            chuoikn.Open();
-            string sql = "SELECT SUM(TongTien) AS TongDoanhThu FROM HoaDon WHERE YEAR(NgayThanhToan) = " + nam + " AND MONTH(NgayThanhToan) = " + thang;
-            cmd = new SqlCommand(sql, chuoikn);
-            SqlDataReader dr = cmd.ExecuteReader();
-            if (dr.Read())
-            {
-                if (dr.IsDBNull(0))
-                {
-                    tongDoanhThu = 0;
-                }
-                else
-                {
-                    tongDoanhThu = dr.GetDecimal(0);
-                }
-            }
-            chuoikn.Close();
-            return tongDoanhThu;
-        }
+        //public decimal TinhTongDoanhThuTheoThang(int nam, int thang)
+        //{
+        //    decimal tongDoanhThu = 0;
+        //    chuoikn.Open();
+        //    string sql = "SELECT SUM(TongTien) AS TongDoanhThu FROM HoaDon WHERE YEAR(NgayThanhToan) = " + nam + " AND MONTH(NgayThanhToan) = " + thang;
+        //    cmd = new SqlCommand(sql, chuoikn);
+        //    SqlDataReader dr = cmd.ExecuteReader();
+        //    if (dr.Read())
+        //    {
+        //        if (dr.IsDBNull(0))
+        //        {
+        //            tongDoanhThu = 0;
+        //        }
+        //        else
+        //        {
+        //            tongDoanhThu = dr.GetDecimal(0);
+        //        }
+        //    }
+        //    chuoikn.Close();
+        //    return tongDoanhThu;
+        //}
 
 
         public string getMaDatPhongByMaPhong(string maPhong)
@@ -78,16 +78,16 @@ namespace DAL
             chuoikn.Close();
             return dt;
         }
-        public DataTable getKHHD(string maDatPhong)
-        {
-            chuoikn.Open();
-            cmd = new SqlCommand("select DatPhong.MaKH,KhachHang.TenKH,KhachHang.SoDienThoai,KhachHang.DiaChi FROM KhachHang JOIN DatPhong ON DatPhong.MaKH = KhachHang.MaKH WHERE DatPhong.MaDatPhong = '" + maDatPhong + "' ", chuoikn);
-            da = new SqlDataAdapter(cmd);
-            dt = new DataTable();
-            da.Fill(dt);
-            chuoikn.Close();
-            return dt;
-        }
+        //public DataTable getKHHD(string maDatPhong)
+        //{
+        //    chuoikn.Open();
+        //    cmd = new SqlCommand("select DatPhong.MaKH,KhachHang.TenKH,KhachHang.SoDienThoai,KhachHang.DiaChi FROM KhachHang JOIN DatPhong ON DatPhong.MaKH = KhachHang.MaKH WHERE DatPhong.MaDatPhong = '" + maDatPhong + "' ", chuoikn);
+        //    da = new SqlDataAdapter(cmd);
+        //    dt = new DataTable();
+        //    da.Fill(dt);
+        //    chuoikn.Close();
+        //    return dt;
+        //}
 
         public DTO_DatPhong LayMaKHTuMaDP(string maDP)
         {
@@ -142,29 +142,29 @@ namespace DAL
 
 
         #endregion
-        public List<string> LayDanhSachMa()
-        {
-            List<string> listMaDP = new List<string>();
-            try
-            {
-                string sql = "SELECT MaHD FROM HoaDon";
-                SqlDataAdapter da = new SqlDataAdapter(sql, chuoikn);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                if (dt.Rows.Count > 0)
-                {
-                    foreach (DataRow row in dt.Rows)
-                    {
-                        listMaDP.Add(row["MaHD"].ToString());
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            return listMaDP;
-        }
+        //public List<string> LayDanhSachMa()
+        //{
+        //    List<string> listMaDP = new List<string>();
+        //    try
+        //    {
+        //        string sql = "SELECT MaHD FROM HoaDon";
+        //        SqlDataAdapter da = new SqlDataAdapter(sql, chuoikn);
+        //        DataTable dt = new DataTable();
+        //        da.Fill(dt);
+        //        if (dt.Rows.Count > 0)
+        //        {
+        //            foreach (DataRow row in dt.Rows)
+        //            {
+        //                listMaDP.Add(row["MaHD"].ToString());
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw ex;
+        //    }
+        //    return listMaDP;
+        //}
 
 
         public bool ThemHoaDon(DTO_HoaDon hd)

@@ -42,6 +42,7 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BCTK_DatPhong));
             this.panel3 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -66,6 +67,7 @@
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.btn_XuatExcel = new Guna.UI2.WinForms.Guna2Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_BC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart_Thang)).BeginInit();
@@ -75,6 +77,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.Window;
+            this.panel3.Controls.Add(this.btn_XuatExcel);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.panel6);
@@ -319,7 +322,7 @@
             this.btn_Xuat_BC.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(176)))), ((int)(((byte)(122)))));
             this.btn_Xuat_BC.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Xuat_BC.ForeColor = System.Drawing.Color.White;
-            this.btn_Xuat_BC.Image = global::GUI.Properties.Resources.icons8_Add_Pie_Chart_Report_60px_1;
+            this.btn_Xuat_BC.Image = ((System.Drawing.Image)(resources.GetObject("btn_Xuat_BC.Image")));
             this.btn_Xuat_BC.ImageSize = new System.Drawing.Size(40, 40);
             this.btn_Xuat_BC.Location = new System.Drawing.Point(419, 147);
             this.btn_Xuat_BC.Name = "btn_Xuat_BC";
@@ -487,11 +490,31 @@
             this.bunifuElipse1.ElipseRadius = 40;
             this.bunifuElipse1.TargetControl = this.panel3;
             // 
+            // btn_XuatExcel
+            // 
+            this.btn_XuatExcel.BorderColor = System.Drawing.Color.White;
+            this.btn_XuatExcel.BorderRadius = 15;
+            this.btn_XuatExcel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_XuatExcel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_XuatExcel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_XuatExcel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_XuatExcel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(176)))), ((int)(((byte)(122)))));
+            this.btn_XuatExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_XuatExcel.ForeColor = System.Drawing.Color.White;
+            this.btn_XuatExcel.Image = ((System.Drawing.Image)(resources.GetObject("btn_XuatExcel.Image")));
+            this.btn_XuatExcel.ImageSize = new System.Drawing.Size(40, 40);
+            this.btn_XuatExcel.Location = new System.Drawing.Point(419, 304);
+            this.btn_XuatExcel.Name = "btn_XuatExcel";
+            this.btn_XuatExcel.Size = new System.Drawing.Size(195, 56);
+            this.btn_XuatExcel.TabIndex = 91;
+            this.btn_XuatExcel.Text = "Excel";
+            this.btn_XuatExcel.Click += new System.EventHandler(this.btn_XuatExcel_Click);
+            // 
             // BCTK_DatPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::GUI.Properties.Resources.Nền2;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1484, 787);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -536,5 +559,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label9;
+        private Guna.UI2.WinForms.Guna2Button btn_XuatExcel;
     }
 }

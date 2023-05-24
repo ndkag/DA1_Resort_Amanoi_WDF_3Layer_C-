@@ -31,51 +31,55 @@ namespace DAL
             return i;
         }
 
+        //tính tổng tiền cho chi tiết đặt phòng. giá dịch vụ * số lượng
         public decimal TinhTongTien(string maDatPhong)
         {
-            decimal tongTien = 0;
+            decimal tongTien = 0; // Khởi tạo biến tổng tiền với giá trị ban đầu là 0
             try
             {
                 string sql = string.Format("SELECT SUM(TongTien) FROM ChiTietDatPhong WHERE MaDatPhong = '{0}'", maDatPhong);
                 SqlDataAdapter da = new SqlDataAdapter(sql, chuoikn);
                 DataTable dt = new DataTable();
-                da.Fill(dt);
+                da.Fill(dt); // Thực hiện truy vấn và lưu kết quả vào DataTable
                 if (dt.Rows.Count > 0 && dt.Rows[0][0] != DBNull.Value)
                 {
-                    tongTien = Convert.ToDecimal(dt.Rows[0][0]);
+                    tongTien = Convert.ToDecimal(dt.Rows[0][0]); // Gán giá trị tổng tiền từ kết quả truy vấn
                 }
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw ex; // Xử lý ngoại lệ và ném lại ngoại lệ cho phần gọi hàm xử lý
             }
-            return tongTien;
+            return tongTien; // Trả về tổng tiền
         }
 
 
-        public List<string> LayDanhSachMa()
-        {
-            List<string> listMaDP = new List<string>();
-            try
-            {
-                string sql = "SELECT MaCTDV FROM ChiTietDatPhong";
-                SqlDataAdapter da = new SqlDataAdapter(sql, chuoikn);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                if (dt.Rows.Count > 0)
-                {
-                    foreach (DataRow row in dt.Rows)
-                    {
-                        listMaDP.Add(row["MaCTDV"].ToString());
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            return listMaDP;
-        }
+
+        //public List<string> LayDanhSachMa()
+        //{
+        //    List<string> listMaDP = new List<string>();
+        //    try
+        //    {
+        //        string sql = "SELECT MaCTDV FROM ChiTietDatPhong";
+        //        SqlDataAdapter da = new SqlDataAdapter(sql, chuoikn);
+        //        DataTable dt = new DataTable();
+        //        da.Fill(dt);
+        //        if (dt.Rows.Count > 0)
+        //        {
+        //            foreach (DataRow row in dt.Rows)
+        //            {
+        //                listMaDP.Add(row["MaCTDV"].ToString());
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw ex;
+        //    }
+        //    return listMaDP;
+        //}
+
+
         public void ThemChiTietDichVu(DTO_ChiTietDV ctdv)
         {
             string sql = string.Format("INSERT INTO ChiTietDatPhong( MaDatPhong, MaDV,TenDV, SoLuong, TongTien) VALUES ('{0}', '{1}', N'{2}', {3}, {4})", ctdv.MaDatPhong, ctdv.MaDV, ctdv.TenDV, ctdv.SoLuong, ctdv.TongTien);
@@ -129,6 +133,7 @@ namespace DAL
 
         #endregion
 
+        //Khi chọn mã dịch vụ sẽ lấy thông tin trong dịch vụ được chọn. vd: chọn mã sẽ đổ ra tên
         public DTO_DichVu LayMaTuMaDV(string maDV)
         {
             DTO_DichVu dp = null;
@@ -143,27 +148,26 @@ namespace DAL
 
                 if (reader.Read())
                 {
+                    string TenDV = reader["TenDV"].ToString(); // Lấy giá trị của cột "TenDV" từ đọc giả và chuyển đổi thành chuỗi
 
-                    string TenDV = reader["TenDV"].ToString();
+                    decimal giatien = decimal.Parse(reader["GiaTien"].ToString()); // Lấy giá trị của cột "GiaTien" từ đọc giả và chuyển đổi thành số thực
 
-                    decimal giatien = decimal.Parse(reader["GiaTien"].ToString());
-
-
-                    dp = new DTO_DichVu(maDV, TenDV, giatien);
+                    dp = new DTO_DichVu(maDV, TenDV, giatien); // Khởi tạo đối tượng DTO_DichVu với các thông tin lấy được từ cơ sở dữ liệu
                 }
 
                 reader.Close();
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw ex; // Ném ra ngoại lệ nếu có lỗi xảy ra
             }
             finally
             {
-                chuoikn.Close();
+                chuoikn.Close(); // Đảm bảo rằng kết nối sẽ được đóng ngay cả khi có ngoại lệ xảy ra
             }
 
-            return dp;
+            return dp; // Trả về đối tượng DTO_DichVu
         }
+
     }
 }

@@ -50,6 +50,7 @@
             Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState toggleState3 = new Bunifu.UI.WinForms.BunifuToggleSwitch.ToggleState();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
             this.txt_TimKiem = new Guna.UI2.WinForms.Guna2TextBox();
             this.dgvCTDV = new Guna.UI2.WinForms.Guna2DataGridView();
             this.dgvDatPhong = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -57,9 +58,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txt_TongTienCTDV = new GUI.BC.RJTextBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.rjTextBox5 = new GUI.BC.RJTextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btn_LamMoiHD = new Guna.UI2.WinForms.Guna2Button();
             this.btn_Xuat_Bao_Cao = new Guna.UI2.WinForms.Guna2Button();
@@ -77,21 +76,24 @@
             this.label7 = new System.Windows.Forms.Label();
             this.dtp_NgayThanhToan = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.checkbox_chinhsuahd = new Bunifu.UI.WinForms.BunifuToggleSwitch();
-            this.txt_MaKH = new GUI.BC.RJTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cbb_MaDV = new System.Windows.Forms.ComboBox();
             this.cbb_MaNV = new System.Windows.Forms.ComboBox();
             this.lb_ghichu = new System.Windows.Forms.Label();
-            this.txt_GhiChu = new GUI.BC.RJTextBox();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.txt_MaNV = new GUI.BC.RJTextBox();
-            this.txt_MaDPHD = new GUI.BC.RJTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lb_manv = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.lb_madatphong = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.lb_Mahd = new System.Windows.Forms.Label();
+            this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.txt_TongTienCTDV = new GUI.BC.RJTextBox();
+            this.rjTextBox5 = new GUI.BC.RJTextBox();
+            this.txt_MaKH = new GUI.BC.RJTextBox();
+            this.txt_GhiChu = new GUI.BC.RJTextBox();
+            this.txt_MaNV = new GUI.BC.RJTextBox();
+            this.txt_MaDPHD = new GUI.BC.RJTextBox();
             this.txt_MaDatPhong = new GUI.BC.RJTextBox();
             this.txt_SoLuong = new GUI.BC.RJTextBox();
             this.rjTextBox7 = new GUI.BC.RJTextBox();
@@ -99,7 +101,6 @@
             this.rjTextBox6 = new GUI.BC.RJTextBox();
             this.rjTextBox2 = new GUI.BC.RJTextBox();
             this.txt_MaPhong = new GUI.BC.RJTextBox();
-            this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCTDV)).BeginInit();
@@ -124,6 +125,8 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.BackgroundImage = global::GUI.Properties.Resources.Nền2;
+            this.panel2.Controls.Add(this.label9);
+            this.panel2.Controls.Add(this.txt_TongTienCTDV);
             this.panel2.Controls.Add(this.txt_TimKiem);
             this.panel2.Controls.Add(this.dgvCTDV);
             this.panel2.Controls.Add(this.dgvDatPhong);
@@ -131,7 +134,6 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.txt_TongTienCTDV);
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.rjTextBox5);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -139,6 +141,20 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(816, 787);
             this.panel2.TabIndex = 60;
+            // 
+            // label9
+            // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.SystemColors.Window;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label9.Location = new System.Drawing.Point(726, 735);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(51, 22);
+            this.label9.TabIndex = 101;
+            this.label9.Text = "VND";
             // 
             // txt_TimKiem
             // 
@@ -157,7 +173,7 @@
             this.txt_TimKiem.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_TimKiem.IconRight = global::GUI.Properties.Resources.icons8_search_64px_11;
             this.txt_TimKiem.IconRightSize = new System.Drawing.Size(40, 40);
-            this.txt_TimKiem.Location = new System.Drawing.Point(153, 720);
+            this.txt_TimKiem.Location = new System.Drawing.Point(106, 720);
             this.txt_TimKiem.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.txt_TimKiem.Name = "txt_TimKiem";
             this.txt_TimKiem.PasswordChar = '\0';
@@ -409,34 +425,11 @@
             this.label6.BackColor = System.Drawing.SystemColors.Window;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label6.Location = new System.Drawing.Point(490, 731);
+            this.label6.Location = new System.Drawing.Point(443, 731);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(121, 29);
             this.label6.TabIndex = 43;
             this.label6.Text = "Tổng tiền:";
-            // 
-            // txt_TongTienCTDV
-            // 
-            this.txt_TongTienCTDV.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_TongTienCTDV.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_TongTienCTDV.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(176)))), ((int)(((byte)(122)))));
-            this.txt_TongTienCTDV.BorderRadius = 1;
-            this.txt_TongTienCTDV.BorderSize = 3;
-            this.txt_TongTienCTDV.Enabled = false;
-            this.txt_TongTienCTDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_TongTienCTDV.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_TongTienCTDV.Location = new System.Drawing.Point(605, 722);
-            this.txt_TongTienCTDV.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_TongTienCTDV.Multiline = false;
-            this.txt_TongTienCTDV.Name = "txt_TongTienCTDV";
-            this.txt_TongTienCTDV.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_TongTienCTDV.PasswordChar = false;
-            this.txt_TongTienCTDV.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txt_TongTienCTDV.PlaceholderText = "";
-            this.txt_TongTienCTDV.Size = new System.Drawing.Size(178, 40);
-            this.txt_TongTienCTDV.TabIndex = 44;
-            this.txt_TongTienCTDV.Texts = "";
-            this.txt_TongTienCTDV.UnderlinedStyle = true;
             // 
             // panel4
             // 
@@ -445,29 +438,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(757, 3);
             this.panel4.TabIndex = 49;
-            // 
-            // rjTextBox5
-            // 
-            this.rjTextBox5.BackColor = System.Drawing.SystemColors.Window;
-            this.rjTextBox5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(176)))), ((int)(((byte)(122)))));
-            this.rjTextBox5.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(176)))), ((int)(((byte)(122)))));
-            this.rjTextBox5.BorderRadius = 20;
-            this.rjTextBox5.BorderSize = 3;
-            this.rjTextBox5.Enabled = false;
-            this.rjTextBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjTextBox5.ForeColor = System.Drawing.Color.DimGray;
-            this.rjTextBox5.Location = new System.Drawing.Point(7, 4);
-            this.rjTextBox5.Margin = new System.Windows.Forms.Padding(4);
-            this.rjTextBox5.Multiline = true;
-            this.rjTextBox5.Name = "rjTextBox5";
-            this.rjTextBox5.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.rjTextBox5.PasswordChar = false;
-            this.rjTextBox5.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.rjTextBox5.PlaceholderText = "";
-            this.rjTextBox5.Size = new System.Drawing.Size(795, 774);
-            this.rjTextBox5.TabIndex = 27;
-            this.rjTextBox5.Texts = " |Chi tiết đặt phòng| ";
-            this.rjTextBox5.UnderlinedStyle = false;
             // 
             // panel3
             // 
@@ -852,28 +822,6 @@
             this.checkbox_chinhsuahd.Value = false;
             this.checkbox_chinhsuahd.CheckedChanged += new System.EventHandler<Bunifu.UI.WinForms.BunifuToggleSwitch.CheckedChangedEventArgs>(this.checkbox_chinhsuahd_CheckedChanged);
             // 
-            // txt_MaKH
-            // 
-            this.txt_MaKH.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_MaKH.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_MaKH.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(176)))), ((int)(((byte)(122)))));
-            this.txt_MaKH.BorderRadius = 10;
-            this.txt_MaKH.BorderSize = 2;
-            this.txt_MaKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_MaKH.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_MaKH.Location = new System.Drawing.Point(32, 601);
-            this.txt_MaKH.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_MaKH.Multiline = true;
-            this.txt_MaKH.Name = "txt_MaKH";
-            this.txt_MaKH.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_MaKH.PasswordChar = false;
-            this.txt_MaKH.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txt_MaKH.PlaceholderText = "";
-            this.txt_MaKH.Size = new System.Drawing.Size(265, 45);
-            this.txt_MaKH.TabIndex = 98;
-            this.txt_MaKH.Texts = "";
-            this.txt_MaKH.UnderlinedStyle = false;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -921,28 +869,6 @@
             this.lb_ghichu.TabIndex = 56;
             this.lb_ghichu.Text = "Ghi chú";
             // 
-            // txt_GhiChu
-            // 
-            this.txt_GhiChu.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_GhiChu.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_GhiChu.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(176)))), ((int)(((byte)(122)))));
-            this.txt_GhiChu.BorderRadius = 10;
-            this.txt_GhiChu.BorderSize = 2;
-            this.txt_GhiChu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_GhiChu.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_GhiChu.Location = new System.Drawing.Point(348, 525);
-            this.txt_GhiChu.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_GhiChu.Multiline = true;
-            this.txt_GhiChu.Name = "txt_GhiChu";
-            this.txt_GhiChu.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_GhiChu.PasswordChar = false;
-            this.txt_GhiChu.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txt_GhiChu.PlaceholderText = "";
-            this.txt_GhiChu.Size = new System.Drawing.Size(265, 45);
-            this.txt_GhiChu.TabIndex = 97;
-            this.txt_GhiChu.Texts = "";
-            this.txt_GhiChu.UnderlinedStyle = false;
-            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(176)))), ((int)(((byte)(122)))));
@@ -950,53 +876,6 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(590, 3);
             this.panel5.TabIndex = 34;
-            // 
-            // txt_MaNV
-            // 
-            this.txt_MaNV.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_MaNV.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_MaNV.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(176)))), ((int)(((byte)(122)))));
-            this.txt_MaNV.BorderRadius = 10;
-            this.txt_MaNV.BorderSize = 2;
-            this.txt_MaNV.Enabled = false;
-            this.txt_MaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_MaNV.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_MaNV.Location = new System.Drawing.Point(32, 519);
-            this.txt_MaNV.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_MaNV.Multiline = true;
-            this.txt_MaNV.Name = "txt_MaNV";
-            this.txt_MaNV.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_MaNV.PasswordChar = false;
-            this.txt_MaNV.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txt_MaNV.PlaceholderText = "";
-            this.txt_MaNV.Size = new System.Drawing.Size(265, 45);
-            this.txt_MaNV.TabIndex = 53;
-            this.txt_MaNV.Texts = "";
-            this.txt_MaNV.UnderlinedStyle = false;
-            // 
-            // txt_MaDPHD
-            // 
-            this.txt_MaDPHD.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_MaDPHD.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_MaDPHD.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(176)))), ((int)(((byte)(122)))));
-            this.txt_MaDPHD.BorderRadius = 10;
-            this.txt_MaDPHD.BorderSize = 2;
-            this.txt_MaDPHD.Enabled = false;
-            this.txt_MaDPHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_MaDPHD.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_MaDPHD.Location = new System.Drawing.Point(348, 440);
-            this.txt_MaDPHD.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_MaDPHD.Multiline = true;
-            this.txt_MaDPHD.Name = "txt_MaDPHD";
-            this.txt_MaDPHD.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_MaDPHD.PasswordChar = false;
-            this.txt_MaDPHD.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txt_MaDPHD.PlaceholderText = "";
-            this.txt_MaDPHD.Size = new System.Drawing.Size(265, 45);
-            this.txt_MaDPHD.TabIndex = 95;
-            this.txt_MaDPHD.Texts = "";
-            this.txt_MaDPHD.UnderlinedStyle = false;
-            this.txt_MaDPHD._TextChanged += new System.EventHandler(this.txt_MaDPHD__TextChanged);
             // 
             // label2
             // 
@@ -1069,6 +948,148 @@
             this.lb_Mahd.Size = new System.Drawing.Size(104, 22);
             this.lb_Mahd.TabIndex = 45;
             this.lb_Mahd.Text = "Mã hoá đơn";
+            // 
+            // guna2Elipse2
+            // 
+            this.guna2Elipse2.BorderRadius = 33;
+            // 
+            // txt_TongTienCTDV
+            // 
+            this.txt_TongTienCTDV.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_TongTienCTDV.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_TongTienCTDV.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(176)))), ((int)(((byte)(122)))));
+            this.txt_TongTienCTDV.BorderRadius = 1;
+            this.txt_TongTienCTDV.BorderSize = 3;
+            this.txt_TongTienCTDV.Enabled = false;
+            this.txt_TongTienCTDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_TongTienCTDV.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_TongTienCTDV.Location = new System.Drawing.Point(558, 722);
+            this.txt_TongTienCTDV.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_TongTienCTDV.Multiline = false;
+            this.txt_TongTienCTDV.Name = "txt_TongTienCTDV";
+            this.txt_TongTienCTDV.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_TongTienCTDV.PasswordChar = false;
+            this.txt_TongTienCTDV.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txt_TongTienCTDV.PlaceholderText = "";
+            this.txt_TongTienCTDV.Size = new System.Drawing.Size(178, 40);
+            this.txt_TongTienCTDV.TabIndex = 44;
+            this.txt_TongTienCTDV.Texts = "";
+            this.txt_TongTienCTDV.UnderlinedStyle = true;
+            // 
+            // rjTextBox5
+            // 
+            this.rjTextBox5.BackColor = System.Drawing.SystemColors.Window;
+            this.rjTextBox5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(176)))), ((int)(((byte)(122)))));
+            this.rjTextBox5.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(176)))), ((int)(((byte)(122)))));
+            this.rjTextBox5.BorderRadius = 20;
+            this.rjTextBox5.BorderSize = 3;
+            this.rjTextBox5.Enabled = false;
+            this.rjTextBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjTextBox5.ForeColor = System.Drawing.Color.DimGray;
+            this.rjTextBox5.Location = new System.Drawing.Point(7, 4);
+            this.rjTextBox5.Margin = new System.Windows.Forms.Padding(4);
+            this.rjTextBox5.Multiline = true;
+            this.rjTextBox5.Name = "rjTextBox5";
+            this.rjTextBox5.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.rjTextBox5.PasswordChar = false;
+            this.rjTextBox5.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.rjTextBox5.PlaceholderText = "";
+            this.rjTextBox5.Size = new System.Drawing.Size(795, 774);
+            this.rjTextBox5.TabIndex = 27;
+            this.rjTextBox5.Texts = " |Chi tiết đặt phòng| ";
+            this.rjTextBox5.UnderlinedStyle = false;
+            // 
+            // txt_MaKH
+            // 
+            this.txt_MaKH.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_MaKH.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_MaKH.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(176)))), ((int)(((byte)(122)))));
+            this.txt_MaKH.BorderRadius = 10;
+            this.txt_MaKH.BorderSize = 2;
+            this.txt_MaKH.Enabled = false;
+            this.txt_MaKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_MaKH.ForeColor = System.Drawing.Color.DimGray;
+            this.txt_MaKH.Location = new System.Drawing.Point(32, 601);
+            this.txt_MaKH.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_MaKH.Multiline = true;
+            this.txt_MaKH.Name = "txt_MaKH";
+            this.txt_MaKH.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_MaKH.PasswordChar = false;
+            this.txt_MaKH.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txt_MaKH.PlaceholderText = "";
+            this.txt_MaKH.Size = new System.Drawing.Size(265, 45);
+            this.txt_MaKH.TabIndex = 98;
+            this.txt_MaKH.Texts = "";
+            this.txt_MaKH.UnderlinedStyle = false;
+            // 
+            // txt_GhiChu
+            // 
+            this.txt_GhiChu.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_GhiChu.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_GhiChu.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(176)))), ((int)(((byte)(122)))));
+            this.txt_GhiChu.BorderRadius = 10;
+            this.txt_GhiChu.BorderSize = 2;
+            this.txt_GhiChu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_GhiChu.ForeColor = System.Drawing.Color.DimGray;
+            this.txt_GhiChu.Location = new System.Drawing.Point(348, 525);
+            this.txt_GhiChu.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_GhiChu.Multiline = true;
+            this.txt_GhiChu.Name = "txt_GhiChu";
+            this.txt_GhiChu.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_GhiChu.PasswordChar = false;
+            this.txt_GhiChu.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txt_GhiChu.PlaceholderText = "";
+            this.txt_GhiChu.Size = new System.Drawing.Size(265, 45);
+            this.txt_GhiChu.TabIndex = 97;
+            this.txt_GhiChu.Texts = "";
+            this.txt_GhiChu.UnderlinedStyle = false;
+            // 
+            // txt_MaNV
+            // 
+            this.txt_MaNV.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_MaNV.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_MaNV.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(176)))), ((int)(((byte)(122)))));
+            this.txt_MaNV.BorderRadius = 10;
+            this.txt_MaNV.BorderSize = 2;
+            this.txt_MaNV.Enabled = false;
+            this.txt_MaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_MaNV.ForeColor = System.Drawing.Color.DimGray;
+            this.txt_MaNV.Location = new System.Drawing.Point(32, 519);
+            this.txt_MaNV.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_MaNV.Multiline = true;
+            this.txt_MaNV.Name = "txt_MaNV";
+            this.txt_MaNV.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_MaNV.PasswordChar = false;
+            this.txt_MaNV.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txt_MaNV.PlaceholderText = "";
+            this.txt_MaNV.Size = new System.Drawing.Size(265, 45);
+            this.txt_MaNV.TabIndex = 53;
+            this.txt_MaNV.Texts = "";
+            this.txt_MaNV.UnderlinedStyle = false;
+            // 
+            // txt_MaDPHD
+            // 
+            this.txt_MaDPHD.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_MaDPHD.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_MaDPHD.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(176)))), ((int)(((byte)(122)))));
+            this.txt_MaDPHD.BorderRadius = 10;
+            this.txt_MaDPHD.BorderSize = 2;
+            this.txt_MaDPHD.Enabled = false;
+            this.txt_MaDPHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_MaDPHD.ForeColor = System.Drawing.Color.DimGray;
+            this.txt_MaDPHD.Location = new System.Drawing.Point(348, 440);
+            this.txt_MaDPHD.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_MaDPHD.Multiline = true;
+            this.txt_MaDPHD.Name = "txt_MaDPHD";
+            this.txt_MaDPHD.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_MaDPHD.PasswordChar = false;
+            this.txt_MaDPHD.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txt_MaDPHD.PlaceholderText = "";
+            this.txt_MaDPHD.Size = new System.Drawing.Size(265, 45);
+            this.txt_MaDPHD.TabIndex = 95;
+            this.txt_MaDPHD.Texts = "";
+            this.txt_MaDPHD.UnderlinedStyle = false;
+            this.txt_MaDPHD._TextChanged += new System.EventHandler(this.txt_MaDPHD__TextChanged);
             // 
             // txt_MaDatPhong
             // 
@@ -1232,10 +1253,6 @@
             this.txt_MaPhong.UnderlinedStyle = false;
             this.txt_MaPhong.Visible = false;
             // 
-            // guna2Elipse2
-            // 
-            this.guna2Elipse2.BorderRadius = 33;
-            // 
             // Hoá_Đơn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1312,5 +1329,6 @@
         private Guna.UI2.WinForms.Guna2Button btn_Xoa;
         private Guna.UI2.WinForms.Guna2Button btn_LamMoiHD;
         private Guna.UI2.WinForms.Guna2Button btn_Xuat_Bao_Cao;
+        private System.Windows.Forms.Label label9;
     }
 }

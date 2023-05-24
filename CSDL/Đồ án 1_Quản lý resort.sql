@@ -76,6 +76,8 @@ CREATE TABLE ChiTietDatPhong (
    constraint FK_MaDatPhong_CTDV FOREIGN KEY (MaDatPhong) REFERENCES DatPhong(MaDatPhong) on delete cascade on update cascade,
   constraint FK_MaDV_CTDV FOREIGN KEY (MaDV) REFERENCES DichVu(MaDV) on delete cascade on update cascade
 );
+ALTER TABLE ChiTietDatPhong
+ADD CONSTRAINT PK_ChiTietDatPhong PRIMARY KEY (MaDatPhong, MaDV);
 
 ---------------------------BẢNG HOÁ ĐƠN------------------------------
 CREATE TABLE HoaDon (

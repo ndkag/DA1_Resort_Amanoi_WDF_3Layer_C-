@@ -1,21 +1,21 @@
 ﻿using BLL;
 using DTO;
-using GUI.BC;
 using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI.Quản_lý
 {
     public partial class QL_Đặt_Phòng : Form
     {
+
+
+        BLL_DatPhong blldp = new BLL_DatPhong();
+        DTO_DatPhong dtoDP = new DTO_DatPhong();
+        BLL_HoaDon bllhd = new BLL_HoaDon();
+        private readonly QLPhongBLL phongBLL;
         public QL_Đặt_Phòng()
         {
             InitializeComponent();
@@ -28,12 +28,6 @@ namespace GUI.Quản_lý
             cbb_MaKH.ValueMember = "MaKH";
 
         }
-
-
-        BLL_DatPhong blldp = new BLL_DatPhong();
-        DTO_DatPhong dtoDP = new DTO_DatPhong();
-        BLL_HoaDon bllhd = new BLL_HoaDon();
-        private readonly QLPhongBLL phongBLL;
 
         private void refreshdatagridview() //giúp load lại trang dữ liệu
         {
@@ -48,7 +42,7 @@ namespace GUI.Quản_lý
             cbb_MaP.DisplayMember = "MaPhong";
             cbb_MaP.ValueMember = "MaPhong";
 
-         
+
 
 
             dgv_DatPhong.Columns["STT"].HeaderText = "STT";
@@ -59,7 +53,7 @@ namespace GUI.Quản_lý
         private void btn_DatP_Click(object sender, EventArgs e)
         {
 
-          
+
 
             try
             {
@@ -69,7 +63,7 @@ namespace GUI.Quản_lý
                 DateTime ngayDen = DateTime.Now;
                 DateTime ngayDi = DateTime.Parse(dtp_NgayDi.Value.ToShortDateString());
                 string ghiChu = txt_GhiChu.Text.Trim();
-          
+
                 if (string.IsNullOrEmpty(maPhong) || string.IsNullOrEmpty(maKH))
                 {
                     MessageBox.Show("Vui lòng nhập thông tin!");
@@ -104,7 +98,7 @@ namespace GUI.Quản_lý
 
         private void Đặt_phòng_Load(object sender, EventArgs e)
         {
-          
+
             try
             {
                 refreshdatagridview();
@@ -137,7 +131,7 @@ namespace GUI.Quản_lý
         private void btn_Sua_Click(object sender, EventArgs e)
         {
 
-          
+
             try
             {
                 string maDP = txt_MaDP.Text.Trim();
@@ -172,7 +166,7 @@ namespace GUI.Quản_lý
 
         private void dgv_DatPhong_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
 
             try
             {
@@ -204,10 +198,10 @@ namespace GUI.Quản_lý
 
             try
             {
-               
+
                 string mp = cbb_MaP.Text;
                 string maDP = txt_MaDP.Text.Trim();
-                if (string.IsNullOrEmpty(maDP) || string.IsNullOrEmpty(mp) )
+                if (string.IsNullOrEmpty(maDP) || string.IsNullOrEmpty(mp))
                 {
                     MessageBox.Show("Vui lòng chọn thông tin muốn xoá.");
                     return;
@@ -227,11 +221,11 @@ namespace GUI.Quản_lý
 
                     }
                 }
-               
+
             }
             catch (Exception ex)
             {
-                MessageBox.Show( ex.Message, "Thông báo");
+                MessageBox.Show(ex.Message, "Thông báo");
             }
 
         }

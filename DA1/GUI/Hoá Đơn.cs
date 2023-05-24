@@ -208,8 +208,6 @@ namespace GUI.Chức_năng
 
 
 
-
-
         private void btn_Sua_Click(object sender, EventArgs e)
         {
             try
@@ -494,7 +492,7 @@ namespace GUI.Chức_năng
                 dgvCTDV.DataSource = bllhd.getChiTietDV(madp);
 
                 dgvDatPhong.DataSource = bllhd.getDPHD(madp);
-
+                txt_MaKH.Enabled = true;
             }
             catch (Exception ex)
             {
