@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BCTK_DatPhong));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -42,8 +43,8 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BCTK_DatPhong));
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btn_XuatExcel = new Guna.UI2.WinForms.Guna2Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -67,7 +68,6 @@
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.btn_XuatExcel = new Guna.UI2.WinForms.Guna2Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_BC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart_Thang)).BeginInit();
@@ -101,6 +101,26 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1424, 737);
             this.panel3.TabIndex = 17;
+            // 
+            // btn_XuatExcel
+            // 
+            this.btn_XuatExcel.BorderColor = System.Drawing.Color.White;
+            this.btn_XuatExcel.BorderRadius = 15;
+            this.btn_XuatExcel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_XuatExcel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_XuatExcel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_XuatExcel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_XuatExcel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(176)))), ((int)(((byte)(122)))));
+            this.btn_XuatExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_XuatExcel.ForeColor = System.Drawing.Color.White;
+            this.btn_XuatExcel.Image = ((System.Drawing.Image)(resources.GetObject("btn_XuatExcel.Image")));
+            this.btn_XuatExcel.ImageSize = new System.Drawing.Size(40, 40);
+            this.btn_XuatExcel.Location = new System.Drawing.Point(419, 304);
+            this.btn_XuatExcel.Name = "btn_XuatExcel";
+            this.btn_XuatExcel.Size = new System.Drawing.Size(195, 56);
+            this.btn_XuatExcel.TabIndex = 91;
+            this.btn_XuatExcel.Text = "Excel";
+            this.btn_XuatExcel.Click += new System.EventHandler(this.btn_XuatExcel_Click);
             // 
             // label6
             // 
@@ -445,9 +465,9 @@
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(176)))), ((int)(((byte)(122)))));
             this.label9.Location = new System.Drawing.Point(18, 19);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(397, 52);
+            this.label9.Size = new System.Drawing.Size(621, 52);
             this.label9.TabIndex = 90;
-            this.label9.Text = "Báo Cáo Thống Kê";
+            this.label9.Text = "Báo Cáo Thống Kê Đặt Phòng";
             // 
             // panel2
             // 
@@ -489,26 +509,6 @@
             // 
             this.bunifuElipse1.ElipseRadius = 40;
             this.bunifuElipse1.TargetControl = this.panel3;
-            // 
-            // btn_XuatExcel
-            // 
-            this.btn_XuatExcel.BorderColor = System.Drawing.Color.White;
-            this.btn_XuatExcel.BorderRadius = 15;
-            this.btn_XuatExcel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_XuatExcel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_XuatExcel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_XuatExcel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_XuatExcel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(176)))), ((int)(((byte)(122)))));
-            this.btn_XuatExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_XuatExcel.ForeColor = System.Drawing.Color.White;
-            this.btn_XuatExcel.Image = ((System.Drawing.Image)(resources.GetObject("btn_XuatExcel.Image")));
-            this.btn_XuatExcel.ImageSize = new System.Drawing.Size(40, 40);
-            this.btn_XuatExcel.Location = new System.Drawing.Point(419, 304);
-            this.btn_XuatExcel.Name = "btn_XuatExcel";
-            this.btn_XuatExcel.Size = new System.Drawing.Size(195, 56);
-            this.btn_XuatExcel.TabIndex = 91;
-            this.btn_XuatExcel.Text = "Excel";
-            this.btn_XuatExcel.Click += new System.EventHandler(this.btn_XuatExcel_Click);
             // 
             // BCTK_DatPhong
             // 

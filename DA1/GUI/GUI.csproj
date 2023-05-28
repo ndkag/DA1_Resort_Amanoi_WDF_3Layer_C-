@@ -196,6 +196,12 @@
     <Compile Include="BC\RJToggleButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Chi tiết đặt phòng.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chi tiết đặt phòng.Designer.cs">
+      <DependentUpon>Chi tiết đặt phòng.cs</DependentUpon>
+    </Compile>
     <Compile Include="CR_DatPhong.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -226,6 +232,12 @@
       <DependentUpon>CR_XuatHD.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Hoá đơn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hoá đơn.Designer.cs">
+      <DependentUpon>Hoá đơn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Hỗ trợ.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -238,11 +250,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Hoá Đơn.cs">
+    <Compile Include="Quản Lý Hoá Đơn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hoá Đơn.Designer.cs">
-      <DependentUpon>Hoá Đơn.cs</DependentUpon>
+    <Compile Include="Quản Lý Hoá Đơn.Designer.cs">
+      <DependentUpon>Quản Lý Hoá Đơn.cs</DependentUpon>
     </Compile>
     <Compile Include="Quản lý\QL CTDP.cs">
       <SubType>Form</SubType>
@@ -328,6 +340,9 @@
     <EmbeddedResource Include="BC\RJTextBox.resx">
       <DependentUpon>RJTextBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Chi tiết đặt phòng.resx">
+      <DependentUpon>Chi tiết đặt phòng.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CR_DatPhong.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CR_DatPhong.cs</LastGenOutput>
@@ -346,6 +361,9 @@
     <EmbeddedResource Include="CR_XuatHD.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CR_XuatHD.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hoá đơn.resx">
+      <DependentUpon>Hoá đơn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Hỗ trợ.resx">
       <DependentUpon>Hỗ trợ.cs</DependentUpon>
@@ -370,8 +388,8 @@
     <EmbeddedResource Include="obj\Debug\GUI.Quản_lý.QL_Phòng.resources" />
     <EmbeddedResource Include="obj\Debug\GUI.Quản_lý.QL_Đặt_Phòng.resources" />
     <EmbeddedResource Include="Properties\licenses.licx" />
-    <EmbeddedResource Include="Hoá Đơn.resx">
-      <DependentUpon>Hoá Đơn.cs</DependentUpon>
+    <EmbeddedResource Include="Quản Lý Hoá Đơn.resx">
+      <DependentUpon>Quản Lý Hoá Đơn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Quản lý\QL CTDP.resx">
       <DependentUpon>QL CTDP.cs</DependentUpon>

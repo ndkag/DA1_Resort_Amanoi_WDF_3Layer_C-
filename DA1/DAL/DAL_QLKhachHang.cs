@@ -8,16 +8,7 @@ namespace DAL
 {
     public class DAL_QLKhachHang : DBConnect
     {
-        //public int kiemtramatrung(string ma)
-        //{
-        //    chuoikn.Open();
-        //    int i;
-        //    string sql = "Select count(*) from KhachHang where MaKH='" + ma.Trim() + "'";
-        //    cmd = new SqlCommand(sql, chuoikn);
-        //    i = (int)cmd.ExecuteScalar();
-        //    chuoikn.Close();
-        //    return i;
-        //}
+
 
         public DataTable getQLKhachHang()
         {

@@ -16,12 +16,13 @@ namespace GUI
         //private bool isLoggedIn = false;
         QLPhongDTO p = new QLPhongDTO();
         QLPhongBLL bll = new QLPhongBLL();
+        public static Trang_Chủ Instance;
 
         public Trang_Chủ()
         {
             InitializeComponent();
             customizeDesign();
-
+            Instance = this;
         }
 
 
@@ -56,7 +57,7 @@ namespace GUI
         }
 
         private Form activeForm = null;
-        private void openChildFormInPanel(Form childForm)
+        public void openChildFormInPanel(Form childForm)
         {
             if (activeForm != null)
                 activeForm.Close();
@@ -288,7 +289,7 @@ namespace GUI
 
         private void btn_HoaDon_Click(object sender, EventArgs e)
         {
-            openChildFormInPanel(new Hoá_Đơn());
+            openChildFormInPanel(new Quản_Lý_Hoá_Đơn());
             CollapseMenu3();
 
             hideSubMenu();

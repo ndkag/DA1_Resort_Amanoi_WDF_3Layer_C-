@@ -84,7 +84,6 @@ C:\Users\duykh\Desktop\Đồ án 1\DA1\GUI\obj\Debug\GUI.BCTK_KhachHang.resource
 C:\Users\duykh\Desktop\Đồ án 1\DA1\GUI\obj\Debug\GUI.BC.RJTextBox.resources
 C:\Users\duykh\Desktop\Đồ án 1\DA1\GUI\obj\Debug\GUI.Báo_cáo_thống_kê.Xuất_báo_cáo.resources
 C:\Users\duykh\Desktop\Đồ án 1\DA1\GUI\obj\Debug\GUI.Hỗ_trợ.resources
-C:\Users\duykh\Desktop\Đồ án 1\DA1\GUI\obj\Debug\GUI.Chức_năng.Hoá_Đơn.resources
 C:\Users\duykh\Desktop\Đồ án 1\DA1\GUI\obj\Debug\GUI.Quản_lý.QL_dịch_vụ.resources
 C:\Users\duykh\Desktop\Đồ án 1\DA1\GUI\obj\Debug\GUI.Quản_lý.QL_Khách_Hàng.resources
 C:\Users\duykh\Desktop\Đồ án 1\DA1\GUI\obj\Debug\GUI.Quản_lý.QL_Phòng.resources
@@ -110,3 +109,6 @@ C:\Users\duykh\Desktop\Đồ án 1\DA1\GUI\bin\Debug\EPPlus.dll
 C:\Users\duykh\Desktop\Đồ án 1\DA1\GUI\bin\Debug\EPPlus.Interfaces.dll
 C:\Users\duykh\Desktop\Đồ án 1\DA1\GUI\bin\Debug\EPPlus.System.Drawing.dll
 C:\Users\duykh\Desktop\Đồ án 1\DA1\GUI\bin\Debug\EPPlus.xml
+C:\Users\duykh\Desktop\Đồ án 1\DA1\GUI\obj\Debug\GUI.Chi_tiết_đặt_phòng.resources
+C:\Users\duykh\Desktop\Đồ án 1\DA1\GUI\obj\Debug\GUI.Chức_năng.Quản_Lý_Hoá_Đơn.resources
+C:\Users\duykh\Desktop\Đồ án 1\DA1\GUI\obj\Debug\GUI.Hoá_đơn.resources

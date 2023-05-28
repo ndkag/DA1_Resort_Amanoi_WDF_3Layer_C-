@@ -86,9 +86,9 @@
             // 
             // chart_Thang
             // 
+            this.chart_Thang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             chartArea1.Name = "ChartArea1";
             this.chart_Thang.ChartAreas.Add(chartArea1);
-            this.chart_Thang.Dock = System.Windows.Forms.DockStyle.Bottom;
             legend1.Name = "Legend1";
             this.chart_Thang.Legends.Add(legend1);
             this.chart_Thang.Location = new System.Drawing.Point(0, 449);
@@ -243,6 +243,7 @@
             // 
             // chart_Nam
             // 
+            this.chart_Nam.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             chartArea2.Name = "ChartArea1";
             this.chart_Nam.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
@@ -289,9 +290,9 @@
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(176)))), ((int)(((byte)(122)))));
             this.label9.Location = new System.Drawing.Point(22, 21);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(397, 52);
+            this.label9.Size = new System.Drawing.Size(636, 52);
             this.label9.TabIndex = 90;
-            this.label9.Text = "Báo Cáo Thống Kê";
+            this.label9.Text = "Báo Cáo Thống Kê Doanh Thu";
             // 
             // panel2
             // 

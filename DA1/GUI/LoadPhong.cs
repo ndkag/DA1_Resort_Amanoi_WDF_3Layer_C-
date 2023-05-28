@@ -1,6 +1,5 @@
 ﻿using BLL;
 using GUI.BC;
-using GUI.Chức_năng;
 using GUI.Quản_lý;
 using System;
 using System.Data;
@@ -62,13 +61,13 @@ namespace GUI
                         string maDatPhong = bllhd.getMaDatPhongByMaPhong(maPhong); //Giả sử hàm getMaDatPhongByMaPhong() đã được thực hiện trong lớp QLPhongBLL
 
                         // Gán mã phòng vào textbox txtMaPhong trên form Hoá Đơn
-                        Hoá_Đơn formHoaDon = new Hoá_Đơn();
+                        Chi_tiết_đặt_phòng formHoaDon = new Chi_tiết_đặt_phòng();
                         formHoaDon.txt_MaDatPhong.Texts = maDatPhong;
-                        formHoaDon.txt_MaDPHD.Texts = maDatPhong;
                         formHoaDon.txt_MaPhong.Texts = maPhong;
-                        formHoaDon.label4.Visible = false;
                         formHoaDon.rjTextBox1.Visible = false;
-                        formHoaDon.checkbox_chinhsuahd.Visible = false;
+                        //formHoaDon.txt_MaDPHD.Texts = maDatPhong;
+                        //formHoaDon.label4.Visible = false;
+                        //formHoaDon.checkbox_chinhsuahd.Visible = false;
 
                         // Tìm kiếm các đặt phòng tương ứng với mã phòng
                         DataTable dt = bllhd.getDatPhongByMaPhong(maPhong);

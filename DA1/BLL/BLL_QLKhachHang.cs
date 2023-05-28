@@ -31,9 +31,6 @@ namespace BLL
         {
             return QLKH.XoaKH(KH);
         }
-        //public int kiemtramatrung(string ma)
-        //{
-        //    return QLKH.kiemtramatrung(ma);
-        //}
+
     }
 }

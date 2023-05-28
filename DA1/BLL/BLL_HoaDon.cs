@@ -27,11 +27,7 @@ namespace BLL
         {
             return dalhd.getChiTietDV(maDatPhong);
         }
-        //public DataTable getKHHD(string maDatPhong)
-        //{
-        //    return dalhd.getKHHD(maDatPhong);
 
-        //}
         public DataTable getHoaDon(string maDatPhong)
         {
             return dalhd.getHoaDon(maDatPhong);
@@ -71,21 +67,16 @@ namespace BLL
             return dalhd.XoaChiTietDV(DP);
 
         }
-        //public bool ChuyendulieuDP(string maDP)
-        //{
-        //    return dalhd.ChuyendulieuDP(maDP);
 
-        //}
-        //public bool ChuyendulieuCTDV(string maDP)
-        //{
-        //    return dalhd.ChuyendulieuCTDV(maDP);
-
-        //}
 
         #region from quản lý hoá đơn
         public DataTable getQLHoaDon()
         {
             return dalhd.getQLHoaDon();
+        }
+        public DataTable getQLHoaDonwheremahoadon(string mahoadon)
+        {
+            return dalhd.getQLHoaDonwheremahoadon(mahoadon);
         }
         public bool XoaHoaDon(string HD)
         {
@@ -101,22 +92,7 @@ namespace BLL
         }
         #endregion
 
-        // Hàm thống kê doanh thu theo tháng
-        //public List<Tuple<string, decimal>> ThongKeTheoThang(int nam)
-        //{
-        //    List<Tuple<string, decimal>> data = new List<Tuple<string, decimal>>();
 
-        //    for (int i = 1; i <= 12; i++)
-        //    {
-        //        // Lấy doanh thu của tháng i
-        //        decimal doanhThuThang = dalhd.TinhTongDoanhThuTheoThang(nam, i);
-
-        //        // Thêm vào danh sách data
-        //        data.Add(new Tuple<string, decimal>(i.ToString(), doanhThuThang));
-        //    }
-
-        //    return data;
-        //}
         public int kiemtramatrung(string ma)
         {
             return dalhd.kiemtramatrung(ma);

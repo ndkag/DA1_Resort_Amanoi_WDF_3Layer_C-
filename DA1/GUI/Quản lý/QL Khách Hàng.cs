@@ -4,12 +4,7 @@ using GUI.BC;
 using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI.Quản_lý
@@ -71,14 +66,14 @@ namespace GUI.Quản_lý
         private void btn_Thêm_Click(object sender, EventArgs e)
         {
 
-          
+
             try
             {
                 string tenkh = txt_TenKH.Text.Trim();
                 string diachi = txt_DiaChi.Text.Trim();
                 string sdt = txt_SDT.Text.Trim();
                 DateTime ngaytao = DateTime.Now;
-              
+
                 if (string.IsNullOrEmpty(tenkh) || string.IsNullOrEmpty(diachi) || string.IsNullOrEmpty(sdt))
                 {
                     MessageBox.Show("Vui lòng nhập thông tin!");
@@ -107,7 +102,7 @@ namespace GUI.Quản_lý
 
         private void btn_Sua_Click(object sender, EventArgs e)
         {
-           
+
             try
             {
                 string makh = txt_MaKH.Text.Trim();
@@ -131,7 +126,7 @@ namespace GUI.Quản_lý
 
         private void btn_LamMoi_Click(object sender, EventArgs e)
         {
-        
+
             try
             {
                 foreach (Control ctrl in guna2Panel1.Controls)
@@ -164,7 +159,7 @@ namespace GUI.Quản_lý
 
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
-         
+
             try
             {
                 string makh = txt_MaKH.Text.Trim();
@@ -200,7 +195,7 @@ namespace GUI.Quản_lý
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-        
+
 
             try
             {
@@ -226,7 +221,7 @@ namespace GUI.Quản_lý
 
         private void txt_TimKiem_TextChanged(object sender, EventArgs e)
         {
-          
+
             try
             {
                 string keyword = txt_TimKiem.Text.Trim();
@@ -274,8 +269,8 @@ namespace GUI.Quản_lý
             {
                 e.Handled = true;
             }
-
         }
+
 
         private void txt_DiaChi_KeyPress(object sender, KeyPressEventArgs e)
         {

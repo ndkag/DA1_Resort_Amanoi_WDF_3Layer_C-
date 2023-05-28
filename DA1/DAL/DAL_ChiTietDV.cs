@@ -55,29 +55,6 @@ namespace DAL
 
 
 
-        //public List<string> LayDanhSachMa()
-        //{
-        //    List<string> listMaDP = new List<string>();
-        //    try
-        //    {
-        //        string sql = "SELECT MaCTDV FROM ChiTietDatPhong";
-        //        SqlDataAdapter da = new SqlDataAdapter(sql, chuoikn);
-        //        DataTable dt = new DataTable();
-        //        da.Fill(dt);
-        //        if (dt.Rows.Count > 0)
-        //        {
-        //            foreach (DataRow row in dt.Rows)
-        //            {
-        //                listMaDP.Add(row["MaCTDV"].ToString());
-        //            }
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //    return listMaDP;
-        //}
 
 
         public void ThemChiTietDichVu(DTO_ChiTietDV ctdv)

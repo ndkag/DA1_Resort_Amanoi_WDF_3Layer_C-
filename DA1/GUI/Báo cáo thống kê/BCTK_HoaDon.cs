@@ -58,13 +58,6 @@ namespace GUI.Báo_cáo_thống_kê
             chart_Thang.Titles.Add("Thống kê doanh thu trong tháng " + thang + " năm " + nam);
             Series series = chart_Thang.Series.Add("Doanh thu");
             series.ChartType = SeriesChartType.Line;
-            //foreach (DataRow row in dt.Rows)
-            //{
-            //    int ngay = int.Parse(row["Ngày"].ToString());
-            //    int so = int.Parse(row["DoanhThu"].ToString());
-            //    series.Points.AddXY(ngay, so);
-            //}
-            // Thiết lập khoảng cách giữa các giá trị trên trục X
             chart_Thang.ChartAreas[0].AxisX.Interval = 1;
 
             // Thiết lập kiểu gạch ngang trên trục X để các cột hiển thị liên tục hơn

@@ -422,9 +422,9 @@
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(176)))), ((int)(((byte)(122)))));
             this.label9.Location = new System.Drawing.Point(22, 20);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(397, 52);
+            this.label9.Size = new System.Drawing.Size(660, 52);
             this.label9.TabIndex = 89;
-            this.label9.Text = "Báo Cáo Thống Kê";
+            this.label9.Text = "Báo Cáo Thống Kê Khách Hàng";
             // 
             // bunifuElipse1
             // 

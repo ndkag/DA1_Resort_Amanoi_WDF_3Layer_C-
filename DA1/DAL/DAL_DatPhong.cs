@@ -145,28 +145,6 @@ namespace DAL
             return true;
         }
 
-        //public List<string> LayDanhSachMaDP()
-        //{
-        //    List<string> listMaDP = new List<string>();
-        //    try
-        //    {
-        //        string sql = "SELECT MaDatPhong FROM DatPhong";
-        //        SqlDataAdapter da = new SqlDataAdapter(sql, chuoikn);
-        //        DataTable dt = new DataTable();
-        //        da.Fill(dt);
-        //        if (dt.Rows.Count > 0)
-        //        {
-        //            foreach (DataRow row in dt.Rows)
-        //            {
-        //                listMaDP.Add(row["MaDatPhong"].ToString());
-        //            }
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //    return listMaDP;
-        //}
+
     }
 }
