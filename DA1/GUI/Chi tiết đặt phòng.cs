@@ -72,6 +72,7 @@ namespace GUI
                     refreshdatagridview();
                     HienThiTongTienChiTietDichVu();
 
+                    MessageBox.Show("Thêm dịch vụ " + tenDV + " thành công");
 
                 }
 
@@ -100,7 +101,7 @@ namespace GUI
                 DTO_ChiTietDV DP = new DTO_ChiTietDV(maDP, maDV, tendv, soLUong, TongTien);
                 if (bll_CTDV.SuaCTDV(DP) == true)
                 {
-                    MessageBox.Show("Sửa thành công");
+                    MessageBox.Show("Sửa chi đặt phòng có mã " + maDP + " thành công");
                     refreshdatagridview();
                     HienThiTongTienChiTietDichVu();
                 }
@@ -140,7 +141,7 @@ namespace GUI
                     {
                         if (bll_CTDV.Xoa(madv, madp) == true)
                         {
-                            MessageBox.Show("Xoá thành công");
+                            MessageBox.Show("Xoá dịch vụ " + madv + " trong chi tiết đặt phòng có mã " + madp + " thành công");
 
                             refreshdatagridview();
                             HienThiTongTienChiTietDichVu();
@@ -235,7 +236,7 @@ namespace GUI
             Hoá_đơn hd = new Hoá_đơn();
             hd.txt_MaDPHD.Texts = txt_MaDatPhong.Texts;
             hd.txt_MaPhong.Texts = txt_MaPhong.Texts;
-            Trang_Chủ.Instance.openChildFormInPanel(new Hoá_đơn());
+            Trang_Chủ.Instance.openChildFormInPanel(hd);
 
         }
 
@@ -253,6 +254,11 @@ namespace GUI
             // Gán các giá trị khác tương tự
 
             txt_TenDV.Text = DP.TenDV;
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

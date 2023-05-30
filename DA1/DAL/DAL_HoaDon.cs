@@ -191,7 +191,7 @@ namespace DAL
         {
             string ngay = string.Format("{0}/{1}/{2}", HD.NgayThanhToan.Year, HD.NgayThanhToan.Month, HD.NgayThanhToan.Day);
 
-            string sql = "UPDATE HoaDon SET MaHD = '" + HD.MaHD + "',MaKH = '" + HD.MaKH + "', MaNV = '" + HD.MaNV + "', MaDatPhong = '" + HD.MaDatPhong + "', TongTien = '" + HD.TongTien + "', NgayThanhToan = '" + ngay + "', GhiChu = '" + HD.GhiChu + "' WHERE MaHD = '" + HD.MaHD + "' ";
+            string sql = "UPDATE HoaDon SET MaHD = '" + HD.MaHD + "',MaKH = '" + HD.MaKH + "', MaNV = '" + HD.MaNV + "', MaDatPhong = '" + HD.MaDatPhong + "', TongTien = '" + HD.TongTien + "', NgayThanhToan = '" + ngay + "', GhiChu = N'" + HD.GhiChu + "' WHERE MaHD = '" + HD.MaHD + "' ";
             thucthisql(sql);
             return true;
         }

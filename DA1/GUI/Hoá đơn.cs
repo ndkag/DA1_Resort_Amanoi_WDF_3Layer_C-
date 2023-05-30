@@ -165,12 +165,6 @@ namespace GUI
                 DateTime ngaytao = DateTime.Parse(dtp_NgayThanhToan.Value.ToShortDateString());
                 decimal tongtien = decimal.Parse(txt_TongTienCTDV.Texts.Trim());
                 DTO_HoaDon DP = new DTO_HoaDon(maHD, makh, maNV, maDP, tongtien, ngaytao, ghichu);
-                if (!decimal.TryParse(txt_TongTienCTDV.Text.Trim(), out tongtien))
-                {
-                    MessageBox.Show("Vui lòng nhập đúng định dạng số cho Tổng tiền.");
-                    return;
-                }
-
                 if (string.IsNullOrEmpty(maHD) || string.IsNullOrEmpty(maDP) || string.IsNullOrEmpty(makh) || string.IsNullOrEmpty(maNV))
                 {
                     MessageBox.Show("Vui lòng nhập đầy đủ thông tin.");
@@ -256,6 +250,41 @@ namespace GUI
             {
                 MessageBox.Show(ex.Message, "Thông báo!");
             }
+        }
+
+        private void dgv_HoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+
+
+            try
+            {
+                int hang = e.RowIndex;
+                // Dữ liệu được hiển thị lên bảng điền thông tin
+                if (hang == -1) return;
+                txt_MaHD.Text = dgv_HoaDon[0, hang].Value.ToString();
+                txt_MaKH.Texts = dgv_HoaDon[1, hang].Value.ToString();
+                cbb_MaNV.Text = dgv_HoaDon[2, hang].Value.ToString();
+                txt_MaDPHD.Texts = dgv_HoaDon[3, hang].Value.ToString();
+
+
+
+                dtp_NgayThanhToan.Text = dgv_HoaDon[5, hang].Value.ToString();
+                txt_GhiChu.Texts = dgv_HoaDon[6, hang].Value.ToString();
+
+                string madp = txt_MaDPHD.Texts;
+
+                dgvCTDV.DataSource = bllhd.getChiTietDV(madp);
+
+                dgvDatPhong.DataSource = bllhd.getDPHD(madp);
+                txt_MaKH.Enabled = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Thông báo!");
+            }
+
+
         }
     }
 }

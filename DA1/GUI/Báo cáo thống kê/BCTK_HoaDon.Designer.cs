@@ -290,9 +290,9 @@
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(176)))), ((int)(((byte)(122)))));
             this.label9.Location = new System.Drawing.Point(22, 21);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(636, 52);
+            this.label9.Size = new System.Drawing.Size(634, 52);
             this.label9.TabIndex = 90;
-            this.label9.Text = "Báo Cáo Thống Kê Doanh Thu";
+            this.label9.Text = "Báo cáo và thống kê doanh thu";
             // 
             // panel2
             // 

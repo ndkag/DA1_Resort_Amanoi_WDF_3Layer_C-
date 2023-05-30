@@ -39,7 +39,7 @@
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.Size = new System.Drawing.Size(895, 519);
+            this.crystalReportViewer1.Size = new System.Drawing.Size(1277, 738);
             this.crystalReportViewer1.TabIndex = 0;
             // 
             // Xuất_báo_cáo
@@ -47,7 +47,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(895, 519);
+            this.ClientSize = new System.Drawing.Size(1277, 738);
             this.Controls.Add(this.crystalReportViewer1);
             this.Name = "Xuất_báo_cáo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

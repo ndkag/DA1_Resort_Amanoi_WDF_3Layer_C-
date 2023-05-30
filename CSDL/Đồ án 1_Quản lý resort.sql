@@ -92,6 +92,7 @@ CREATE TABLE HoaDon (
 	constraint FK_NhanVien_HD FOREIGN KEY (MaNV) REFERENCES NhanVien(MaNV) ,
 		constraint FK_KhachHang_MaKH FOREIGN KEY (MaKH) REFERENCES KhachHang(MaKH) 
 );
+
 --==================================================================
 --==================================================================
 

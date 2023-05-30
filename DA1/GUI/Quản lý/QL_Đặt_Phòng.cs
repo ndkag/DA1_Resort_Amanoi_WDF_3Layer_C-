@@ -83,6 +83,8 @@ namespace GUI.Quản_lý
                 }
                 else if (blldp.ThemDP(DP) == true)
                 {
+                    MessageBox.Show("Đặt phòng thành công.");
+
                     refreshdatagridview();
                     LoadPhong();
                 }
@@ -218,7 +220,6 @@ namespace GUI.Quản_lý
                             refreshdatagridview();
                             LoadPhong();
                         }
-
                     }
                 }
 

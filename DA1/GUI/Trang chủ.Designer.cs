@@ -669,7 +669,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Trang_Chủ";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Trang chủ";
+            this.Text = "Resort Amanoi";
             this.Load += new System.EventHandler(this.Menu_Load);
             this.panelSlideMenu.ResumeLayout(false);
             this.panelThongKeSubmenu.ResumeLayout(false);

@@ -64,7 +64,6 @@ namespace GUI
                         Chi_tiết_đặt_phòng formHoaDon = new Chi_tiết_đặt_phòng();
                         formHoaDon.txt_MaDatPhong.Texts = maDatPhong;
                         formHoaDon.txt_MaPhong.Texts = maPhong;
-                        formHoaDon.rjTextBox1.Visible = false;
                         //formHoaDon.txt_MaDPHD.Texts = maDatPhong;
                         //formHoaDon.label4.Visible = false;
                         //formHoaDon.checkbox_chinhsuahd.Visible = false;

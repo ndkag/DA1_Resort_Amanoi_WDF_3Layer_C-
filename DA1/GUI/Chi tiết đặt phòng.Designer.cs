@@ -40,7 +40,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.txt_MaPhong = new GUI.BC.RJTextBox();
             this.btn_LamMoi = new Guna.UI2.WinForms.Guna2Button();
             this.btn_Xoa = new Guna.UI2.WinForms.Guna2Button();
             this.btn_Them = new Guna.UI2.WinForms.Guna2Button();
@@ -59,6 +58,7 @@
             this.txt_SoLuong = new GUI.BC.RJTextBox();
             this.rjTextBox7 = new GUI.BC.RJTextBox();
             this.rjTextBox2 = new GUI.BC.RJTextBox();
+            this.txt_MaPhong = new GUI.BC.RJTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
@@ -83,30 +83,6 @@
             // guna2Elipse2
             // 
             this.guna2Elipse2.BorderRadius = 33;
-            // 
-            // txt_MaPhong
-            // 
-            this.txt_MaPhong.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_MaPhong.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_MaPhong.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(176)))), ((int)(((byte)(122)))));
-            this.txt_MaPhong.BorderRadius = 10;
-            this.txt_MaPhong.BorderSize = 2;
-            this.txt_MaPhong.Enabled = false;
-            this.txt_MaPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_MaPhong.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_MaPhong.Location = new System.Drawing.Point(59, 451);
-            this.txt_MaPhong.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_MaPhong.Multiline = true;
-            this.txt_MaPhong.Name = "txt_MaPhong";
-            this.txt_MaPhong.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_MaPhong.PasswordChar = false;
-            this.txt_MaPhong.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txt_MaPhong.PlaceholderText = "";
-            this.txt_MaPhong.Size = new System.Drawing.Size(265, 45);
-            this.txt_MaPhong.TabIndex = 60;
-            this.txt_MaPhong.Texts = "";
-            this.txt_MaPhong.UnderlinedStyle = false;
-            this.txt_MaPhong.Visible = false;
             // 
             // btn_LamMoi
             // 
@@ -347,6 +323,7 @@
             this.txt_MaDatPhong.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(176)))), ((int)(((byte)(122)))));
             this.txt_MaDatPhong.BorderRadius = 10;
             this.txt_MaDatPhong.BorderSize = 2;
+            this.txt_MaDatPhong.Enabled = false;
             this.txt_MaDatPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_MaDatPhong.ForeColor = System.Drawing.Color.DimGray;
             this.txt_MaDatPhong.Location = new System.Drawing.Point(60, 83);
@@ -429,6 +406,30 @@
             this.rjTextBox2.TabIndex = 2;
             this.rjTextBox2.Texts = " |Chi tiết đặt phòng|";
             this.rjTextBox2.UnderlinedStyle = false;
+            // 
+            // txt_MaPhong
+            // 
+            this.txt_MaPhong.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_MaPhong.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_MaPhong.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(176)))), ((int)(((byte)(122)))));
+            this.txt_MaPhong.BorderRadius = 10;
+            this.txt_MaPhong.BorderSize = 2;
+            this.txt_MaPhong.Enabled = false;
+            this.txt_MaPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_MaPhong.ForeColor = System.Drawing.Color.DimGray;
+            this.txt_MaPhong.Location = new System.Drawing.Point(59, 451);
+            this.txt_MaPhong.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_MaPhong.Multiline = true;
+            this.txt_MaPhong.Name = "txt_MaPhong";
+            this.txt_MaPhong.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_MaPhong.PasswordChar = false;
+            this.txt_MaPhong.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txt_MaPhong.PlaceholderText = "";
+            this.txt_MaPhong.Size = new System.Drawing.Size(265, 45);
+            this.txt_MaPhong.TabIndex = 60;
+            this.txt_MaPhong.Texts = "";
+            this.txt_MaPhong.UnderlinedStyle = false;
+            this.txt_MaPhong.Visible = false;
             // 
             // panel1
             // 
@@ -712,23 +713,24 @@
             this.label3.Font = new System.Drawing.Font("Times New Roman", 33F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(176)))), ((int)(((byte)(122)))));
-            this.label3.Location = new System.Drawing.Point(566, 30);
+            this.label3.Location = new System.Drawing.Point(545, 30);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(438, 62);
             this.label3.TabIndex = 93;
             this.label3.Text = "Chi tiết đặt phòng";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // rjTextBox1
             // 
             this.rjTextBox1.BackColor = System.Drawing.SystemColors.Window;
             this.rjTextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(176)))), ((int)(((byte)(122)))));
             this.rjTextBox1.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(176)))), ((int)(((byte)(122)))));
-            this.rjTextBox1.BorderRadius = 15;
+            this.rjTextBox1.BorderRadius = 20;
             this.rjTextBox1.BorderSize = 3;
             this.rjTextBox1.Enabled = false;
-            this.rjTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rjTextBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.rjTextBox1.Location = new System.Drawing.Point(13, 10);
+            this.rjTextBox1.Location = new System.Drawing.Point(13, 13);
             this.rjTextBox1.Margin = new System.Windows.Forms.Padding(4);
             this.rjTextBox1.Multiline = true;
             this.rjTextBox1.Name = "rjTextBox1";
@@ -736,9 +738,9 @@
             this.rjTextBox1.PasswordChar = false;
             this.rjTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.rjTextBox1.PlaceholderText = "";
-            this.rjTextBox1.Size = new System.Drawing.Size(1449, 99);
-            this.rjTextBox1.TabIndex = 92;
-            this.rjTextBox1.Texts = "";
+            this.rjTextBox1.Size = new System.Drawing.Size(1449, 93);
+            this.rjTextBox1.TabIndex = 94;
+            this.rjTextBox1.Texts = " ";
             this.rjTextBox1.UnderlinedStyle = false;
             // 
             // Chi_tiết_đặt_phòng
@@ -798,7 +800,7 @@
         private System.Windows.Forms.Panel panel4;
         public BC.RJTextBox rjTextBox5;
         private System.Windows.Forms.Panel panel7;
-        public BC.RJTextBox rjTextBox1;
         private System.Windows.Forms.Label label3;
+        public BC.RJTextBox rjTextBox1;
     }
 }

@@ -465,9 +465,9 @@
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(176)))), ((int)(((byte)(122)))));
             this.label9.Location = new System.Drawing.Point(18, 19);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(621, 52);
+            this.label9.Size = new System.Drawing.Size(573, 52);
             this.label9.TabIndex = 90;
-            this.label9.Text = "Báo Cáo Thống Kê Đặt Phòng";
+            this.label9.Text = "Báo cáo thống kê đặt phòng";
             // 
             // panel2
             // 
